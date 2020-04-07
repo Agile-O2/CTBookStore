@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Review Page
+		</title>
+		
+		<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<link rel="stylesheet" style="text/css" href="CSS/reviewPage.css">
+	</head>
+	
+	<body>
+		<div id="div1">
+			<ul>
+                <li><a href="homePage.html">Main Page</a></li>
+				<li><a href="productPage.html">Books</a></li>
+                <li><a href="contactPage.html">Contact Us</a></li>
+            </ul>
+        </div>
+		
+        <div class="row" id="middlediv">
+            
+            <!-- left panel -->
+            <div class="col-5" > 
+                <p id="here"></p>
+                <div id="hereAgain"></div>
+            </div>
+            
+            <!-- right panel -->
+            <div class="col-7" style="margin: auto">
+				
+                <p id="hereAlso"></p>
+				
+				<div class="text-center">
+					<button type="button" id="returnButton" class="btn btn-outline-primary" onclick="history.go(-1)">Go Back</button>
+				</div>
+            </div>
+        </div>
+		
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		
+    </body>
+	
+    <script src="JavaScript/reviewPage.js"></script>
+</html>
+

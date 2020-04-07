@@ -1,0 +1,72 @@
+body{
+	background-image: url("Images/backgroundImage.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	margin: 0;
+}
+#div1{
+	background-color: transparent;
+	font-family: cursive;
+	margin: 0;
+	padding: 15px;
+	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li{
+	display: inline;
+	margin-right: 15px;
+	font-size: 20px;
+}
+#div2{
+	width: 50%;
+	align-content: center;
+	margin: auto;
+    margin-top: 3%;
+	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+}
+#div1 a{
+	color: white;
+	text-decoration: none;
+	padding: 20px;
+	font-weight:bold;
+}
+#div1 a:hover{
+	background-color:lightgreen;
+}
+
+#div2 h1{
+	font-size: 50px;
+	color: white;
+	text-align: center;
+	padding:40px;
+}
+#div2 img{
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+}
+#div2 a{
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	display: block;
+	margin: 0;
+	padding:10px;
+}
+#div2 p{
+	font-size: 25px;
+	padding: 20px;
+	font-family: cursive;
+	color: white;
+}

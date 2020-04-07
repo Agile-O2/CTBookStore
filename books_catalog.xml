@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    
+<!-- TO DO - add ratings and reviews -->    
+<!-- Daniel Pobidel -->
+    
+  <!--Sapiens -->
+  <book> 
+    <author>Yuval Noah Harari</author>
+    <image>bookImages/Sapiens.jpg</image>
+    <isbn>9780062316097</isbn>
+    <price>$30.00</price>
+    <pages>464</pages>
+    <stock>54</stock>
+    <tags>
+      <tag>Evolution</tag>
+      <tag>History of Civilization and Culture</tag>  
+      <tag>General Anthropology</tag>
+    </tags>
+    <title>Sapiens: A Brief History of Humankind</title>
+    <topic>History</topic>
+    <year>2015</year>
+    <description> From a renowned historian comes a groundbreaking narrative of humanity’s creation and evolution—a #1 international bestseller—that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be “human.”
+
+One hundred thousand years ago, at least six different species of humans inhabited Earth. Yet today there is only one—homo sapiens. What happened to the others? And what may happen to us?
+
+Most books about the history of humanity pursue either a historical or a biological approach, but Dr. Yuval Noah Harari breaks the mold with this highly original book that begins about 70,000 years ago with the appearance of modern cognition. From examining the role evolving humans have played in the global ecosystem to charting the rise of empires, Sapiens integrates history and science to reconsider accepted narratives, connect past developments with contemporary concerns, and examine specific events within the context of larger ideas.
+
+Dr. Harari also compels us to look ahead, because over the last few decades humans have begun to bend laws of natural selection that have governed life for the past four billion years. We are acquiring the ability to design not only the world around us, but also ourselves. Where is this leading us, and what do we want to become?
+
+</description>
+  </book> 
+    
+  <!--Fly Fishers Guide -->
+  <book>
+    <author>Ron Merly</author>
+    <image>bookImages/flyFishersGuide.jpg</image>
+    <isbn>9781932098891</isbn>
+    <price>$15.99</price>
+    <pages>346</pages>
+    <stock>21</stock>
+    <tags>
+      <tag>Fishing</tag>
+      <tag>Outdoors</tag>  
+      <tag>Guide</tag>
+    </tags>
+    <title>Flyfisher's Guide to Connecticut</title>
+    <topic>Nature</topic>
+    <year>2011</year>
+    <description> Connecticut hosts some of the finest and least-know fishing opportunities in the eastern U.S. From the legendary Housatonic River and its tributaries, to the Wild and Scenic Farmington River, to the Naugatuck, Hammonasset, Salmon, Shetucket, Willimantic and beyond, Ron Merly's years of experience will get you to new holes, hatches, and fish.
+All told, over 350 rivers, brooks, lakes, and ponds are covered, along with detailed maps and hub city information.
+
+Beyond the fishing, Merly covers the pressing issues facing Connecticut's fisheries, including invasive species and funding issues facing the state's trout stocking. This is the only flyfishing-specific guide on the market for Connecticut.
+
+</description>
+  </book>
+    
+  <!--Gillette Castle -->
+  <book>
+    <author>Erik Ofgang</author>
+    <image>bookImages/gilletteCastle.jpg</image>
+    <isbn>B071W7JGKJ</isbn>
+    <price>$14.99</price>
+    <pages>144</pages>
+    <stock>12</stock>
+    <tags>
+      <tag>Castle</tag>
+      <tag>History</tag>  
+      <tag>Connecticut landmarks</tag>
+    </tags>
+    <title>Gillette Castle: A History (Landmarks)</title>
+    <topic>History</topic>
+    <year>2017</year>
+    <description> During his career as an actor, William Gillette portrayed world-renowned character Sherlock Holmes in more than 1,300 performances. His career as a playwright and actor afforded him the opportunity to purchase a 184-acre estate, where he also built a twenty-four-room medieval-style castle. Overlooking the Connecticut River, Gillette's castle was complete with spy mirrors, sliding furniture, hidden rooms and a three-mile quarter-scale railroad. Since becoming a state park in 1943, it has evolved into one of Connecticut's most popular tourist attractions. Writer and award-winning journalist Erik Ofgang examines the history of an iconic structure and Gillette’s life and role in the evolution of Sherlock Holmes
+
+</description>
+  </book>
+    
+  <!--CT Architecture -->
+  <book>
+    <author>Christopher Wigren </author>
+    <image>bookImages/ctArchitecture.jpg</image>
+    <isbn>9780819578136</isbn>
+    <price>$39.00</price>
+    <pages>296</pages>
+    <stock>13</stock>
+    <tags>
+      <tag>History</tag>
+      <tag>Historic Buildings</tag>  
+      <tag>Architecture</tag>
+    </tags>
+    <title>Connecticut Architecture: Stories of 100 Places</title>
+    <topic>History</topic>
+    <year>2018</year>
+    <description> Connecticut boasts some of the oldest and most distinctive architecture in New England, from Colonial churches and Modernist houses to refurbished nineteenth-century factories. The state's history includes landscapes of small farmsteads, country churches, urban streets, tobacco sheds, quiet maritime villages, and town greens, as well as more recent suburbs and corporate headquarters. In his guide to this rich and diverse architectural heritage, Christopher Wigren introduces readers to 100 places across the state. Written for travelers and residents alike, the book features buildings visible from the road. 
+
+Featuring more than 200 illustrations, the book is organized thematically. Sections include concise entries that treat notable buildings, neighborhoods, and communities, emphasizing the importance of the built environment and its impact on our sense of place. The text highlights key architectural features and trends and relates buildings to the local and regional histories they represent. There are suggestions for further reading and a helpful glossary of architectural terms
+
+</description>
+  </book>
+    
+  <!--The Mouse and His Child -->
+  <book>
+    <author>Russell Hoban</author>
+    <image>bookImages/theMouse.jpg</image>
+    <isbn>9780439098274</isbn>
+    <price>$9.99</price>
+    <pages>272</pages>
+    <stock>81</stock>
+    <tags>
+      <tag>Childrens book</tag>
+      <tag>Psychology</tag> 
+    </tags> 
+    <title>The Mouse and His Child</title>
+    <topic>Youth</topic>
+    <year>2017</year>
+    <description> Caldecott Medalist David Small lovingly shows us the heart of Russell Hoban's classic. The mouse and his child are wind-up toys forever joined at the hands. But when their mechanism breaks they are discarded, separated from the doll house where they lived and the toy elephant that the child calls "mother" (much to her chagrin). Thus begins the suspenseful journey that is heartbreaking, harrowing, and ultimately joyful as the mice seek what seems at first to be impossible: independence (self-winding) and the way back home.
+
+</description>
+  </book>
+    
+  <!--Before I Fall -->
+  <book>
+    <author>Lauren Oliver</author>
+    <image>bookImages/beforeIFall.jpg</image>
+    <isbn>9780061726811</isbn>
+    <price>$12.99</price>
+    <pages>470</pages>
+    <stock>12</stock>
+    <tags>
+      <tag>Young Adult</tag>
+      <tag>Fiction</tag>
+      <tag>Romance</tag>
+    </tags>
+    <title>Before I Fall</title>
+    <topic>Romance</topic>
+    <year>2010</year>
+    <description> For popular high school senior Samantha Kingston, February 12—"Cupid Day"—should be one big party, a day of valentines and roses and the privileges that come with being at the top of the social pyramid. And it is … until she dies in a terrible accident that night.
+
+However, she still wakes up the next morning. In fact, Sam lives the last day of her life seven times, until she realizes that by making even the slightest changes, she may hold more power than she ever imagined.
+</description>
+  </book>
+
+  <!--The Other -->
+  <book>
+    <author>Thomas Tryon</author>
+    <image>bookImages/theOther.jpg</image>
+    <isbn>9780440167365</isbn>
+    <price>$7.99</price>
+    <pages>281</pages>
+    <stock>12</stock>
+    <tags>
+      <tag>Thrilling</tag>
+      <tag>Horror</tag>  
+      <tag>Dark</tag>
+      <tag>Mystery</tag>
+      <tag>Classic</tag>
+      <tag>Fiction</tag>
+    </tags>
+    <title>The Other</title>
+    <topic>Horror</topic>
+    <year>1987</year>
+    <description> Entranced and terrified, the reader of The Other is swept up in the life of a Connecticut country town in the thirties—and in the fearful mysteries that slowly darken and overwhelm it.
+
+Originally published in 1971, The Other is one of the most influential horror novels ever written. Its impeccable recreation of small-town life and its skillful handling of the theme of personality transference between thirteen-year-old twins led to widespread critical acclaim for the novel, which was successfully filmed from Thomas Tryon's own screenplay.
+
+</description>
+  </book>
+    
+  <!--The Year We Fell Down -->
+  <book>
+    <author>Sarina Bowen</author>
+    <image>bookImages/theYearWe.jpg</image>
+    <isbn>B00J50YNE0</isbn>
+    <price>$4.99</price>
+    <pages>274</pages>
+    <stock>54</stock>
+    <tags>
+      <tag>New Adult</tag>
+      <tag>Romance</tag>  
+      <tag>Contemporary</tag>
+    </tags>
+    <title>TheYear We Fell Down</title>
+    <topic>Romance</topic>
+    <year>2014</year>
+    <description> The sport she loves is out of reach. The boy she loves has someone else. What now?
+ 
+She expected to start Harkness College as a varsity ice hockey player. But a serious accident means that Corey Callahan will start school in a wheelchair instead.
+ 
+Across the hall, in the other handicapped-accessible dorm room, lives the too-delicious-to-be real Adam Hartley, another would-be hockey star with his leg broken in two places. He's way out of Corey's league.
+ 
+Also, he's taken.
+ 
+Nevertheless, an unlikely alliance blooms between Corey and Hartley in the "gimp ghetto" of McHerrin Hall. Over tequila, perilously balanced dining hall trays, and video games, the two cope with disappointments that nobody else understands.
+ 
+They're just friends, of course, until one night when things fall apart. Or fall together. All Corey knows is that she's falling. Hard.
+ 
+But will Hartley set aside his trophy girl to love someone as broken as Corey? If he won't, she will need to find the courage to make a life for herself at Harkness -- one which does not revolve around the sport she can no longer play, or the brown-eyed boy who's afraid to love her back.
+</description>
+  </book>
+    
+  <!--Revolutionary Road -->    
+  <book>
+    <author>Richard Yates</author>
+    <image>bookImages/revRoad.jpg</image>
+    <isbn>9780413757104</isbn>
+    <price>$10.00</price>
+    <pages>355</pages>
+    <stock>20</stock>
+    <tags>
+      <tag>Fiction</tag>
+      <tag>Classics</tag>  
+      <tag>Historical Fiction</tag>
+    </tags>
+    <title>Revolutionary Road</title>
+    <topic>History</topic>
+    <year>2001</year>
+    <description> In the hopeful 1950s, Frank and April Wheeler appear to be a model American couple: bright, beautiful, talented, with two young children and a starter home in the suburbs. Perhaps they married too young and started a family too early. Maybe Frank's job is dull. And April never saw herself as a housewife. Yet they have always lived on the assumption that greatness is only just around the corner. But now that certainty is now about to crumble. With heartbreaking compassion and remorseless clarity, Richard Yates shows how Frank and April mortgage their spiritual birthright, betraying not only each other, but their best selves.
+
+</description>
+  </book>
+    
+  <!--My Life Next Door -->
+  <book>
+    <author>Huntley Fitzpatrick </author>
+    <image>bookImages/myLife.jpg</image>
+    <isbn>9780803736993</isbn>
+    <price>$17.48</price>
+    <pages>394</pages>
+    <stock>24</stock>
+    <tags>
+      <tag>Young Adult</tag>
+      <tag>Romance</tag>  
+      <tag>Womens Fiction</tag>
+    </tags>
+    <title>My Life Next Door</title>
+    <topic>Romance</topic>
+    <year>2012</year>
+    <description> "One thing my mother never knew, and would disapprove of most of all, was that I watched the Garretts. All the time."
+
+The Garretts are everything the Reeds are not. Loud, messy, affectionate. And every day from her rooftop perch, Samantha Reed wishes she was one of them . . . until one summer evening, Jase Garrett climbs up next to her and changes everything.
+
+As the two fall fiercely for each other, stumbling through the awkwardness and awesomeness of first love, Jase's family embraces Samantha - even as she keeps him a secret from her own. Then something unthinkable happens, and the bottom drops out of Samantha's world. She's suddenly faced with an impossible decision. Which perfect family will save her? Or is it time she saved herself?
+
+A transporting debut about family, friendship, first romance, and how to be true to one person you love without betraying another.
+
+</description>
+  </book>
+    
+  <!--Ginger Pye -->
+  <book>
+    <author>Eleanor Estes, Edward Ardizzone</author>
+    <image>bookImages/gingerPye.jpg</image>
+    <isbn>97801520250527</isbn>
+    <price>$13.76</price>
+    <pages>306</pages>
+    <stock>4</stock>
+    <tags>
+      <tag>Childrens</tag>
+      <tag>Fiction</tag>  
+      <tag>Animals</tag>
+    </tags>
+    <title>Ginger Pye</title>
+    <topic>Youth</topic>
+    <year>2000</year>
+    <description> The disappearance of a new puppy named Ginger and the appearance of a mysterious man in a mustard yellow hat bring excitement into the lives of the Pye children.
+
+</description>
+  </book>
+    
+  <!--Cracked Up to Be -->
+  <book>
+    <author>Courtney Summers</author>
+    <image>bookImages/crackedUp.jpg</image>
+    <isbn>978-0062316097</isbn>
+    <price>$8.99</price>
+    <pages>240</pages>
+    <stock>23</stock>
+    <tags>
+      <tag>Contemporary</tag>
+      <tag>Young Adult</tag>  
+      <tag>Realistic Fiction</tag>
+    </tags>
+    <title>Cracked Up to Be</title>
+    <topic>Romance</topic>
+    <year>2020</year>
+    <description> When "Perfect" Parker Fadley starts drinking at school and failing her classes, all of St. Peter's High goes on alert. How has the cheerleading captain, girlfriend of the most popular guy in school, consummate teacher's pet, and future valedictorian fallen so far from grace?
+
+Parker doesn't want to talk about it. She'd just like to be left alone, to disappear, to be ignored. But her parents have placed her on suicide watch and her conselors are demanding the truth. Worse, there's a nice guy falling in love with her and he's making her feel things again when she'd really rather not be feeling anything at all.
+
+Nobody would have guessed she'd turn out like this. But nobody knows the truth.
+
+Something horrible has happened, and it just might be her fault.
+</description>
+  </book>
+    
+  <!--Connecticut A History -->
+  <book>
+    <author>David M. Roth</author>
+    <image>bookImages/ctHistory.jpg</image>
+    <isbn>9780393331745</isbn>
+    <price>$18.00</price>
+    <pages>264</pages>
+    <stock>9</stock>
+    <tags>
+      <tag>Connecticut History</tag>
+      <tag>Informative</tag>  
+      <tag>New England</tag>
+    </tags>
+    <title>Connecticut: A History</title>
+    <topic>History</topic>
+    <year>1979</year>
+    <description> Connecticut today continues to combine conservatism and inventiveness in a way that makes it different from other places. The people of Connecticut take pride in that, even as they struggle to balance the demands of change with old traditions and steady habits.
+
+By American standards, Connecticut is a very old place. The descendants of many of its original Puritan settlers still live here, and in their names--Hale, Baldwin, Trumbull, Bulkeley--the spirit of Thomas Hooker still seems to cast a shadow. From its beginnings, caution and conservatism have shaped the Connecticut character and have made its nickname, "The Land of Steady Habits," truly descriptive of life here.
+
+Yet not everyone in Connecticut shares either that ancestry or that disposition. In the nineteenth and twentieth centuries, people of decidedly different backgrounds and outlooks joined the scions of old Puritans and Yankees to enrich--and to complicate--the state's history. Though endowed by nature and the shapers of boundaries with few resources and little space, the people of Connecticut from colonial times to the present have distinguished themselves as enthusiastic and talented purveyors to the rest of the nation of a vast array of goods and services. In the process, they have secured for themselves a degree of economic eminence shared by few other places, and they have proven that there is substance in the old idea of "Yankee inventiveness."
+
+</description>
+  </book>
+    
+  <!--Afoot in Connecticut -->
+  <book>
+    <author>Eric D. Lehman</author>
+    <image>bookImages/aFoot.jpg</image>
+    <isbn>9781938846076</isbn>
+    <price>$18.29</price>
+    <pages>132</pages>
+    <stock>6</stock>
+    <tags>
+      <tag>Environment</tag>
+      <tag>Biology</tag>  
+      <tag>NonFiction</tag>
+    </tags>
+    <title>Afoot in Connecticut: Journeys in Natural History</title>
+    <topic>Nature</topic>
+    <year>2013</year>
+    <description> Afoot in Connecticut, is a love letter to this often overlooked region of America, an inspirational story that will have you taking to the trails and the greenways, along the beaches and mountaintops, and into a land full of transformation, of beauty, and of strength.
+
+</description>
+  </book>
+    
+  <!--CT Wildlife -->
+  <book>
+    <author>Geoffrey A. Hammerson</author>
+    <image>bookImages/ctWildlife.jpg</image>
+    <isbn>9781584653691</isbn>
+    <price>$44.99</price>
+    <pages>465</pages>
+    <stock>15</stock>
+    <tags>
+      <tag>Environment</tag>
+      <tag>Biology</tag>  
+      <tag>Conservation</tag>
+      <tag>Natural History</tag>
+    </tags>
+    <title>Connecticut Wildlife: Biodiversity, Natural History, and Conservation</title>
+    <topic>Nature</topic>
+    <year>2004</year>
+    <description> Connecticut Wildlife is the lavishly illustrated, exhaustive overview of the ecosystems of Connecticut, its plants and animals, and the ecological links among the state s wildlife and their habitats from butterflies to red foxes, jellyfish to double-crested cormorants, poison ivy to phytoplankton. It carefully traces Connecticut s daily, seasonal, annual, and long-term cycles, which range from the dynamics of natural communities to patterns of reproduction and behavior in major groups of organisms. Whether looking at individual species or broad ecosystems, Geoffrey A. Hammerson s conservationist perspective shines in Connecticut Wildlife. The book will become an essential part of the libraries of every naturalist, conservationist, and educator in Connecticut and the Northeast."
+        
+  </description>
+  </book>
+    
+  <!--Birding in CT -->
+  <book>
+    <author>Frank Gallo</author>
+    <image>bookImages/birdingCt.jpg</image>
+    <isbn>9780819576354</isbn>
+    <price>$28.99</price>
+    <pages>532</pages>
+    <stock>54</stock>
+    <tags>
+      <tag>Nature</tag>
+      <tag>Birding</tag>  
+      <tag>Biology</tag>
+    </tags>
+    <title>Birding in Connecticut</title>
+    <topic>Nature</topic>
+    <year>2018</year>
+    <description> Birding in Connecticut is the definitive guide to where, when and, how to find birds in the state. Packed with information valuable to birders of all skill levels, from species accounts and a first-of-a kind cumulative list of rare bird sightings to a host of tips and tricks to finding and identifying birds. It is an invaluable resource on the habits and habitats of Connecticut's birdlife, with clear and up-to-date bar graphs showing seasonal occurrence and abundance for every Connecticut bird species. It is the first guide of its kind to offer QR code links to continually updated information on the occurrence and abundance of birds at each location. Beautifully illustrated with color photographs and maps, Birding in Connecticut is the perfect companion for experts and novices alike.
+
+</description>
+  </book>
+    
+  <!--Ct Walk book -->
+  <book>
+    <author>Connecticut Forest and Park Association, John Barrett</author>
+    <image>bookImages/ctWalk.jpg</image>
+    <isbn>9780961905248</isbn>
+    <price>$11.99</price>
+    <pages>75</pages>
+    <stock>19</stock>
+    <tags>
+      <tag>Hiking</tag>
+      <tag>Nature</tag>  
+      <tag>Guide</tag>
+    </tags>
+    <title>Connecticut Walk Book</title>
+    <topic>Nature</topic>
+    <year>1997</year>
+    <description> The Connecticut Walk Book is a comprehensive guide to the 700-mile Blue-Blazed Hiking Trail System in Connecticut. The book contains written descriptions of each section of trail along with topographic maps of the trails. The book also contains general hiking information and instructions for following the trail signs.
+
+</description>
+  </book>
+
+  <!--Lucky to live in CT -->
+  <book>
+    <author>Kate B.Jerome</author>
+    <image>bookImages/luckyCt.png</image>
+    <isbn>9780738527963</isbn>
+    <price>$16.99</price>
+    <pages>32</pages>
+    <stock>51</stock>
+    <tags>
+      <tag>Childrens</tag>
+      <tag>Picture book</tag>  
+      <tag>Kids</tag>
+    </tags>
+    <title>Lucky to Live in Connecticut</title>
+    <topic>Youth</topic>
+    <year>2017</year>
+    <description> What do you get when you cross a read-aloud storybook with a write-in memory book? Magic moments between kids and adults! The Lucky to Live in Connecticut book is the perfect tool to jump-start meaningful conversations between generations. Read-aloud rhymes set up interesting topics. Then write-in prompts invite children to record their own views to create a personal Constitution State keepsake. The real gift lies in the interactive nature of the book as it offers the perfect opportunity for adults to share their own stories and wisdom about such issues as friendship, community, team spirit, and other topics that help develop a child's social and emotional skills. Customized Connecticut content—from favorite local cuisine (lobster roll) to interesting attractions (Connecticut Science Center)—provides an even more personalized experience
+
+</description>
+  </book>
+    
+  <!--Good Night CT -->
+  <book>
+    <author>Christina Vrba, Anne Rosen</author>
+    <image>bookImages/goodNightCt.jpg</image>
+    <isbn>9781602190351</isbn>
+    <price>$8.95</price>
+    <pages>20</pages>
+    <stock>23</stock>
+    <tags>
+      <tag>Picture Book</tag>  
+      <tag>Childrens</tag>
+    </tags>
+    <title>Good Night Connecticut</title>
+    <topic>Youth</topic>
+    <year>2009</year>
+    <description> Many of North America’s most beloved regions are artfully celebrated in these board books designed to soothe children before bedtime while instilling an early appreciation for the continent’s natural and cultural wonders. Each book stars a multicultural group of people visiting the featured area’s attractions, and rhythmic language guides children through the passage of both a single day and the four seasons while saluting the iconic aspects of each place.
+
+</description>
+  </book>
+    
+  <!--Thinner -->
+  <book>
+    <author>Stephen King</author>
+    <image>bookImages/thinner.jpg</image>
+    <isbn>9780451190758</isbn>
+    <price>$19.99</price>
+    <pages>320</pages>
+    <stock>3</stock>
+    <tags>
+      <tag>Horror</tag>
+      <tag>Fiction</tag>  
+      <tag>Thriller</tag>
+    </tags>
+    <title>Thinner</title>
+    <topic>Horror</topic>
+    <year>1996</year>
+    <description> Attorney Billy Halleck seriously enjoys living his life of upper-class excess. He’s got it all—an expensive home in Connecticut, a loving family…and fifty extra pounds that his doctor repeatedly warns will be the death of him. Then, in a moment of carelessness, Halleck commits vehicular manslaughter when he strikes a jaywalking old woman crossing the street. But Halleck has some powerful local connections, and gets off with a slap on the wrist…much to the fury of the woman’s mysterious and ancient father, who exacts revenge with a single word: “Thinner.” Now a terrified Halleck finds the weight once so difficult to shed dropping effortlessly—and rapidly—by the week. Soon there will be nothing left of Billy Halleck…unless he can somehow locate the source of his living nightmare and reverse what’s happened to him before he utterly wastes away…
+        
+</description>
+  </book>
+    
+
+</bookstore>

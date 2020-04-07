@@ -1,0 +1,105 @@
+body{
+	background-image: url('Images/backgroundImage.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	margin: 0;
+}
+#div1{
+	background-color: transparent;
+	font-family: cursive;
+	margin: 0;
+	padding: 15px;
+	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-size: cover;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li{
+	display: inline;
+	margin-right: 15px;
+	font-size: 20px;
+}
+#div1 a{
+	color: white;
+	text-decoration: none;
+	padding: 20px;
+	font-weight:bold;
+}
+#div1 a:hover{
+	background-color:lightgreen;
+}
+table,td,th{
+	border-collapse: collapse;
+	margin-top: 40px;
+	font-size: 25px;
+    
+}
+th,td {
+    padding: 10px;
+	color: white;   
+
+}
+
+#demo tr{
+    background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-size:cover;
+}
+
+form{
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}
+input[type=text] {
+	width: 400px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	background-color: white;
+	background-position: 10px 10px; 
+	background-repeat: no-repeat;
+	padding: 12px 20px 12px 40px;
+	transition: width 0.2s ease-in-out;
+	margin-top: 50px;
+}
+input[type=text]:focus{
+	width: 40%;
+}
+img{
+	width: 200px;
+	height: 300px;
+}
+#myBtn {
+	display: none;
+	position:fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: lightgreen;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+}
+#myBtn:hover {
+	background-color: #555;
+}
+
+th{
+	position: sticky;
+  	top: 0;
+	font-family:cursive;
+	font-size: 45px;
+    border-top: 25px;
+	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-size: cover;
+}

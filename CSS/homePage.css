@@ -1,0 +1,129 @@
+#div1{
+	background-color: transparent;
+	font-family: cursive;
+	margin: 0;
+	padding: 15px;
+	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li{
+	display: inline;
+	margin-right: 15px;
+	font-size: 20px;
+}
+#div1 a{
+	color: white;
+	text-decoration: none;
+	padding: 20px;
+	font-weight:bold;
+}
+#div1 a:hover{
+	background-color:lightgreen;
+}
+h1{
+	font-size: 75px;
+	color: darkblue
+}
+button{
+	animation-name: bounce;
+	animation-duration: 3s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+}
+.btn {
+	background-color: #008ae6; 
+	border: none;
+	color: white;
+	padding: 20px 37px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation-name: bounce;
+	animation-duration: 3s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+}
+.btn:hover #slide {
+	transition: 1s;
+	left: 0;
+}
+body {
+	background-image: url("https://hdwallsource.com/img/2014/6/open-book-pages-wallpaper-43887-44971-hd-wallpapers.jpg");
+	background-attachment: fixed; 
+	background-size: 100% 100%;
+}
+@-webkit-keyframes bounce {
+	from,
+	20%,
+	53%,
+	80%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		-webkit-transform: translate3d(-74px, -29px, 0);
+		transform: translate3d(-74px, -29px, 0);
+	}
+	40%,
+	43% {
+		-webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		-webkit-transform: translate3d(-74px, -59px, 0);
+		transform: translate3d(-74px, -59px, 0);
+	}
+	70% {
+		-webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+		-webkit-transform: translate3d(-74px, -44px, 0);
+		transform: translate3d(-74px, -44px, 0);
+	}
+	90% {
+		-webkit-transform: translate3d(-74px, -33px, 0);
+		transform: translate3d(-74px, -33px, 0);
+	}
+	@keyframes bounce {
+		from,
+  		20%,
+  		53%,
+		80%,
+		to {
+			-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+			animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+			-webkit-transform: translate3d(-74px, -29px, 0);
+			transform: translate3d(-74px, -29px, 0);
+  		}
+		40%,
+  		43% {
+    		-webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    		animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    		-webkit-transform: translate3d(-74px, -59px, 0);
+			transform: translate3d(-74px, -59px, 0);
+		}	
+  		70% {
+    		-webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    		animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    		-webkit-transform: translate3d(-74px, -44px, 0);
+    		transform: translate3d(-74px, -44px, 0);
+  		}
+  		90% {
+    		-webkit-transform: translate3d(-74px, -33px, 0);
+    		transform: translate3d(-74px, -33px, 0);
+  		}
+	}
+	.bounce {
+		-webkit-animation-name: bounce;
+  		animation-name: bounce;
+  		-webkit-transform-origin: top left;
+		transform-origin: top left;
+	}
+}
