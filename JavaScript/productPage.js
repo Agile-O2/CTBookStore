@@ -1,3 +1,4 @@
+// Radoslaw Konopka
 // Global List
 var list;
 
@@ -10,6 +11,131 @@ function passInfo(clickedBook)
 	localStorage.setItem("currentBook",book); 
 	// Go to new book
 	window.location.href = "reviewPage.html";
+}
+
+// Prints the list of given books on table
+function printTable()
+{
+    // Creates a table for book list display
+	let table="<tr><th></th><th>Title</th><th>Author</th><th>Price</th></tr>";
+    let i;
+	// Adds all necessary info to all books that match with the search and then displays it as table
+	for (i = 0; i <list.length; i++) { 
+		table += "<tr onclick='passInfo(this)' ref='a.html'><td id='pic'>";
+		table += "<img src='/";
+		table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		table += "'/>";
+		table += "</td><td>";
+		table += list[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+		table += "</td><td>";
+        table += list[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+		table += "</td><td>";
+        table += "$";
+		table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+		table += "</td></tr>";
+	}
+	
+	// Display the table
+	document.getElementById("demo").innerHTML = table;  
+}
+
+// Takes the current list and sorts it
+function Sort(toSort)
+{
+    // price low to high
+    if (toSort == "lowestTo")
+    {
+        /*list.sort(function(a, b)
+            {
+            var x = a.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+            var y = b.getElementsByTagName("price")[0].childNodes[0].nodeValue;
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+            });
+        cars.sort(function(a, b){return a.year - b.year});*/
+        list.sort(function(a, b){return a.getElementsByTagName("price")[0].childNodes[0].nodeValue - b.getElementsByTagName("price")[0].childNodes[0].nodeValue});
+    }
+    // price high to low
+    /*
+    if (toSort == highestTo)
+    {
+        list.sort(function(a, b){return b.getElementsByTagName("price")[0].childNodes[0].nodeValue - a.getElementsByTagName("price")[0].childNodes[0].nodeValue});
+    }*/
+    /*
+    // bestseller
+    if (toSort == lowestTo)
+    {
+        cars.sort(function(a, b)
+            {
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+            });
+    }
+    // date newest to oldest
+    if (toSort == lowestTo)
+    {
+        cars.sort(function(a, b)
+            {
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+            });
+    }
+    // date oldest to newest
+    if (toSort == lowestTo)
+    {
+        cars.sort(function(a, b)
+            {
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+            });
+    }
+    // Rating high to low
+    if (toSort == lowestTo)
+    {
+        cars.sort(function(a, b)
+            {
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+            });
+    }
+    // Author
+    if (toSort == lowestTo)
+    {
+        cars.sort(function(a, b)
+            {
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+            });
+    }
+    // Title
+    if (toSort == lowestTo)
+    {
+        cars.sort(function(a, b)
+            {
+            var x = a.type.toLowerCase();
+            var y = b.type.toLowerCase();
+            if (x < y) {return -1;}
+            if (x > y) {return 1;}
+            return 0;
+            });
+    }*/
+    printTable();
 }
 
 // Creates new list based on user input | Book search
@@ -25,9 +151,6 @@ function Search()
 	
 	// Makes a list of all books
 	x = xmlDoc.getElementsByTagName("book");
-	
-	// Creates a table for book list display
-	table="<tr><th></th><th>Title</th><th>Author</th><th>Price</th></tr>";
 	
 	// Resets list
 	list = [];
@@ -74,24 +197,9 @@ function Search()
 			}
 		}
 	}
-	
-	// Adds all necessary info to all books that match with the search and then displays it as table
-	for (i = 0; i <list.length; i++) { 
-		table += "<tr onclick='passInfo(this)' ref='a.html'><td id='pic'>";
-		table += "<img src='/";
-		table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
-		table += "'/>";
-		table += "</td><td>";
-		table += list[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-		table += "</td><td>";
-        table += list[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
-		table += "</td><td>";
-		table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-		table += "</td></tr>";
-	}
-	
-	// Display the table
-	document.getElementById("demo").innerHTML = table;
+	//printTable();
+    // dummy code
+    Sort("lowestTo");
 }
 
 var mybutton = document.getElementById("myBtn");
@@ -112,21 +220,3 @@ function topFunction() {
 }
 
 Search();
-
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}

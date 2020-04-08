@@ -4,7 +4,7 @@ let book = new DOMParser().parseFromString(localStorage.getItem("currentBook"), 
 // Extract info from new DOM Object however you want
 document.getElementById("here").innerHTML=book.getElementsByTagName("title")[0].childNodes[0].nodeValue+"<br>By: &nbsp;"+ book.getElementsByTagName("author")[0].childNodes[0].nodeValue; 
 
-document.getElementById("hereAgain").innerHTML = "<img src='/"+book.getElementsByTagName("image")[0].childNodes[0].nodeValue+"'/>"+"<br>Price: " + book.getElementsByTagName("price")[0].childNodes[0].nodeValue+"<br>Year: &nbsp;" + book.getElementsByTagName("year")[0].childNodes[0].nodeValue+"<br>Topic: &nbsp;" + book.getElementsByTagName("topic")[0].childNodes[0].nodeValue+"<br>Pages: &nbsp;"+ book.getElementsByTagName("pages")[0].childNodes[0].nodeValue+"<br>";
+document.getElementById("hereAgain").innerHTML = "<img src='/"+book.getElementsByTagName("image")[0].childNodes[0].nodeValue+"'/>"+"<br>Price: " + "$"+book.getElementsByTagName("price")[0].childNodes[0].nodeValue+"<br>Year: &nbsp;" + book.getElementsByTagName("year")[0].childNodes[0].nodeValue+"<br>Topic: &nbsp;" + book.getElementsByTagName("topic")[0].childNodes[0].nodeValue+"<br>Pages: &nbsp;"+ book.getElementsByTagName("pages")[0].childNodes[0].nodeValue+"<br>";
 
 document.getElementById("hereAlso").innerHTML = "<br>Description:&nbsp; "+ book.getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br><br>ISBN: &nbsp;"+ book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
 
