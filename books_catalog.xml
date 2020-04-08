@@ -9,9 +9,37 @@
     <author>Yuval Noah Harari</author>
     <image>bookImages/Sapiens.jpg</image>
     <isbn>9780062316097</isbn>
-    <price>$30.00</price>
+    <price>30.00</price>
     <pages>464</pages>
+    <!-- Reviews -->
+    <!-- Total Number of Reviews -->
+    <numOfReviews>2</numOfReviews>
+    <!-- Rating Total -->
+    <totalRating>13.5</totalRating>
+    <!-- Rating Average (0 to 10)-->
+    <averageRating>6.75</averageRating> 
+    <!-- Review List --> 
+    <reviewList>
+        <!-- Individual reviews -->
+        <review>
+            <!-- Commentator's nickname (needed)? -->
+            <nickname>JoeSmoe</nickname>
+            <descriptionReview>
+                OMG!! I luv this buk so much!!!
+            </descriptionReview>
+            <rating>5</rating>
+        </review>
+        <review>
+            <nickname>booklover</nickname>
+            <descriptionReview>
+                Very sensational book. Kept me interested.
+            </descriptionReview>
+            <rating>8.5</rating>
+        </review>
+    </reviewList>
     <stock>54</stock>
+    <!-- Number of books sold -->
+    <sold>234</sold>
     <tags>
       <tag>Evolution</tag>
       <tag>History of Civilization and Culture</tag>  
@@ -36,7 +64,7 @@ Dr. Harari also compels us to look ahead, because over the last few decades huma
     <author>Ron Merly</author>
     <image>bookImages/flyFishersGuide.jpg</image>
     <isbn>9781932098891</isbn>
-    <price>$15.99</price>
+    <price>15.99</price>
     <pages>346</pages>
     <stock>21</stock>
     <tags>
@@ -60,7 +88,7 @@ Beyond the fishing, Merly covers the pressing issues facing Connecticut's fisher
     <author>Erik Ofgang</author>
     <image>bookImages/gilletteCastle.jpg</image>
     <isbn>B071W7JGKJ</isbn>
-    <price>$14.99</price>
+    <price>14.99</price>
     <pages>144</pages>
     <stock>12</stock>
     <tags>
@@ -81,7 +109,7 @@ Beyond the fishing, Merly covers the pressing issues facing Connecticut's fisher
     <author>Christopher Wigren </author>
     <image>bookImages/ctArchitecture.jpg</image>
     <isbn>9780819578136</isbn>
-    <price>$39.00</price>
+    <price>39.00</price>
     <pages>296</pages>
     <stock>13</stock>
     <tags>
@@ -104,7 +132,7 @@ Featuring more than 200 illustrations, the book is organized thematically. Secti
     <author>Russell Hoban</author>
     <image>bookImages/theMouse.jpg</image>
     <isbn>9780439098274</isbn>
-    <price>$9.99</price>
+    <price>9.99</price>
     <pages>272</pages>
     <stock>81</stock>
     <tags>
@@ -124,7 +152,7 @@ Featuring more than 200 illustrations, the book is organized thematically. Secti
     <author>Lauren Oliver</author>
     <image>bookImages/beforeIFall.jpg</image>
     <isbn>9780061726811</isbn>
-    <price>$12.99</price>
+    <price>12.99</price>
     <pages>470</pages>
     <stock>12</stock>
     <tags>
@@ -146,7 +174,7 @@ However, she still wakes up the next morning. In fact, Sam lives the last day of
     <author>Thomas Tryon</author>
     <image>bookImages/theOther.jpg</image>
     <isbn>9780440167365</isbn>
-    <price>$7.99</price>
+    <price>7.99</price>
     <pages>281</pages>
     <stock>12</stock>
     <tags>
@@ -172,7 +200,7 @@ Originally published in 1971, The Other is one of the most influential horror no
     <author>Sarina Bowen</author>
     <image>bookImages/theYearWe.jpg</image>
     <isbn>B00J50YNE0</isbn>
-    <price>$4.99</price>
+    <price>4.99</price>
     <pages>274</pages>
     <stock>54</stock>
     <tags>
@@ -204,7 +232,7 @@ But will Hartley set aside his trophy girl to love someone as broken as Corey? I
     <author>Richard Yates</author>
     <image>bookImages/revRoad.jpg</image>
     <isbn>9780413757104</isbn>
-    <price>$10.00</price>
+    <price>10.00</price>
     <pages>355</pages>
     <stock>20</stock>
     <tags>
@@ -225,7 +253,7 @@ But will Hartley set aside his trophy girl to love someone as broken as Corey? I
     <author>Huntley Fitzpatrick </author>
     <image>bookImages/myLife.jpg</image>
     <isbn>9780803736993</isbn>
-    <price>$17.48</price>
+    <price>17.48</price>
     <pages>394</pages>
     <stock>24</stock>
     <tags>
@@ -252,7 +280,7 @@ A transporting debut about family, friendship, first romance, and how to be true
     <author>Eleanor Estes, Edward Ardizzone</author>
     <image>bookImages/gingerPye.jpg</image>
     <isbn>97801520250527</isbn>
-    <price>$13.76</price>
+    <price>13.76</price>
     <pages>306</pages>
     <stock>4</stock>
     <tags>
@@ -273,7 +301,7 @@ A transporting debut about family, friendship, first romance, and how to be true
     <author>Courtney Summers</author>
     <image>bookImages/crackedUp.jpg</image>
     <isbn>978-0062316097</isbn>
-    <price>$8.99</price>
+    <price>8.99</price>
     <pages>240</pages>
     <stock>23</stock>
     <tags>
@@ -299,7 +327,7 @@ Something horrible has happened, and it just might be her fault.
     <author>David M. Roth</author>
     <image>bookImages/ctHistory.jpg</image>
     <isbn>9780393331745</isbn>
-    <price>$18.00</price>
+    <price>18.00</price>
     <pages>264</pages>
     <stock>9</stock>
     <tags>
@@ -324,7 +352,7 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <author>Eric D. Lehman</author>
     <image>bookImages/aFoot.jpg</image>
     <isbn>9781938846076</isbn>
-    <price>$18.29</price>
+    <price>18.29</price>
     <pages>132</pages>
     <stock>6</stock>
     <tags>
@@ -345,7 +373,7 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <author>Geoffrey A. Hammerson</author>
     <image>bookImages/ctWildlife.jpg</image>
     <isbn>9781584653691</isbn>
-    <price>$44.99</price>
+    <price>44.99</price>
     <pages>465</pages>
     <stock>15</stock>
     <tags>
@@ -367,7 +395,7 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <author>Frank Gallo</author>
     <image>bookImages/birdingCt.jpg</image>
     <isbn>9780819576354</isbn>
-    <price>$28.99</price>
+    <price>28.99</price>
     <pages>532</pages>
     <stock>54</stock>
     <tags>
@@ -388,7 +416,7 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <author>Connecticut Forest and Park Association, John Barrett</author>
     <image>bookImages/ctWalk.jpg</image>
     <isbn>9780961905248</isbn>
-    <price>$11.99</price>
+    <price>11.99</price>
     <pages>75</pages>
     <stock>19</stock>
     <tags>
@@ -409,7 +437,7 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <author>Kate B.Jerome</author>
     <image>bookImages/luckyCt.png</image>
     <isbn>9780738527963</isbn>
-    <price>$16.99</price>
+    <price>16.99</price>
     <pages>32</pages>
     <stock>51</stock>
     <tags>
@@ -430,7 +458,7 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <author>Christina Vrba, Anne Rosen</author>
     <image>bookImages/goodNightCt.jpg</image>
     <isbn>9781602190351</isbn>
-    <price>$8.95</price>
+    <price>8.95</price>
     <pages>20</pages>
     <stock>23</stock>
     <tags>
@@ -450,7 +478,7 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <author>Stephen King</author>
     <image>bookImages/thinner.jpg</image>
     <isbn>9780451190758</isbn>
-    <price>$19.99</price>
+    <price>19.99</price>
     <pages>320</pages>
     <stock>3</stock>
     <tags>
