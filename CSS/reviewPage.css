@@ -88,9 +88,14 @@ img{
 	background-color: #555;
 }
 #returnButton{
-	
 	background: white;
 }
 #returnButton:hover{
+	color: greenyellow;
+}
+#addToCart{
+	background: white;
+}
+#addToCart: hover{
 	color: greenyellow;
 }
