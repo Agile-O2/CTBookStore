@@ -87,7 +87,7 @@ function Search()
         table += list[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
 		table += "</td><td>";
 		table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-		table += "</td><tr>";
+		table += "</td></tr>";
 	}
 	
 	// Display the table
