@@ -10,9 +10,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/productPage.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
     </head>
     
     <body>
@@ -21,12 +25,42 @@
                 <li><a href="homePage.html">Main Page</a></li>
 				<li><a href="productPage.html">Books</a></li>
                 <li><a href="contactPage.html">Contact Us</a></li>
+				<li style="float: right"><a href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
             </ul>
         </div>
 		
 		<form action="">
 			<input type="text" id="txt1" name="search" placeholder="Search..." onkeyup="Search()" size=50px/>
 		</form>
+		
+		<div class="container"> 
+			<div class="dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sort By</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#" onclick="">Price High to Low</a>
+					<a class="dropdown-item" href="#" onclick="">Price Low to High</a>
+					<a class="dropdown-item" href="#" onclick="">Bestseller</a>
+					<a class="dropdown-item" href="#" onclick="">Date(Newest)</a>
+					<a class="dropdown-item" href="#" onclick="">Date(Oldest)</a>
+					<a class="dropdown-item" href="#" onclick="">Rating High to Low</a>
+					<a class="dropdown-item" href="#" onclick="">Rating Low to High</a>
+					<a class="dropdown-item" href="#" onclick="">Author(A-Z)</a>
+					<a class="dropdown-item" href="#" onclick="">Title(A-Z)</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container"> 
+			<div class="dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Browse By</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#" onclick="">Recommendation</a>
+					<a class="dropdown-item" href="#" onclick="">Category</a>
+				</div>
+			</div>
+		</div>
+		
+		
 		
 		<table id="demo" align = center style="width: 50%"></table>
 		

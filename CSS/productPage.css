@@ -103,3 +103,34 @@ th{
 	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
     background-size: cover;
 }
+.dropbtn {
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #2980B9;
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+	
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown a:hover {
+	background-color: #ddd;
+}
+.show {
+	display: block;
+}
