@@ -43,107 +43,75 @@ function printTable()
 function Sort(toSort)
 {
     // price low to high
-    if (toSort == "lowestTo")
+    if (toSort == document.getElementById('lowToHigh').innerHTML)
     {
-        /*list.sort(function(a, b)
-            {
-            var x = a.getElementsByTagName("price")[0].childNodes[0].nodeValue;
-            var y = b.getElementsByTagName("price")[0].childNodes[0].nodeValue;
-            if (x < y) {return -1;}
-            if (x > y) {return 1;}
-            return 0;
-            });
-        cars.sort(function(a, b){return a.year - b.year});*/
         list.sort(function(a, b){return a.getElementsByTagName("price")[0].childNodes[0].nodeValue - b.getElementsByTagName("price")[0].childNodes[0].nodeValue});
     }
     // price high to low
-    /*
-    if (toSort == highestTo)
+    if (toSort == document.getElementById('highToLow').innerHTML)
     {
         list.sort(function(a, b){return b.getElementsByTagName("price")[0].childNodes[0].nodeValue - a.getElementsByTagName("price")[0].childNodes[0].nodeValue});
-    }*/
+    }
     /*
     // bestseller
     if (toSort == lowestTo)
     {
-        cars.sort(function(a, b)
-            {
-            var x = a.type.toLowerCase();
-            var y = b.type.toLowerCase();
-            if (x < y) {return -1;}
-            if (x > y) {return 1;}
-            return 0;
-            });
-    }
+        list.sort(function(a, b){return b.getElementsByTagName("sold")[0].childNodes[0].nodeValue - a.getElementsByTagName("sold")[0].childNodes[0].nodeValue});
+    }*/
     // date newest to oldest
-    if (toSort == lowestTo)
+    if (toSort == document.getElementById('newest').innerHTML)
     {
-        cars.sort(function(a, b)
-            {
-            var x = a.type.toLowerCase();
-            var y = b.type.toLowerCase();
-            if (x < y) {return -1;}
-            if (x > y) {return 1;}
-            return 0;
-            });
+        list.sort(function(a, b){return b.getElementsByTagName("year")[0].childNodes[0].nodeValue - a.getElementsByTagName("year")[0].childNodes[0].nodeValue});
     }
     // date oldest to newest
-    if (toSort == lowestTo)
+    if (toSort == document.getElementById('oldest').innerHTML)
     {
-        cars.sort(function(a, b)
-            {
-            var x = a.type.toLowerCase();
-            var y = b.type.toLowerCase();
-            if (x < y) {return -1;}
-            if (x > y) {return 1;}
-            return 0;
-            });
+        list.sort(function(a, b){return a.getElementsByTagName("year")[0].childNodes[0].nodeValue - b.getElementsByTagName("year")[0].childNodes[0].nodeValue});
     }
+    /*
     // Rating high to low
-    if (toSort == lowestTo)
+    if (toSort == document.getElementById('ratingHighToLow').innerHTML)
     {
-        cars.sort(function(a, b)
-            {
-            var x = a.type.toLowerCase();
-            var y = b.type.toLowerCase();
-            if (x < y) {return -1;}
-            if (x > y) {return 1;}
-            return 0;
-            });
+        list.sort(function(a, b){return b.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue - a.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue});
     }
-    // Author
-    if (toSort == lowestTo)
+    // Rating low to high
+    if (toSort == document.getElementById('ratingLowToHigh').innerHTML)
     {
-        cars.sort(function(a, b)
+        list.sort(function(a, b){return a.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue - b.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue});
+    }*/
+    // Author
+    if (toSort == document.getElementById('author').innerHTML)
+    {
+        list.sort(function(a, b)
             {
-            var x = a.type.toLowerCase();
-            var y = b.type.toLowerCase();
+            var x = a.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+            var y = b.getElementsByTagName("author")[0].childNodes[0].nodeValue;
             if (x < y) {return -1;}
             if (x > y) {return 1;}
             return 0;
             });
     }
     // Title
-    if (toSort == lowestTo)
+    if (toSort == document.getElementById('title').innerHTML)
     {
-        cars.sort(function(a, b)
+        list.sort(function(a, b)
             {
-            var x = a.type.toLowerCase();
-            var y = b.type.toLowerCase();
+            var x = a.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            var y = b.getElementsByTagName("title")[0].childNodes[0].nodeValue;
             if (x < y) {return -1;}
             if (x > y) {return 1;}
             return 0;
             });
-    }*/
+    }
     printTable();
 }
 
 // Creates new list based on user input | Book search
-function Search()
+function Search(str)
 {
 	// Connects to xml file
 	var x,xmlhttp,xmlDoc
-	var str = document.getElementById("txt1").value;
+	//var str = document.getElementById("txt1").value;
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", "books_catalog.xml", false);
 	xmlhttp.send();
@@ -197,9 +165,9 @@ function Search()
 			}
 		}
 	}
-	//printTable();
+	printTable();
     // dummy code
-    Sort("lowestTo");
+    //Sort("lowestTo");
 }
 
 var mybutton = document.getElementById("myBtn");
@@ -219,7 +187,6 @@ function topFunction() {
 	document.documentElement.scrollTop = 0;
 }
 
-Search();
 function myFunction() {	
   document.getElementById("myDropdown").classList.toggle("show");	
 }	
@@ -236,4 +203,7 @@ window.onclick = function(event) {
       }	
     }	
   }	
+    
 } 
+console.log()
+Search(document.getElementById("txt1").value);
