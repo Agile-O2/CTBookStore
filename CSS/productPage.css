@@ -14,12 +14,12 @@ body{
 	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
     background-size: cover;
 }
-ul{
+#topBar{
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-li{
+.topList{
 	display: inline;
 	margin-right: 15px;
 	font-size: 20px;
@@ -37,7 +37,6 @@ table,td,th{
 	border-collapse: collapse;
 	margin-top: 40px;
 	font-size: 25px;
-    
 }
 th,td {
     padding: 10px;
@@ -50,27 +49,6 @@ th,td {
     background-size:cover;
 }
 
-form{
-	text-align: center;
-	color: white;
-	font-size: 20px;
-}
-input[type=text] {
-	width: 400px;
-	box-sizing: border-box;
-	border: 2px solid #ccc;
-	border-radius: 4px;
-	font-size: 16px;
-	background-color: white;
-	background-position: 10px 10px; 
-	background-repeat: no-repeat;
-	padding: 12px 20px 12px 40px;
-	transition: width 0.2s ease-in-out;
-	margin-top: 50px;
-}
-input[type=text]:focus{
-	width: 40%;
-}
 img{
 	width: 200px;
 	height: 300px;
@@ -103,34 +81,65 @@ th{
 	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
     background-size: cover;
 }
-.dropbtn {
-	border: 2px solid black;
-	background-color: white;
-	color: black;
-	padding: 14px 28px;
-	font-size: 16px;
-	cursor: pointer;
+
+.dropdown-submenu {
+  position: relative;
 }
-.dropbtn:hover, .dropbtn:focus {
-	background-color: #2980B9;
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
 }
-.dropdown {
-	position: relative;
-	display: inline-block;
-	
+.container {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.5%;
 }
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	overflow: auto;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
 }
-.dropdown a:hover {
-	background-color: #ddd;
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 50px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
 }
-.show {
-	display: block;
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: relative;
+	margin-top: 2%;
+	margin-left: 35%;
+}
+
+::placeholder {
+	color: #00B4CC;
+	font-family: cursive;
+	font-size: 20px;
 }
