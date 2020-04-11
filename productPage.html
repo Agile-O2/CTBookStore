@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+	<head>
 		<title>
 			Product Page
 		</title>
@@ -10,8 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/productPage.css">
@@ -20,52 +21,66 @@
     </head>
     
     <body>
+		<!--Navbar-->
         <div id="div1">
-            <ul>
-                <li><a href="homePage.html">Main Page</a></li>
-				<li><a href="productPage.html">Books</a></li>
-                <li><a href="contactPage.html">Contact Us</a></li>
-				<li style="float: right"><a href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
+            <ul id="topBar">
+                <li class="topList"><a href="homePage.html">Main Page</a></li>
+				<li class="topList"><a href="productPage.html">Books</a></li>
+                <li class="topList"><a href="contactPage.html">Contact Us</a></li>
+				<li class="topList" style="float: right"><a href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
             </ul>
         </div>
 		
-		<form action="">
-			<input type="text" id="txt1" name="search" placeholder="Search..." onkeyup="Search(document.getElementById('txt1').value)" size=50px/>
-		</form>
-		
-		<div class="container"> 
-			<div class="dropdown">
-				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sort By</button>
-				<div class="dropdown-menu">
-					<a id="highToLow" class="dropdown-item" href="#" onclick="Sort(document.getElementById('highToLow').innerHTML)">Price High to Low</a>
-					<a id="lowToHigh" class="dropdown-item" href="#" onclick="Sort(document.getElementById('lowToHigh').innerHTML)">Price Low to High</a>
-					<a id="bestseller" class="dropdown-item" href="#" onclick="Sort(document.getElementById('bestseller').innerHTML)">Bestseller</a>
-					<a id="newest" class="dropdown-item" href="#" onclick="Sort(document.getElementById('newest').innerHTML)">Date(Newest)</a>
-					<a id="oldest" class="dropdown-item" href="#" onclick="Sort(document.getElementById('oldest').innerHTML)">Date(Oldest)</a>
-					<a id="ratingHighToLow" class="dropdown-item" href="#" onclick="Sort(document.getElementById('ratingHighToLow').innerHTML)">Rating High to Low</a>
-					<a id="ratingLowToHigh" class="dropdown-item" href="#" onclick="Sort(document.getElementById('ratingLowToHigh').innerHTML)">Rating Low to High</a>
-					<a id="author" class="dropdown-item" href="#" onclick="Sort(document.getElementById('author').innerHTML)">Author(A-Z)</a>
-					<a id="title" class="dropdown-item" href="#" onclick="Sort(document.getElementById('title').innerHTML)">Title(A-Z)</a>
-				</div>
+		<!--search Bar-->
+		<div class="wrap">
+			<div class="search">
+					<input type="text" id="txt1" class="searchTerm" placeholder="Looking for a book?">
+					<button type="submit" class="searchButton" onclick="Search(document.getElementById('txt1').value)"><i class="fa fa-search"></i>
+					</button>
 			</div>
 		</div>
 		
-		<div class="container"> 
+		<!--Sorting and Browsing dropdown-->
+		<div class="container">
 			<div class="dropdown">
-				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Browse By</button>
-				<div class="dropdown-menu">
-					<a class="dropdown-item" href="#" onclick="Search('Connecticut')">Recommendation</a>
-					<a class="dropdown-item" href="#" onclick="">Category</a>
-				</div>
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Browse By <span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a id="highToLow" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('highToLow').innerHTML)">Price High to Low</a></li>
+					<li><a id="lowToHigh" class="dropdown-item" href="#" onclick="Sort(document.getElementById('lowToHigh').innerHTML)">Price Low to High</a></li>
+					<li><a id="bestseller" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('bestseller').innerHTML)">Bestseller</a></li>
+					<li><a id="newest" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('newest').innerHTML)">Date(Newest)</a></li>
+					<li><a id="oldest" class="dropdown-item" tabindex="-1"  href="#" onclick="Sort(document.getElementById('oldest').innerHTML)">Date(Oldest)</a></li>
+					<li><a id="ratingHighToLow" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('ratingHighToLow').innerHTML)">Rating High to Low</a></li>
+					<li><a id="ratingLowToHigh" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('ratingLowToHigh').innerHTML)">Rating Low to High</a></li>
+					<li><a id="author" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('author').innerHTML)">Author(A-Z)</a></li>
+					<li><a id="title" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('title').innerHTML)">Title(A-Z)</a></li>
+				</ul>
+			</div>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort By <span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" tabindex="-1" href="#" onclick="Search('Connecticut')">Recommendation</a></li>      
+					<li class="dropdown-submenu">
+						<a class="test" tabindex="-1" href="#">Category <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a tabindex="-1" href="#" class="dropdown-item">Youth</a></li>
+							<li><a tabindex="-1" href="#" class="dropdown-item">History</a></li>
+							<li><a tabindex="-1" href="#" class="dropdown-item">Nature</a></li>
+							<li><a tabindex="-1" href="#" class="dropdown-item">Romance</a></li>
+							<li><a tabindex="-1" href="#" class="dropdown-item">Horror</a></li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
-		
-		
-		
+
+		<!--Book tables-->
 		<table id="demo" align = center style="width: 50%"></table>
 		
+		<!--go back top button-->
 		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 		
+		<!--javascript linkage-->
 		<script src="JavaScript/productPage.js"></script>
-    </body>
+	</body>
 </html>
