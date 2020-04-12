@@ -5,6 +5,7 @@ var list;
 // Sends selected book from the list to another page
 function passInfo(clickedBook)
 {
+    localStorage.setItem("saveSearch",document.getElementById("txt1").value);
 	// Changes from DOM object to string while conservating format
 	let book = list[clickedBook.rowIndex-1].outerHTML;
 	// Stores the new string in localStorage
@@ -42,6 +43,7 @@ function printTable()
 // Takes the current list and sorts it
 function Sort(toSort)
 {
+    localStorage.setItem("sortSearch",toSort);
     // price low to high
     if (toSort == document.getElementById('lowToHigh').innerHTML)
     {
@@ -52,12 +54,11 @@ function Sort(toSort)
     {
         list.sort(function(a, b){return b.getElementsByTagName("price")[0].childNodes[0].nodeValue - a.getElementsByTagName("price")[0].childNodes[0].nodeValue});
     }
-    /*
     // bestseller
-    if (toSort == lowestTo)
+    if (toSort == document.getElementById('bestseller').innerHTML)
     {
         list.sort(function(a, b){return b.getElementsByTagName("sold")[0].childNodes[0].nodeValue - a.getElementsByTagName("sold")[0].childNodes[0].nodeValue});
-    }*/
+    }
     // date newest to oldest
     if (toSort == document.getElementById('newest').innerHTML)
     {
@@ -68,7 +69,6 @@ function Sort(toSort)
     {
         list.sort(function(a, b){return a.getElementsByTagName("year")[0].childNodes[0].nodeValue - b.getElementsByTagName("year")[0].childNodes[0].nodeValue});
     }
-    /*
     // Rating high to low
     if (toSort == document.getElementById('ratingHighToLow').innerHTML)
     {
@@ -78,7 +78,7 @@ function Sort(toSort)
     if (toSort == document.getElementById('ratingLowToHigh').innerHTML)
     {
         list.sort(function(a, b){return a.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue - b.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue});
-    }*/
+    }
     // Author
     if (toSort == document.getElementById('author').innerHTML)
     {
@@ -166,8 +166,6 @@ function Search(str)
 		}
 	}
 	printTable();
-    // dummy code
-    //Sort("lowestTo");
 }
 
 var mybutton = document.getElementById("myBtn");
@@ -188,7 +186,18 @@ function topFunction() {
 }
 
 console.log()
-Search(document.getElementById("txt1").value);
+let find;
+if (localStorage.getItem("saveSearch") == null)
+    find = "";
+else
+    find = localStorage.getItem("saveSearch");
+Search(find);
+localStorage.setItem("saveSearch","");
+if (localStorage.getItem("sortSearch") == null)
+    find = "";
+else
+    find = localStorage.getItem("sortSearch");
+Sort(find);
 
 $(document).ready(function(){
   $('.dropdown-submenu a.test').on("click", function(e){
