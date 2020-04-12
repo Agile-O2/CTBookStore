@@ -375,6 +375,27 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <isbn>9781584653691</isbn>
     <price>44.99</price>
     <pages>465</pages>
+    <!-- Reviews -->
+    <!-- Total Number of Reviews -->
+    <numOfReviews>1</numOfReviews>
+    <!-- Rating Total -->
+    <totalRating>9</totalRating>
+    <!-- Rating Average (0 to 10)-->
+    <averageRating>9</averageRating> 
+    <!-- Review List --> 
+    <reviewList>
+        <!-- Individual reviews -->
+        <review>
+            <!-- Commentator's nickname (needed)? -->
+            <nickname>Teresa</nickname>
+            <descriptionReview>
+                This is a great reference book for Connecticut wildlife, from deer to aphids, and trees to lichens.Many of the entries are written in a conversational tone, with the author sharing his experiences with that species in Connecticut.
+            </descriptionReview>
+            <rating>9</rating>
+        </review>
+    </reviewList>
+    <!-- Number of books sold -->
+    <sold>4</sold>
     <stock>15</stock>
     <tags>
       <tag>Environment</tag>
@@ -397,6 +418,48 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <isbn>9780819576354</isbn>
     <price>28.99</price>
     <pages>532</pages>
+            <!-- Reviews -->
+    <!-- Total Number of Reviews -->
+    <numOfReviews>4</numOfReviews>
+    <!-- Rating Total -->
+    <totalRating>40</totalRating>
+    <!-- Rating Average (0 to 10)-->
+    <averageRating>10</averageRating> 
+    <!-- Review List --> 
+    <reviewList>
+        <!-- Individual reviews -->
+        <review>
+            <!-- Commentator's nickname (needed)? -->
+            <nickname>Jerilyn Duef</nickname>
+            <descriptionReview>
+                Perfect for anyone interested in birding in CT (for those that live in CT and whoever visits CT) I am a bird-nerd and this book is exactly what I need!! Frank Gallo knows birds and where to find them, in this book he includes explanations of the habitats and also has maps of the locations.
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+        <review>
+            <nickname>Gary</nickname>
+            <descriptionReview>
+                At Last!! "Birding in Connecticut" by Frank Gallo has arrived, and it's wonderful, a true birding site field guide. This practical guide not only show the best places to find Connecticut's (CT) birds in all seasons but offers so much more; it tells you where to park, and if there are restrooms, describes the habitats at each site, provides color maps, tells you whether you need a scope or can get by with just binoculars, or if you need mosquito repellent.
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+        <review>
+            <nickname>Angelo</nickname>
+            <descriptionReview>
+                An examplar of the birding guide.Anyone looking to bird in the Nutmeg State should rush out and secure a copy of Frank Gallo’s Birding in Connecticut. Birders at every level will appreciate the personal and professional experience, extensive research and thoughtful planning that went into the writing and production of this guide.
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+        <review>
+            <nickname>Harvey</nickname>
+            <descriptionReview>
+                 Good Enough to Buy Twice! I actually bought this book twice. The paper copy I picked up locally, but I could not resist adding a Kindle eBook copy too. The paper lives in my car with my birding gear, for use in the field.
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+    </reviewList>
+    <!-- Number of books sold -->
+    <sold>29</sold>
     <stock>54</stock>
     <tags>
       <tag>Nature</tag>
@@ -418,6 +481,41 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <isbn>9780961905248</isbn>
     <price>11.99</price>
     <pages>75</pages>
+    <!-- Reviews -->
+    <!-- Total Number of Reviews -->
+    <numOfReviews>3</numOfReviews>
+    <!-- Rating Total -->
+    <totalRating>26</totalRating>
+    <!-- Rating Average (0 to 10)-->
+    <averageRating>8.6</averageRating> 
+    <!-- Review List --> 
+    <reviewList>
+        <!-- Individual reviews -->
+        <review>
+            <!-- Commentator's nickname (needed)? -->
+            <nickname>Todd</nickname>
+            <descriptionReview>
+                Must-Have CT Hiking Guide!
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+        <review>
+            <nickname>Mary</nickname>
+            <descriptionReview>
+                Gave this as a gift. Terrific illustration and text about hiking in CT
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+        <review>
+            <nickname>Warren</nickname>
+            <descriptionReview>
+                50-50 update, The maps in this new edition are excellent. All the trails are published back into a single volume. However,The text description of the hike is completely removed. The general description of the hike and the trailhead information remain, but the "turn-by-turn" text is gone.
+            </descriptionReview>
+            <rating>6</rating>
+        </review>
+    </reviewList>
+    <!-- Number of books sold -->
+    <sold>20</sold>
     <stock>19</stock>
     <tags>
       <tag>Hiking</tag>
@@ -439,6 +537,18 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <isbn>9780738527963</isbn>
     <price>16.99</price>
     <pages>32</pages>
+    <!-- Reviews -->
+    <!-- Total Number of Reviews -->
+    <numOfReviews>0</numOfReviews>
+    <!-- Rating Total -->
+    <totalRating>0</totalRating>
+    <!-- Rating Average (0 to 10)-->
+    <averageRating>-1</averageRating> 
+    <!-- Review List --> 
+    <reviewList>
+    </reviewList>
+    <!-- Number of books sold -->
+    <sold>7</sold>
     <stock>51</stock>
     <tags>
       <tag>Childrens</tag>
@@ -460,6 +570,34 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <isbn>9781602190351</isbn>
     <price>8.95</price>
     <pages>20</pages>
+    <!-- Reviews -->
+    <!-- Total Number of Reviews -->
+    <numOfReviews>2</numOfReviews>
+    <!-- Rating Total -->
+    <totalRating>16</totalRating>
+    <!-- Rating Average (0 to 10)-->
+    <averageRating>8</averageRating> 
+    <!-- Review List --> 
+    <reviewList>
+        <!-- Individual reviews -->
+        <review>
+            <!-- Commentator's nickname (needed)? -->
+            <nickname>Fatime</nickname>
+            <descriptionReview>
+                This is a sweet book, I bought for my kiddos when we where make the move to Connecticut and they can't wait to go on adventures to the places in the book!
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+        <review>
+            <nickname>Moosey</nickname>
+            <descriptionReview>
+                Good book
+            </descriptionReview>
+            <rating>6</rating>
+        </review>
+    </reviewList>
+    <!-- Number of books sold -->
+    <sold>6</sold>
     <stock>23</stock>
     <tags>
       <tag>Picture Book</tag>  
@@ -480,6 +618,34 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <isbn>9780451190758</isbn>
     <price>19.99</price>
     <pages>320</pages>
+      <!-- Reviews -->
+    <!-- Total Number of Reviews -->
+    <numOfReviews>2</numOfReviews>
+    <!-- Rating Total -->
+    <totalRating>17</totalRating>
+    <!-- Rating Average (0 to 10)-->
+    <averageRating>8.5</averageRating> 
+    <!-- Review List --> 
+    <reviewList>
+        <!-- Individual reviews -->
+        <review>
+            <!-- Commentator's nickname (needed)? -->
+            <nickname>GeePee</nickname>
+            <descriptionReview>
+                Stephen King superb storytelling !
+            </descriptionReview>
+            <rating>9</rating>
+        </review>
+        <review>
+            <nickname>Customer</nickname>
+            <descriptionReview>
+                Great addition to my book collection
+            </descriptionReview>
+            <rating>8</rating>
+        </review>
+    </reviewList>
+    <!-- Number of books sold -->
+    <sold>41</sold>
     <stock>3</stock>
     <tags>
       <tag>Horror</tag>
