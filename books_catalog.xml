@@ -202,6 +202,25 @@ Originally published in 1971, The Other is one of the most influential horror no
     <isbn>B00J50YNE0</isbn>
     <price>4.99</price>
     <pages>274</pages>
+	  <numOfReviews>2</numOfReviews>
+	  <totalRating>13</totalRating>
+	  <averageRating>6.5</averageRating>
+	  <reviewList>
+		  <review>
+		  <nickname>Michelle Louise</nickname>
+            <descriptionReview>
+				Words cannot express how much I loved this book. Seriously, the book starts strong and never lets up. The fact that the heroine is paraplegic and doesn't "get better" is so rare in fiction that I can count the number of books I've read with that on one hand and still have fingers left over.        
+			  </descriptionReview>
+            <rating>5</rating>
+		  </review>
+		  <review>
+			  <nickname>Angie</nickname>
+			  <descriptionReview>
+				  I absolute adored the friendships in The Year We Fell Down. Corey becomes fast friends with her roommate, Dana, and of course with Hartley. 
+			  </descriptionReview>
+			  <rating>8</rating>
+		  </review>
+	  </reviewList>
     <stock>54</stock>
     <tags>
       <tag>New Adult</tag>
@@ -234,6 +253,24 @@ But will Hartley set aside his trophy girl to love someone as broken as Corey? I
     <isbn>9780413757104</isbn>
     <price>10.00</price>
     <pages>355</pages>
+	  <numOfReviews>0</numOfReviews>
+	  <totalRating>0</totalRating>
+	  <averageRating>-1</averageRating>
+	  <reviewList>
+		  <review>
+		  <nickname></nickname>
+            <descriptionReview>
+			  </descriptionReview>
+            <rating></rating>
+		  </review>
+		  <review>
+			  <nickname></nickname>
+			  <descriptionReview>
+				  
+			  </descriptionReview>
+			  <rating></rating>
+		  </review>
+	  </reviewList>
     <stock>20</stock>
     <tags>
       <tag>Fiction</tag>
@@ -255,6 +292,18 @@ But will Hartley set aside his trophy girl to love someone as broken as Corey? I
     <isbn>9780803736993</isbn>
     <price>17.48</price>
     <pages>394</pages>
+	  <numOfReviews>1</numOfReviews>
+	  <totalRating>8</totalRating>
+	  <averageRating>8</averageRating>
+	  <reviewList>
+		  <review>
+		  <nickname>Miranda Smith</nickname>
+            <descriptionReview>
+				I'm quickly falling completely and hopelessly in love with Contemporary Romance. Or Contemporary Fiction as a whole. And it's all thanks to novels such as Eleanor and Park and My Life Next Door.   
+			  </descriptionReview>
+            <rating>8</rating>
+		  </review>
+	  </reviewList>
     <stock>24</stock>
     <tags>
       <tag>Young Adult</tag>
@@ -282,6 +331,32 @@ A transporting debut about family, friendship, first romance, and how to be true
     <isbn>97801520250527</isbn>
     <price>13.76</price>
     <pages>306</pages>
+	  <numOfReviews>3</numOfReviews>
+	  <totalRating>15</totalRating>
+	  <averageRating>5</averageRating>
+	  <reviewList>
+		  <review>
+		  <nickname>Ms Malch</nickname>
+            <descriptionReview>
+				One of the things I loved about this book is its innocent description of life in a small town for a child 100 years ago or so. Their ability to manage their time, run freely, and be responsible is a distant memory for me (I grew up in the 50s and 60s).
+			  </descriptionReview>
+            <rating>6</rating>
+		  </review>
+		  <review>
+			  <nickname>Acsandi</nickname>
+			  <descriptionReview>
+				Do I need you for the day I cannot was the time I cannot I love my dog I cannot is a time for us tomorrow and I cannot is a time to go home to the house I will come and get it tomorrow morning and let you do the work the same thing as I do
+			  </descriptionReview>
+            <rating>5</rating>
+		  </review>
+		  <review>
+			  <nickname>Elfriede Janet Rau-O'connell</nickname>
+			  <descriptionReview>
+				  This book is so adorable!  My daughters love it! I read it to them as they grow up with English in Germany.  We have had lots of fun!	
+			  </descriptionReview>
+            <rating>4</rating>
+		  </review>
+	  </reviewList>
     <stock>4</stock>
     <tags>
       <tag>Childrens</tag>
@@ -302,6 +377,25 @@ A transporting debut about family, friendship, first romance, and how to be true
     <image>bookImages/crackedUp.jpg</image>
     <isbn>978-0062316097</isbn>
     <price>8.99</price>
+	  <numOfReviews>2</numOfReviews>
+	  <totalRating>18</totalRating>
+	  <averageRating>9</averageRating>
+	  <reviewList>
+		  <review>
+		  <nickname>Chelsea E. Humphrey</nickname>
+            <descriptionReview>
+				It's fair to note that I'm an adult, and therefore NOT the target audience for this book, but I whole-heartedly believe that Cracked Up to Be is the book I needed as a teen. 			  
+			  </descriptionReview>
+            <rating>9</rating>
+		  </review>
+		  <review>
+			  <nickname>S.Shamma</nickname>
+			  <descriptionReview>
+				  Did I love this book as much as I did Sadie? No.  But did I love this book? Yes!  After purchasing it and having read the introduction of the book, I found out that this was actually Courtney Summers' debut novel, which she decided to re-release following the success of Sadie.			 
+			  </descriptionReview>
+            <rating>9</rating>
+		  </review>
+	  </reviewList>
     <pages>240</pages>
     <stock>23</stock>
     <tags>
@@ -328,6 +422,18 @@ Something horrible has happened, and it just might be her fault.
     <image>bookImages/ctHistory.jpg</image>
     <isbn>9780393331745</isbn>
     <price>18.00</price>
+	   <numOfReviews>1</numOfReviews>
+	  <totalRating>8</totalRating>
+	  <averageRating>8</averageRating>
+	  <reviewList>
+		  <review>
+		  <nickname>Frazier B</nickname>
+            <descriptionReview>
+				his book covered some of Connecticut's history. When I was in 5th grade, I was asked to write a paper on the president's of the United States. I did! I wrote a little bit about each one. Not too thoughtful, just the facts. Well, this book reminded me of that assignment. There was so much more that could have been done		  
+			  </descriptionReview>
+            <rating>8</rating>
+		  </review>
+	  </reviewList>
     <pages>264</pages>
     <stock>9</stock>
     <tags>
@@ -353,6 +459,18 @@ Yet not everyone in Connecticut shares either that ancestry or that disposition.
     <image>bookImages/aFoot.jpg</image>
     <isbn>9781938846076</isbn>
     <price>18.29</price>
+	   <numOfReviews>1</numOfReviews>
+	  <totalRating>8</totalRating>
+	  <averageRating>8</averageRating>
+	  <reviewList>
+		  <review>
+		  <nickname>Richard B. Taber</nickname>
+            <descriptionReview>
+				I grew up in rural Eastern Connecticut in the farming and 4-H culture, and spent many years hiking through the Oak-Hickory forests of that region. Eric's book brought me back to Connecticut; most of his adventures that he wrote about were in the middle and western parts of the state, parts of the state that I know little about. The fact that wildness abounds in such a suburbanized state never ceases to amaze me. His tales of hiking, and of experiencing nature first hand, are reminiscent of other Connecticut naturalists, such as Hal Borland and Edwin Way Teale
+			  </descriptionReview>
+            <rating>8</rating>
+		  </review>
+	  </reviewList>
     <pages>132</pages>
     <stock>6</stock>
     <tags>
