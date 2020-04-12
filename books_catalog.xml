@@ -2,7 +2,7 @@
 <bookstore>
     
 <!-- TO DO - add ratings and reviews -->    
-<!-- Daniel Pobidel -->
+<!-- Daniel Pobidel -->   
     
   <!--Sapiens -->
   <book> 
@@ -66,7 +66,35 @@ Dr. Harari also compels us to look ahead, because over the last few decades huma
     <isbn>9781932098891</isbn>
     <price>15.99</price>
     <pages>346</pages>
+    <numOfReviews>3</numOfReviews>
+    <totalRating>28.5</totalRating>
+    <averageRating>9.5</averageRating> 
+    <reviewList>
+        <review>
+            <nickname>CTBookAddict</nickname>
+            <descriptionReview> I am so glad to have bought this book. It's the ultimate guide to streams and still water in Connecticut -- almost 350 pages dedicated to the third smallest state in the Union. Mr. Merly must have worked very hard to write this book, for as far as I know it lists every stream where water flows year round (plus ponds and lakes) -- not a small task, considering that if one were to line up the Nutmeg State's streams they would be as long as the US-Canada border!
+
+            I like this book because it tells me where to access, how many trout the DEEP stocks, maps, pictures, fly line and rod length recommendations, tackle shops, and more. The book is peppered with information that deepens one's appreciation of our state and its natural resources, such as history, natural history, conservation challenges or accomplishments, etc. I'll treasure this book for the rest of my life.
+            </descriptionReview>
+            <rating>9.5</rating>
+        </review>
+        <review>
+            <nickname>Sean</nickname>
+            <descriptionReview>I did not grow up in CT, so I never was exposed to the word-of-mouth and tribal knowledge of fishing spots within the state until recently, but that is a slow process. I would recommend Mr. Merly's book to anyone who wants to try a new river, lake, or stream in CT. The coverage is expansive and clearly separated by county. All of the major rivers and most of the larger streams are covered.
+
+In a state as small as CT, where you can go from one corner of the state to the other in under 3 hours, it is so easy to try out new fishing areas and this book makes it far less painless than hunting for access; I can have the digital edition open on my phone for last minute access or location changes. Some may argue that the book makes some already pressured areas *too* accessible, but I would disagree. Irresponsible anglers filling five gallon buckets with undersized fish are generally not the ones likely to buy this book. Furthermore, there are miles of vacant river in this state. I can think of three productive spots within a 30 minutes drive where I am not likely to encounter another angler on opening day, let alone any other time of year. Find a blue line you love. This book will help.
+            </descriptionReview>
+            <rating>9</rating>
+        </review>
+        <review>
+            <nickname>Peter B. Tobinn</nickname>
+            <descriptionReview>Excellent book on fishing Ct. I was impressed . Every person who fishes Ct should own one.
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+    </reviewList> 
     <stock>21</stock>
+    <sold>95</sold>
     <tags>
       <tag>Fishing</tag>
       <tag>Outdoors</tag>  
@@ -90,7 +118,19 @@ Beyond the fishing, Merly covers the pressing issues facing Connecticut's fisher
     <isbn>B071W7JGKJ</isbn>
     <price>14.99</price>
     <pages>144</pages>
+    <numOfReviews>1</numOfReviews>
+    <totalRating>7</totalRating>
+    <averageRating>7</averageRating> 
+    <reviewList>
+        <review>
+            <nickname>Sean</nickname>
+            <descriptionReview>
+            </descriptionReview>
+            <rating>7</rating>
+        </review>
+    </reviewList> 
     <stock>12</stock>
+    <sold>31</sold>
     <tags>
       <tag>Castle</tag>
       <tag>History</tag>  
@@ -110,8 +150,15 @@ Beyond the fishing, Merly covers the pressing issues facing Connecticut's fisher
     <image>bookImages/ctArchitecture.jpg</image>
     <isbn>9780819578136</isbn>
     <price>39.00</price>
+    <pages>464</pages>
+    <numOfReviews>0</numOfReviews>
+    <totalRating>0</totalRating>
+    <averageRating>-1</averageRating> 
+    <reviewList>
+    </reviewList>
     <pages>296</pages>
     <stock>13</stock>
+    <sold>12</sold>
     <tags>
       <tag>History</tag>
       <tag>Historic Buildings</tag>  
@@ -134,7 +181,31 @@ Featuring more than 200 illustrations, the book is organized thematically. Secti
     <isbn>9780439098274</isbn>
     <price>9.99</price>
     <pages>272</pages>
+    <numOfReviews>3</numOfReviews>
+    <totalRating>21</totalRating>
+    <averageRating>7</averageRating> 
+    <reviewList>
+        <review>
+            <nickname>MelG</nickname>
+            <descriptionReview>A gift for my son that used to watch the movie when he was small. He very much liked the book
+            </descriptionReview>
+            <rating>8</rating>
+        </review>
+        <review>
+            <nickname>Sarah Wolcheski</nickname>
+            <descriptionReview>I bought this out of nostalgia, I loved this book as a kid. Really dark for a kid's book, perhaps not for every child.
+            </descriptionReview>
+            <rating>7</rating>
+        </review>
+        <review>
+            <nickname>Janice Larson</nickname>
+            <descriptionReview>Kids loved the abook
+            </descriptionReview>
+            <rating>6</rating>
+        </review>
+    </reviewList> 
     <stock>81</stock>
+    <sold>69</sold>
     <tags>
       <tag>Childrens book</tag>
       <tag>Psychology</tag> 
@@ -154,7 +225,27 @@ Featuring more than 200 illustrations, the book is organized thematically. Secti
     <isbn>9780061726811</isbn>
     <price>12.99</price>
     <pages>470</pages>
+    <numOfReviews>2</numOfReviews>
+    <totalRating>12</totalRating>
+    <averageRating>6</averageRating> 
+    <reviewList>
+        <review>
+            <nickname>	E.M.</nickname>
+            <descriptionReview>I TORE THROUGH THIS ONE! Not kidding, picked it up Friday night, finished Saturday night. I loved this story, I was worried it'd be the typical teenage drama stuff but no, this is very complex and jaw-dropping. With every page I'd be more and more interested in what happens next. Plus! The ending, holy crap the ending had me in tears but also amazed and proud at the same time. A personal emotional roller coaster for me. 100% recommend!
+            </descriptionReview>
+            <rating>10</rating>
+        </review>
+        <review>
+            <nickname>Ryan</nickname>
+            <descriptionReview>This was not what I expected and no idea what prompted me to buy this book. It probably is more for young adults as it tells the story of four teenage friends in high school. Their friendships, their bullying, and their love life. The most disturbing thing to me was the reruns of how this story is going to end. Just about the time you think she has everything fixed it is dejavu all over again.
+
+I could not get through this book fast enough! It just was not my kind of story and I really did not care for the writing style.
+            </descriptionReview>
+            <rating>3</rating>
+        </review>
+    </reviewList> 
     <stock>12</stock>
+    <sold>51</sold>
     <tags>
       <tag>Young Adult</tag>
       <tag>Fiction</tag>
@@ -176,7 +267,25 @@ However, she still wakes up the next morning. In fact, Sam lives the last day of
     <isbn>9780440167365</isbn>
     <price>7.99</price>
     <pages>281</pages>
+    <numOfReviews>2</numOfReviews>
+    <totalRating>13</totalRating>
+    <averageRating>6.5</averageRating> 
+    <reviewList>
+        <review>
+            <nickname>Ken Blackmer</nickname>
+            <descriptionReview>I first became aware of this story when I saw the movie years ago. After reading "Harvest Home," I downloaded this one to my kindle, and tore through it in a single weekend. A riveting study of how the mind controls the body when unavoidable life events become too overwhelming to accept .
+            </descriptionReview>
+            <rating>8</rating>
+        </review>
+        <review>
+            <nickname>Shopping</nickname>
+            <descriptionReview>Set in scenic 1930's Connecticut, the narration does present a pleasant America of days gone by. This theme may have been relatively new in 1971 when the book was published and was a commercial success. It may not be as popular in today's market with over commercialization of this specific "strawman". The popular series (both the book and the tv mini-series) Dexter deals with split personality as do many more novels, including the not-so innocent children themes. To mr, this was an ok read.
+            </descriptionReview>
+            <rating>5</rating>
+        </review>
+    </reviewList> 
     <stock>12</stock>
+    <sold>42</sold>
     <tags>
       <tag>Thrilling</tag>
       <tag>Horror</tag>  
