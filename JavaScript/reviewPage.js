@@ -83,14 +83,8 @@ function addToCart()
             
     }
         
-        
-        
-        
-        
 }
     
-
-
 
 // Extract info from new DOM Object however you want
 document.getElementById("here").innerHTML=book.getElementsByTagName("title")[0].childNodes[0].nodeValue+"<br>By: &nbsp;"+ book.getElementsByTagName("author")[0].childNodes[0].nodeValue; 
