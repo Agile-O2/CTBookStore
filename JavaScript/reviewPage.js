@@ -1,6 +1,10 @@
 // Changes from String format to DOM Object format
 let book = new DOMParser().parseFromString(localStorage.getItem("currentBook"), "text/xml");
-
+function ret()
+{
+    sessionStorage.setItem("from","yes");
+    window.location.href = "productPage.html";
+}
 function addToCart()
 {
     //if no books in cart, create the cart and add current book to it alone

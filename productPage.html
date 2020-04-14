@@ -42,7 +42,7 @@
 		<!--Sorting and Browsing dropdown-->
 		<div class="container">
 			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Browse By <span class="caret"></span></button>
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort By <span class="caret"></span></button>
 				<ul class="dropdown-menu">
 					<li><a id="highToLow" class="dropdown-item" tabindex="-1" href="#" onclick="Sort(document.getElementById('highToLow').innerHTML)">Price High to Low</a></li>
 					<li><a id="lowToHigh" class="dropdown-item" href="#" onclick="Sort(document.getElementById('lowToHigh').innerHTML)">Price Low to High</a></li>
@@ -56,7 +56,7 @@
 				</ul>
 			</div>
 			<div class="dropdown">
-				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Sort By <span class="caret"></span></button>
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Browse By <span class="caret"></span></button>
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item" tabindex="-1" href="#" onclick="Search('Connecticut')">Recommendation</a></li>      
 					<li class="dropdown-submenu">
@@ -82,4 +82,5 @@
 		<!--javascript linkage-->
 		<script src="JavaScript/productPage.js"></script>
 	</body>
+    <script>loadPage();</script>
 </html>
