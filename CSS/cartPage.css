@@ -1,3 +1,5 @@
+
+
 body{
 	background-image: url(Images/cartPageBackground.jpg);
 	background-position: center center;
@@ -33,3 +35,68 @@ li{
 #div1 a:hover{
 	background-color:lightgreen;
 }
+
+#topBar{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.topList{
+	display: inline;
+	margin-right: 15px;
+	font-size: 20px;
+}
+
+table,td,th{
+	border-collapse: collapse;
+	margin-top: 40px;
+	font-size: 25px;
+    margin-bottom: 10%;
+}
+th,td {
+    padding: 10px;
+	color: white;   
+
+}
+
+#cartTable tr{
+    background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-size:cover;
+}
+
+img{
+	width: 150px;
+	height: 200px;
+}
+
+
+button {
+    border: none;
+    padding-left: 8px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-right: 8px;
+    margin: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+th{
+	position: sticky;
+  	top: 0;
+	font-family:cursive;
+	font-size: 45px;
+    border-top: 25px;
+	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-size: cover;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.5%;
+}
+
