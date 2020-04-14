@@ -1,11 +1,15 @@
 // Radoslaw Konopka
 // Global List
 var list;
+var saveSort;
+var saveSearch
 
 // Sends selected book from the list to another page
 function passInfo(clickedBook)
 {
-    localStorage.setItem("saveSearch",document.getElementById("txt1").value);
+    sessionStorage.setItem("saveSearch",saveSearch);
+    sessionStorage.setItem("sortSearch",saveSort);
+    sessionStorage.setItem("search",document.getElementById("txt1").value);
 	// Changes from DOM object to string while conservating format
 	let book = list[clickedBook.rowIndex-1].outerHTML;
 	// Stores the new string in localStorage
@@ -18,11 +22,11 @@ function passInfo(clickedBook)
 function printTable()
 {
     // Creates a table for book list display
-	let table="<tr><th></th><th>Title</th><th>Author</th><th>Price</th></tr>";
+	let table="<tr><th></th><th>Title</th><th>Author</th><th>Price</th><th>Rating</th></tr>";
     let i;
 	// Adds all necessary info to all books that match with the search and then displays it as table
 	for (i = 0; i <list.length; i++) { 
-		table += "<tr onclick='passInfo(this)' ref='a.html'><td id='pic'>";
+		table += "<tr onclick='passInfo(this)' ><td id='pic'>";
 		table += "<img src='/";
 		table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
 		table += "'/>";
@@ -33,7 +37,12 @@ function printTable()
 		table += "</td><td>";
         table += "$";
 		table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-		table += "</td></tr>";
+		table += "</td><td>";
+        if (list[i].getElementsByTagName("numOfReviews")[0].childNodes[0].nodeValue != 0)
+            table += list[i].getElementsByTagName("averageRating")[0].childNodes[0].nodeValue+"/10";
+        else
+            table += "No Rating";
+        table += "</td></tr>";
 	}
 	
 	// Display the table
@@ -43,7 +52,7 @@ function printTable()
 // Takes the current list and sorts it
 function Sort(toSort)
 {
-    localStorage.setItem("sortSearch",toSort);
+    saveSort=toSort;
     // price low to high
     if (toSort == document.getElementById('lowToHigh').innerHTML)
     {
@@ -109,9 +118,10 @@ function Sort(toSort)
 // Creates new list based on user input | Book search
 function Search(str)
 {
+    saveSort="";
+    saveSearch=str;
 	// Connects to xml file
 	var x,xmlhttp,xmlDoc
-	//var str = document.getElementById("txt1").value;
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("GET", "books_catalog.xml", false);
 	xmlhttp.send();
@@ -130,7 +140,7 @@ function Search(str)
 	{
         console.log(x[i]);
 		// This one if then statement checks if there are no books left. If there are none, then this book will not get displayed.
-		if ((x[i].getElementsByTagName("stock")[0].childNodes[0].nodeValue.indexOf("0")) != -1)
+		if ((x[i].getElementsByTagName("stock")[0].childNodes[0].nodeValue) == "0")
 		{
 			continue;
 		}
@@ -186,19 +196,29 @@ function topFunction() {
 	document.documentElement.scrollTop = 0;
 }
 
-console.log()
-let find;
-if (localStorage.getItem("saveSearch") == null)
-    find = "";
-else
-    find = localStorage.getItem("saveSearch");
-Search(find);
-localStorage.setItem("saveSearch","");
-if (localStorage.getItem("sortSearch") == null)
-    find = "";
-else
-    find = localStorage.getItem("sortSearch");
-Sort(find);
+function loadPage()
+{
+    console.log();
+    if (sessionStorage.getItem("from")=="yes") 
+    {
+        let find;
+        if (sessionStorage.getItem("saveSearch") == null)
+            find = "";
+        else
+            find = sessionStorage.getItem("saveSearch");
+        Search(find);
+        if (sessionStorage.getItem("sortSearch") == null)
+            find = "";
+        else
+            find = sessionStorage.getItem("sortSearch");
+        Sort(find);  
+        sessionStorage.setItem("from","no")
+        document.getElementById("txt1").value=sessionStorage.getItem("search");
+    }
+
+    else
+        Search("");  
+}
 
 $(document).ready(function(){
   $('.dropdown-submenu a.test').on("click", function(e){
