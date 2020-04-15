@@ -1,4 +1,5 @@
 // Global cart List
+// Daniel Pobidel
 var list;
 var count;
 var totalprice;
@@ -7,7 +8,7 @@ var totalprice;
 function passInfo(clickedBook)
 {
 	// Changes from DOM object to string while conservating format
-    var book = new XMLSerializer().serializeToString(list[clickedBook.rowIndex-1])
+    var book = new XMLSerializer().serializeToString(list[clickedBook.closest("tr").rowIndex-1]);
 
 	// Stores the new string in localStorage
 	localStorage.setItem("currentBook",book); 
@@ -19,32 +20,39 @@ function passInfo(clickedBook)
 // Prints the list of given books on table
 function printTable()
 {
-    // Creates a table for book list display
-	let table="<tr><th></th><th>Title</th><th>Author</th><th>&nbsp;Price&nbsp;</th><th>Quantity</th></tr>";
-    let i;
-	// Adds all necessary info to all books that match with the search and then displays it as table
-	for (i = 0; i <list.length; i++) { 
-		table += "<tr><td onclick='passInfo(parentNode)' ref='a.html' id='pic'>";
-		table += "<img src='/";
-		table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
-		table += "'/>";
-		table += "</td><td>";
-		table += list[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-		table += "</td><td>";
-        table += list[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
-		table += "</td><td><button type='button' name='minusButton'>"
-        table += " - </button>";
-        table += "$";
-		table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
-		table += "<button class='plus-btn' type='button' name='plusButton'>"
-        table += " + </button></td><td>";
-        table += "x";
-		table += count[i];
-		table += "</td></tr>";
-	}
-    table += "<tr><td></td><td></td><td></td><td> Total Price: </td> <td> $"
-    table += calcTotal();
-    table += "</td></tr>"
+    if (list.length == 0){
+        console.log("cart is empty");
+        var table = "<tr><th style='text-align:center'> Your Cart is Empty </th></tr>";
+        table += "<tr><td style='text-align:center'> <a href='productPage.html'>Click here to Shop now</a> </td> </tr>";
+    }
+    else{
+       // Creates a table for book list display
+	   var table="<tr><th></th><th>Title</th><th>Author</th><th>&nbsp;Price&nbsp;</th><th>Quantity</th></tr>";
+       let i;
+	   // Adds all necessary info to all books that match with the search and then displays it as table
+	   for (i = 0; i <list.length; i++) 
+       { 
+		  table += "<tr><td onclick='passInfo(parentNode)' ref='a.html' id='pic'>";
+		  table += "<img src='/";
+		  table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		  table += "'/>";
+          table += "</td><td>";
+		  table += list[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+		  table += "</td><td>";
+          table += list[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+          table += "</td><td>$";
+		  table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+          table += "</td><td><button type='button' name='minusButton' onclick='editCart(this,2)'>"
+          table += " - </button>";
+          table += "x";
+		  table += count[i];
+          table += "<button class='plus-btn' type='button' name='plusButton' onclick='editCart(this,3)'>"
+          table += " + </button> &nbsp;<button onclick='editCart(this,1)' id='removeBtn'>Remove</button></td></tr>";
+	   }
+        table += "<tr><td><button onclick='editCart(this,0)' id='clearBtn' >Clear Cart</button></td><td></td><td> Total Price: </td> <td> $"
+        table += calcTotal();
+        table += "</td><td><button onclick='' id='checkoutBtn'>Check Out </button></td></tr>"
+    }
 	
 	// Display the table
 	document.getElementById("cartTable").innerHTML = table;  
@@ -63,7 +71,13 @@ function createTableList()
     
     //check if cart exists
     if(cart == null){
-        //notify user that cart is empty
+        //do nothing
+    }
+    else if(cart == []){
+        console.log("cart is empty");
+        
+        //delete the cart
+        editCart(0,0);
     }
     else{
         // split contents of cart local storage into 1d array
@@ -96,6 +110,71 @@ function calcTotal()
 }
 
 
-console.log()
+function editCart(clickedItem,changeCode){
+    // 0 - delete/clear cart
+    // 1 - remove book
+    // 2 - decrease quantity
+    // 3 - increase quantity
+    
+    if(changeCode == 0){
+        console.log("clear cart");
+        localStorage.removeItem("cart"); 
+    }
+    else
+    {
+        var book = list[clickedItem.closest("tr").rowIndex-1]
+        //get cart from local storage
+        let cart = localStorage.getItem("cart");
+        // split contents of cart local storage into 1d array
+        let a=cart.split('@@@');
+        
+        // Change the 1 outer array into 2 dim array
+        for (let z = 0; z<a.length;z++)
+        {   
+            a[z] = a[z].split('$$$');
+            count[z] = a[z][1]; //count
+            
+            let book_isbn = book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue; //selected book
+            let cart_book = new DOMParser().parseFromString((a[z][0]), "text/xml"); //book in saved cart
+            let cart_book_isbn = cart_book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;  //saved cart book isbn
+            
+            if ( cart_book_isbn === book_isbn)  //find selected book in cart
+            { 
+                if(changeCode==1) //remove book
+                {
+                    a[z] = a[z].join('$$$');
+                    a.splice(z, 1); //remove 1 item at index a[z]
+                }
+                else if(changeCode==2) //decrease quantity
+                {
+                    if(a[z][1] > 1) //prevent quantity from going below 1
+                    {
+                        a[z][1]--;
+                    }
+                    a[z] = a[z].join('$$$');
+                }   
+                else if(changeCode==3) //increase quantity
+                {
+                    let stock = cart_book.getElementsByTagName("stock")[0].childNodes[0].nodeValue;
+                    console.log("stock:", stock);
+                    if(a[z][1] < parseInt(stock))//check stock
+                    {
+                        a[z][1]++;
+                    }
+                    a[z] = a[z].join('$$$');
+                }
+            }
+            else{
+                a[z] = a[z].join('$$$');
+            }
+        }
+        
+        a=a.join("@@@");
+        localStorage.setItem("cart",a);
+        
+    }     
+    createTableList(); //update table
+}
+
 createTableList();
 calcTotal();

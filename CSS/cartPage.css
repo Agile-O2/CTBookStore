@@ -26,6 +26,8 @@ li{
 	margin-right: 15px;
 	font-size: 20px;
 }
+
+
 #div1 a{
 	color: white;
 	text-decoration: none;
@@ -34,6 +36,13 @@ li{
 }
 #div1 a:hover{
 	background-color:lightgreen;
+}
+
+a{
+    color: white;
+	text-decoration: none;
+	padding: 20px;
+	font-weight:bold;
 }
 
 #topBar{
@@ -71,18 +80,44 @@ img{
 
 
 button {
-    border: none;
-    padding-left: 8px;
-    padding-bottom: 2px;
-    padding-top: 2px;
-    padding-right: 8px;
-    margin: 4px;
+    height: 30px;
+    width: 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin: 1px;
 }
 
+#removeBtn{
+    display: inline;
+    position:absolute;
+    text-decoration: underline;
+    font-weight: 250;
+    font-size: 20px;
+    line-height: 1em;
+    width: auto;
+    margin: 10px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+
+#clearBtn{
+    height: auto;
+    width: auto;
+    align-content: center;
+}
+
+#checkoutBtn{
+    height:50px;
+    width: 100%;
+    align-content: center;
+}
 
 th{
 	position: sticky;
