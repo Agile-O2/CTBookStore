@@ -140,7 +140,6 @@ function Search(str)
 	// the search goes to another book. If search does not match any case, then book is not added to the list
 	for (i=0;i<x.length;i++)
 	{
-        console.log(x[i]);
 		// This one if then statement checks if there are no books left. If there are none, then this book will not get displayed.
 		if ((x[i].getElementsByTagName("stock")[0].childNodes[0].nodeValue) == "0")
 		{
