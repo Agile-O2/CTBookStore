@@ -153,4 +153,3 @@ function testCart(){
             console.log(count1, "x ", result1 );
         }
 }
-
