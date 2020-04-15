@@ -1,12 +1,15 @@
 // Radoslaw Konopka
 // Global List
-var list;
+// Contains current list of books on the page
+var productPageList;
+// These two act like query to save user's input/choices on productPage
 var saveSort;
 var saveSearch
 
 // Sends selected book from the list to another page
 function passInfo(clickedBook)
 {
+    // Save user's choices/input
     sessionStorage.setItem("saveSearch",saveSearch);
     sessionStorage.setItem("sortSearch",saveSort);
     sessionStorage.setItem("search",document.getElementById("txt1").value);
@@ -195,12 +198,14 @@ function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 }
-
+// Will load user's input/choices if he/she came back from reviewPage
+// Else it will create fresh page
 function loadPage()
 {
     console.log();
     if (sessionStorage.getItem("from")=="yes") 
     {
+        // Goes back to previous state of page
         let find;
         if (sessionStorage.getItem("saveSearch") == null)
             find = "";
@@ -215,7 +220,6 @@ function loadPage()
         sessionStorage.setItem("from","no")
         document.getElementById("txt1").value=sessionStorage.getItem("search");
     }
-
     else
         Search("");  
 }
