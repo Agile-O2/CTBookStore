@@ -4,6 +4,7 @@ function ret()
 {
     sessionStorage.setItem("from","yes");
     window.location.href = "productPage.html";
+	window.history.back();
 }
 
 //Daniel Pobidel
@@ -93,6 +94,42 @@ function topFunction() {
 	document.documentElement.scrollTop = 0;
 }
 
+
+/*This is for the popup window for the reviews-*/
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("reviewButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+	modal.style.display = "block";
+	let reviews = book.getElementsByTagName("reviewList")[0].getElementsByTagName("review");
+
+	for (let j=0;j<reviews.length;j++)
+	{
+		document.getElementById("reviewsFromXML").innerHTML = document.getElementById("reviewsFromXML").innerHTML + "<br><strong>Name: </strong> "+ reviews[j].getElementsByTagName("nickname")[0].childNodes[0].nodeValue + "<br><strong>Review:  </strong>"+ reviews[j].getElementsByTagName("descriptionReview")[0].childNodes[0].nodeValue + "<br><p style='color:'><strong>Rating: </strong>" + reviews[j].getElementsByTagName("rating")[0].childNodes[0].nodeValue + "</p>";
+	}
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+	modal.style.display = "none";
+	document.getElementById("reviewsFromXML").innerHTML="";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+	  modal.style.display = "none";
+	  document.getElementById("reviewsFromXML").innerHTML="";
+  }
+}
+
 /*this function opens cart in local storage, splits elements into 1d array,
 then splits that further into a 2d array where b[x][0] is book and b[x][1] is quantity
 of the book stored. The array is read into console to if monitor books being added to cart correctly*/
@@ -116,3 +153,4 @@ function testCart(){
             console.log(count1, "x ", result1 );
         }
 }
+

@@ -40,10 +40,20 @@
 				
 				<div class="text-center">
 					<button type="button" id="returnButton" class="btn btn-outline-primary" onclick="ret()">Go Back</button>
+					<button type="button" class="btn btn-outline-primary" id="reviewButton">Reviews</button>					
 					<button type="button" id="addToCart" class="btn btn-outline-primary" onclick="addToCart()">Add To Cart</button>
 				</div>
             </div>
         </div>
+		
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p id="reviewsFromXML"></p>
+			</div>
+		</div>
 		
 		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 		

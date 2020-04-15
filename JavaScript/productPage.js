@@ -22,11 +22,11 @@ function passInfo(clickedBook)
 function printTable()
 {
     // Creates a table for book list display
-	let table="<tr><th></th><th>Title</th><th>Author</th><th>Price</th><th>Rating</th></tr>";
+	let table="<tr><th></th><th>Title</th><th>Author</th><th>Price</th><th>Rating</th><th></th></tr>";
     let i;
 	// Adds all necessary info to all books that match with the search and then displays it as table
 	for (i = 0; i <list.length; i++) { 
-		table += "<tr onclick='passInfo(this)' ><td id='pic'>";
+		table += "<tr><td id='pic'>";
 		table += "<img src='/";
 		table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
 		table += "'/>";
@@ -42,7 +42,9 @@ function printTable()
             table += list[i].getElementsByTagName("averageRating")[0].childNodes[0].nodeValue+"/10";
         else
             table += "No Rating";
-        table += "</td></tr>";
+        table += "</td><td>";
+		table += "<button id='view' onclick='passInfo(parentNode.parentNode)';>View</button>";
+		table += "</td></tr>";
 	}
 	
 	// Display the table
