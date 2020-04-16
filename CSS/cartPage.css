@@ -104,8 +104,12 @@ button {
     cursor:pointer;
     overflow: hidden;
     outline:none;
+    color:white;
 }
 
+#removeBtn:hover{
+	background-color:lightgreen;
+}
 
 #clearBtn{
     height: auto;

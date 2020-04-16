@@ -1,12 +1,12 @@
 // Radoslaw Konopka
-// Global List
+// Global productPageList
 // Contains current list of books on the page
 var productPageList;
 // These two act like query to save user's input/choices on productPage
 var saveSort;
 var saveSearch
 
-// Sends selected book from the list to another page
+// Sends selected book from the productPageList to another page
 function passInfo(clickedBook)
 {
     // Save user's choices/input
@@ -14,35 +14,35 @@ function passInfo(clickedBook)
     sessionStorage.setItem("sortSearch",saveSort);
     sessionStorage.setItem("search",document.getElementById("txt1").value);
 	// Changes from DOM object to string while conservating format
-	let book = list[clickedBook.rowIndex-1].outerHTML;
+	let book = BookToString(productPageList[clickedBook.rowIndex-1]);
 	// Stores the new string in localStorage
 	localStorage.setItem("currentBook",book); 
 	// Go to new book
 	window.location.href = "reviewPage.html";
 }
 
-// Prints the list of given books on table
+// Prints the productPageList of given books on table
 function printTable()
 {
-    // Creates a table for book list display
+    // Creates a table for book productPageList display
 	let table="<tr><th></th><th>Title</th><th>Author</th><th>Price</th><th>Rating</th><th></th></tr>";
     let i;
 	// Adds all necessary info to all books that match with the search and then displays it as table
-	for (i = 0; i <list.length; i++) { 
-		table += "<tr><td id='pic'>";
+	for (i = 0; i <productPageList.length; i++) { 
+		table += "<tr><td id='pic' onclick='passInfo(parentNode)';>";
 		table += "<img src='/";
-		table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		table += productPageList[i].image;
 		table += "'/>";
 		table += "</td><td>";
-		table += list[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+		table += productPageList[i].title;
 		table += "</td><td>";
-        table += list[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+        table += productPageList[i].author;
 		table += "</td><td>";
         table += "$";
-		table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+		table += productPageList[i].price;
 		table += "</td><td>";
-        if (list[i].getElementsByTagName("numOfReviews")[0].childNodes[0].nodeValue != 0)
-            table += list[i].getElementsByTagName("averageRating")[0].childNodes[0].nodeValue+"/10";
+        if (productPageList[i].numOfReviews != 0)
+            table += productPageList[i].averageRating+"/10";
         else
             table += "No Rating";
         table += "</td><td>";
@@ -54,52 +54,52 @@ function printTable()
 	document.getElementById("demo").innerHTML = table;  
 }
 
-// Takes the current list and sorts it
+// Takes the current productPageList and sorts it
 function Sort(toSort)
 {
     saveSort=toSort;
     // price low to high
     if (toSort == document.getElementById('lowToHigh').innerHTML)
     {
-        list.sort(function(a, b){return a.getElementsByTagName("price")[0].childNodes[0].nodeValue - b.getElementsByTagName("price")[0].childNodes[0].nodeValue});
+        productPageList.sort(function(a, b){return a.price - b.price});
     }
     // price high to low
     if (toSort == document.getElementById('highToLow').innerHTML)
     {
-        list.sort(function(a, b){return b.getElementsByTagName("price")[0].childNodes[0].nodeValue - a.getElementsByTagName("price")[0].childNodes[0].nodeValue});
+        productPageList.sort(function(a, b){return b.price - a.price});
     }
     // bestseller
     if (toSort == document.getElementById('bestseller').innerHTML)
     {
-        list.sort(function(a, b){return b.getElementsByTagName("sold")[0].childNodes[0].nodeValue - a.getElementsByTagName("sold")[0].childNodes[0].nodeValue});
+        productPageList.sort(function(a, b){return b.sold - a.sold});
     }
     // date newest to oldest
     if (toSort == document.getElementById('newest').innerHTML)
     {
-        list.sort(function(a, b){return b.getElementsByTagName("year")[0].childNodes[0].nodeValue - a.getElementsByTagName("year")[0].childNodes[0].nodeValue});
+        productPageList.sort(function(a, b){return b.year - a.year});
     }
     // date oldest to newest
     if (toSort == document.getElementById('oldest').innerHTML)
     {
-        list.sort(function(a, b){return a.getElementsByTagName("year")[0].childNodes[0].nodeValue - b.getElementsByTagName("year")[0].childNodes[0].nodeValue});
+        productPageList.sort(function(a, b){return a.year - b.year});
     }
     // Rating high to low
     if (toSort == document.getElementById('ratingHighToLow').innerHTML)
     {
-        list.sort(function(a, b){return b.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue - a.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue});
+        productPageList.sort(function(a, b){return b.averageRating - a.averageRating});
     }
     // Rating low to high
     if (toSort == document.getElementById('ratingLowToHigh').innerHTML)
     {
-        list.sort(function(a, b){return a.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue - b.getElementsByTagName("averageRating")[0].childNodes[0].nodeValue});
+        productPageList.sort(function(a, b){return a.averageRating - b.averageRating});
     }
     // Author
     if (toSort == document.getElementById('author').innerHTML)
     {
-        list.sort(function(a, b)
+        productPageList.sort(function(a, b)
             {
-            var x = a.getElementsByTagName("author")[0].childNodes[0].nodeValue;
-            var y = b.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+            var x = a.author;
+            var y = b.author;
             if (x < y) {return -1;}
             if (x > y) {return 1;}
             return 0;
@@ -108,10 +108,10 @@ function Sort(toSort)
     // Title
     if (toSort == document.getElementById('title').innerHTML)
     {
-        list.sort(function(a, b)
+        productPageList.sort(function(a, b)
             {
-            var x = a.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-            var y = b.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            var x = a.title;
+            var y = b.title;
             if (x < y) {return -1;}
             if (x > y) {return 1;}
             return 0;
@@ -120,7 +120,7 @@ function Sort(toSort)
     printTable();
 }
 
-// Creates new list based on user input | Book search
+// Creates new productPageList based on user input | Book search
 function Search(str)
 {
     saveSort="";
@@ -132,50 +132,52 @@ function Search(str)
 	xmlhttp.send();
 	xmlDoc = xmlhttp.responseXML; 
 	
-	// Makes a list of all books
+	// Makes a productPageList of all books
 	x = xmlDoc.getElementsByTagName("book");
 	
-	// Resets list
-	list = [];
-	let i,j;
-	
-	// Searches for title, author, isbn, topic, and then tags. If a book is found, then it is added to the list and
-	// the search goes to another book. If search does not match any case, then book is not added to the list
-	for (i=0;i<x.length;i++)
+	// Resets productPageList
+	productPageList = [];
+	let i,j,tempBook;
+	length = x.length
+	// Searches for title, author, isbn, topic, and then tags. If a book is found, then it is added to the productPageList and
+	// the search goes to another book. If search does not match any case, then book is not added to the productPageList
+	for (i=0; i<length; i++)
 	{
+        tempBook = new Book(x[i]);
+        console.log(tempBook);
 		// This one if then statement checks if there are no books left. If there are none, then this book will not get displayed.
-		if ((x[i].getElementsByTagName("stock")[0].childNodes[0].nodeValue) == "0")
+		if (tempBook.stock == "0")
 		{
 			continue;
 		}
-		if (x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toLowerCase().indexOf(str.toLowerCase()) != -1)
+		if (tempBook.title.toLowerCase().indexOf(str.toLowerCase()) != -1)
 		{
-			list.push(x[i]);
+			productPageList.push(tempBook);
 			continue;
 		}
-		if (x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toLowerCase().indexOf(str.toLowerCase()) != -1)
+		if (tempBook.author.toLowerCase().indexOf(str.toLowerCase()) != -1)
 		{
-			list.push(x[i]);
+			productPageList.push(tempBook);
 			continue;
 		}
-		if (x[i].getElementsByTagName("isbn")[0].childNodes[0].nodeValue.toLowerCase().indexOf(str.toLowerCase()) != -1)
+		if (tempBook.isbn.toLowerCase().indexOf(str.toLowerCase()) != -1)
 		{
-			list.push(x[i]);
+			productPageList.push(tempBook);
 			continue;
 		}
-		if (x[i].getElementsByTagName("topic")[0].childNodes[0].nodeValue.toLowerCase().indexOf(str.toLowerCase()) != -1)
+		if (tempBook.topic.toLowerCase().indexOf(str.toLowerCase()) != -1)
 		{
-			list.push(x[i]);
+			productPageList.push(tempBook);
 			continue;
 		}
 		
-		// Searches through entire list of tags | keywords
-		let y = x[i].getElementsByTagName("tags")[0].getElementsByTagName("tag");
-		for (j=0;j<y.length;j++)
+		// Searches through entire productPageList of tags | keywords
+		let tagLength = tempBook.tag.length;
+		for (j=0;j<tagLength;j++)
 		{
-			if (y[j].textContent.toLowerCase().indexOf(str.toLowerCase()) != -1)
+			if (tempBook.tag[j].toLowerCase().indexOf(str.toLowerCase()) != -1)
 			{
-				list.push(x[i]);
+				productPageList.push(tempBook);
 				break;
 			}
 		}
@@ -201,7 +203,7 @@ function topFunction() {
 }
 // Will load user's input/choices if he/she came back from reviewPage
 // Else it will create fresh page
-function loadPage()
+function loadProductPage()
 {
     console.log();
     if (sessionStorage.getItem("from")=="yes") 
@@ -223,12 +225,13 @@ function loadPage()
     }
     else
         Search("");  
+    
+    $(document).ready(function(){
+        $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
 }
 
-$(document).ready(function(){
-  $('.dropdown-submenu a.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
-});
