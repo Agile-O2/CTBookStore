@@ -1,5 +1,6 @@
 // Changes from String format to DOM Object format
-let book = new DOMParser().parseFromString(localStorage.getItem("currentBook"), "text/xml");
+    console.log(localStorage.getItem("currentBook"));
+let book = StringToBook(localStorage.getItem("currentBook"));
 function ret()
 {
     sessionStorage.setItem("from","yes");
@@ -35,14 +36,11 @@ function addToCart()
         for (let z = 0; z<a.length;z++)
         {
             a[z] = a[z].split('$$$');
-            let book1 = new DOMParser().parseFromString((a[z][0]), "text/xml");
-            let result1 = book1.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
+            let book1 = StringToBook((a[z][0]));
             
-            if (result1 == book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue)//check if book is already in cart
+            if (book1.isbn == book.isbn)//check if book is already in cart
             {
-                
-                let stock = book.getElementsByTagName("stock")[0].childNodes[0].nodeValue;
-                if(a[z][1] < parseInt(stock))//check stock
+                if(a[z][1] < parseInt(book.stock))//check stock
                 {
                     a[z][1]++;
                 }
@@ -69,17 +67,6 @@ function addToCart()
 }
         
 
-
-// Extract info from new DOM Object however you want
-document.getElementById("here").innerHTML=book.getElementsByTagName("title")[0].childNodes[0].nodeValue+"<br>By: &nbsp;"+ book.getElementsByTagName("author")[0].childNodes[0].nodeValue; 
-
-document.getElementById("hereAgain").innerHTML = "<img src='/"+book.getElementsByTagName("image")[0].childNodes[0].nodeValue+"'/>"+"<br>Price: " + "$"+book.getElementsByTagName("price")[0].childNodes[0].nodeValue+"<br>Year: &nbsp;" + book.getElementsByTagName("year")[0].childNodes[0].nodeValue+"<br>Topic: &nbsp;" + book.getElementsByTagName("topic")[0].childNodes[0].nodeValue+"<br>Pages: &nbsp;"+ book.getElementsByTagName("pages")[0].childNodes[0].nodeValue+"<br>";
-
-document.getElementById("hereAlso").innerHTML = "<br>Description:&nbsp; "+ book.getElementsByTagName("description")[0].childNodes[0].nodeValue + "<br><br>ISBN: &nbsp;"+ book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;
-
-var mybutton = document.getElementById("myBtn");
-window.onscroll = function() {scrollFunction()};
-
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
@@ -95,39 +82,61 @@ function topFunction() {
 }
 
 
-/*This is for the popup window for the reviews-*/
-// Get the modal
-var modal = document.getElementById("myModal");
+function loadReviewPage()
+{
+     document.getElementById("here").innerHTML=
+        book.title+"<br>By: &nbsp;" + book.author; 
 
-// Get the button that opens the modal
-var btn = document.getElementById("reviewButton");
+    document.getElementById("hereAgain").innerHTML = 
+        "<img src='/" + book.image+"'/>" + 
+        "<br>Price: " + "$"+book.price + 
+        "<br>Year: &nbsp;" + book.year + 
+        "<br>Topic: &nbsp;" + book.topic + 
+        "<br>Pages: &nbsp;"+ book.pages+"<br>";
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    document.getElementById("hereAlso").innerHTML = 
+        "<br>Description:&nbsp; " + book.description + 
+        "<br><br>ISBN: &nbsp;" + book.isbn;
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-	modal.style.display = "block";
-	let reviews = book.getElementsByTagName("reviewList")[0].getElementsByTagName("review");
+    var mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {scrollFunction()};   
+    
+    /*This is for the popup window for the reviews-*/
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
-	for (let j=0;j<reviews.length;j++)
-	{
-		document.getElementById("reviewsFromXML").innerHTML = document.getElementById("reviewsFromXML").innerHTML + "<br><strong>Name: </strong> "+ reviews[j].getElementsByTagName("nickname")[0].childNodes[0].nodeValue + "<br><strong>Review:  </strong>"+ reviews[j].getElementsByTagName("descriptionReview")[0].childNodes[0].nodeValue + "<br><p style='color:'><strong>Rating: </strong>" + reviews[j].getElementsByTagName("rating")[0].childNodes[0].nodeValue + "</p>";
-	}
-}
+    // Get the button that opens the modal
+    var btn = document.getElementById("reviewButton");
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-	modal.style.display = "none";
-	document.getElementById("reviewsFromXML").innerHTML="";
-}
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-	  modal.style.display = "none";
-	  document.getElementById("reviewsFromXML").innerHTML="";
-  }
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+        console.log(book.numOfReviews);
+        for (let j=0; j<book.numOfReviews; j++)
+        {
+            document.getElementById("reviewsFromXML").innerHTML = document.getElementById("reviewsFromXML").innerHTML + 
+            "<br><strong>Name: </strong> " + book.nickname[j] + 
+            "<br><strong>Review:  </strong>" + book.descriptionReview[j] + 
+            "<br><p style='color:'><strong>Rating: </strong>" + book.rating[j] + "/10</p>";
+        }
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+        document.getElementById("reviewsFromXML").innerHTML="";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+          document.getElementById("reviewsFromXML").innerHTML="";
+      }
+    }
 }
 
 /*this function opens cart in local storage, splits elements into 1d array,
@@ -147,9 +156,8 @@ function testCart(){
         console.log("books in cart:");
         for (let z = 0; z<b.length;z++)
         {
-            let book1 = new DOMParser().parseFromString((b[z][0]), "text/xml");
-            let result1 = book1.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            let book1 = StringToBook((b[z][0]));
             let count1 = b[z][1];
-            console.log(count1, "x ", result1 );
+            console.log(count1, "x ", book1.title );
         }
 }

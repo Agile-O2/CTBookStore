@@ -7,9 +7,10 @@ var totalprice;
 // Sends selected book from the list to another page
 function passInfo(clickedBook)
 {
-	// Changes from DOM object to string while conservating format
-    var book = new XMLSerializer().serializeToString(list[clickedBook.closest("tr").rowIndex-1]);
-
+	// Changes from JSON/Book object to string while conservating format
+    var book = BookToString(list[clickedBook.closest("tr").rowIndex-1]);
+    console.log(book);
+    
 	// Stores the new string in localStorage
 	localStorage.setItem("currentBook",book); 
     
@@ -34,14 +35,14 @@ function printTable()
        { 
 		  table += "<tr><td onclick='passInfo(parentNode)' ref='a.html' id='pic'>";
 		  table += "<img src='/";
-		  table += list[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		  table += list[i].image;
 		  table += "'/>";
           table += "</td><td>";
-		  table += list[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+		  table += list[i].title;
 		  table += "</td><td>";
-          table += list[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+          table += list[i].author;
           table += "</td><td>$";
-		  table += list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+		  table += list[i].price;
           table += "</td><td><button type='button' name='minusButton' onclick='editCart(this,2)'>"
           table += " - </button>";
           table += "x";
@@ -90,7 +91,7 @@ function createTableList()
             count[z] = a[z][1]; //count
             
             //grab book from 2d array and push it to list
-            let book1 = new DOMParser().parseFromString((a[z][0]), "text/xml");
+            let book1 = StringToBook(a[z][0]);
             list.push(book1);
         }
         
@@ -102,7 +103,7 @@ function calcTotal()
 {
     var totalprice = 0;
     for(let i = 0; i<list.length; i++){
-        totalprice += (list[i].getElementsByTagName("price")[0].childNodes[0].nodeValue * count[i]);
+        totalprice += (list[i].price * count[i]);
     }
     totalprice = totalprice.toFixed(2);
     console.log(totalprice);
@@ -134,9 +135,9 @@ function editCart(clickedItem,changeCode){
             a[z] = a[z].split('$$$');
             count[z] = a[z][1]; //count
             
-            let book_isbn = book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue; //selected book
-            let cart_book = new DOMParser().parseFromString((a[z][0]), "text/xml"); //book in saved cart
-            let cart_book_isbn = cart_book.getElementsByTagName("isbn")[0].childNodes[0].nodeValue;  //saved cart book isbn
+            let book_isbn = book.isbn; //selected book
+            let cart_book = StringToBook(a[z][0]); //book in saved cart
+            let cart_book_isbn = cart_book.isbn;  //saved cart book isbn
             
             if ( cart_book_isbn === book_isbn)  //find selected book in cart
             { 
@@ -155,7 +156,7 @@ function editCart(clickedItem,changeCode){
                 }   
                 else if(changeCode==3) //increase quantity
                 {
-                    let stock = cart_book.getElementsByTagName("stock")[0].childNodes[0].nodeValue;
+                    let stock = cart_book.stock;
                     console.log("stock:", stock);
                     if(a[z][1] < parseInt(stock))//check stock
                     {
@@ -176,5 +177,9 @@ function editCart(clickedItem,changeCode){
     createTableList(); //update table
 }
 
-createTableList();
-calcTotal();
+function loadCartPage()
+{
+    console.log();
+    createTableList();
+    calcTotal();
+}

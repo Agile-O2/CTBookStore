@@ -3,6 +3,7 @@ class Book
 {
     constructor(bookXML) 
     {
+        console.log();
         let i;
         let length;
         this.author = bookXML.getElementsByTagName("author")[0].childNodes[0].nodeValue;
@@ -39,4 +40,19 @@ class Book
         this.year =bookXML.getElementsByTagName("year")[0].childNodes[0].nodeValue;
         this.description =bookXML.getElementsByTagName("description")[0].childNodes[0].nodeValue;
     }
+}
+// XML object to Book 
+function CreateBookFromStringXML(source)
+{
+    return (new Book(new DOMParser().parseFromString(source, "text/xml")));
+}
+// String to Book (used for local/session storage)
+function StringToBook(source)
+{
+    return JSON.parse(source);
+}
+// Book to String (used for local/session storage)
+function BookToString(source)
+{
+    return JSON.stringify(source);
 }
