@@ -70,9 +70,9 @@ function addToCart()
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
-		mybutton.style.display = "block";
+		document.getElementById("myBtn").style.display = "block";
 	} else {
-		mybutton.style.display = "none";
+		document.getElementById("myBtn").style.display = "none";
 	}
 }
 
@@ -98,7 +98,6 @@ function loadReviewPage()
         "<br>Description:&nbsp; " + book.description + 
         "<br><br>ISBN: &nbsp;" + book.isbn;
 
-    var mybutton = document.getElementById("myBtn");
     window.onscroll = function() {scrollFunction()};   
     
     /*This is for the popup window for the reviews-*/
@@ -118,9 +117,9 @@ function loadReviewPage()
         for (let j=0; j<book.numOfReviews; j++)
         {
             document.getElementById("reviewsFromXML").innerHTML = document.getElementById("reviewsFromXML").innerHTML + 
-            "<br><strong>Name: </strong> " + book.nickname[j] + 
-            "<br><strong>Review:  </strong>" + book.descriptionReview[j] + 
-            "<br><p style='color:'><strong>Rating: </strong>" + book.rating[j] + "/10</p>";
+            "<br><strong>Name: </strong> " + book.reviewList.review[j].nickname + 
+            "<br><strong>Review:  </strong>" + book.reviewList.review[j].descriptionReview + 
+            "<br><p style='color:'><strong>Rating: </strong>" + book.reviewList.review[j].rating + "/10</p>";
         }
     }
 

@@ -125,26 +125,17 @@ function Search(str)
 {
     saveSort="";
     saveSearch=str;
-	// Connects to xml file
-	var x,xmlhttp,xmlDoc
-	xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("GET", "books_catalog.xml", false);
-	xmlhttp.send();
-	xmlDoc = xmlhttp.responseXML; 
-	
-	// Makes a productPageList of all books
-	x = xmlDoc.getElementsByTagName("book");
-	
+    let tempBooks = StringToBook(localStorage.getItem("allBooks")).book;
+    console.log(tempBooks);
 	// Resets productPageList
 	productPageList = [];
 	let i,j,tempBook;
-	length = x.length
+	length = tempBooks.length;
 	// Searches for title, author, isbn, topic, and then tags. If a book is found, then it is added to the productPageList and
 	// the search goes to another book. If search does not match any case, then book is not added to the productPageList
 	for (i=0; i<length; i++)
 	{
-        tempBook = new Book(x[i]);
-        console.log(tempBook);
+        tempBook = tempBooks[i];
 		// This one if then statement checks if there are no books left. If there are none, then this book will not get displayed.
 		if (tempBook.stock == "0")
 		{
@@ -172,10 +163,10 @@ function Search(str)
 		}
 		
 		// Searches through entire productPageList of tags | keywords
-		let tagLength = tempBook.tag.length;
+		let tagLength = tempBook.tags.tag.length;
 		for (j=0;j<tagLength;j++)
 		{
-			if (tempBook.tag[j].toLowerCase().indexOf(str.toLowerCase()) != -1)
+			if (tempBook.tags.tag[j].toLowerCase().indexOf(str.toLowerCase()) != -1)
 			{
 				productPageList.push(tempBook);
 				break;
@@ -206,6 +197,7 @@ function topFunction() {
 function loadProductPage()
 {
     console.log();
+    getAllBooks();
     if (sessionStorage.getItem("from")=="yes") 
     {
         // Goes back to previous state of page
