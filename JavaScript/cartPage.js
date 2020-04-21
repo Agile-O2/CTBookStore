@@ -3,9 +3,10 @@
 var list;
 var count;
 var totalprice;
+updateCartDisplay();
 
 // Sends selected book from the list to another page
-function passInfo(clickedBook)
+function cartPassInfo(clickedBook)
 {
 	// Changes from JSON/Book object to string while conservating format
     var book = BookToString(list[clickedBook.closest("tr").rowIndex-1]);
@@ -19,7 +20,7 @@ function passInfo(clickedBook)
 }
 
 // Prints the list of given books on table
-function printTable()
+function printCartTable()
 {
     if (list.length == 0){
         console.log("cart is empty");
@@ -33,7 +34,7 @@ function printTable()
 	   // Adds all necessary info to all books that match with the search and then displays it as table
 	   for (i = 0; i <list.length; i++) 
        { 
-		  table += "<tr><td onclick='passInfo(parentNode)' ref='a.html' id='pic'>";
+		  table += "<tr><td onclick='cartPassInfo(parentNode)' ref='a.html' id='pic'>";
 		  table += "<img src='/";
 		  table += list[i].image;
 		  table += "'/>";
@@ -96,7 +97,7 @@ function createTableList()
         }
         
     }
-	printTable();
+	printCartTable();
 }
 
 function calcTotal()
@@ -119,7 +120,7 @@ function editCart(clickedItem,changeCode){
     
     if(changeCode == 0){
         console.log("clear cart");
-        localStorage.removeItem("cart"); 
+        localStorage.removeItem("cart");
     }
     else
     {
@@ -145,6 +146,7 @@ function editCart(clickedItem,changeCode){
                 {
                     a[z] = a[z].join('$$$');
                     a.splice(z, 1); //remove 1 item at index a[z]
+                    
                 }
                 else if(changeCode==2) //decrease quantity
                 {
@@ -175,6 +177,7 @@ function editCart(clickedItem,changeCode){
         
     }     
     createTableList(); //update table
+    updateCartDisplay();
 }
 
 function loadCartPage()
@@ -182,4 +185,30 @@ function loadCartPage()
     console.log();
     createTableList();
     calcTotal();
+}
+
+function getCartCount(){
+    var totalCount = 0;
+    let cart = localStorage.getItem("cart");
+    if(cart == null || cart == []){
+        return 0;
+    }
+    else {
+        // split contents of cart local storage into 1d array
+        let a=cart.split('@@@');
+        
+        // Change the 1 outer array into 2 dim array
+        for (let z = 0; z<a.length;z++)
+        {   
+            a[z] = a[z].split('$$$');
+            totalCount += parseInt(a[z][1]); //count
+            console.log(totalCount);
+        }
+        return totalCount; 
+    }
+}
+
+function updateCartDisplay(){
+    let cartCountDisplay = getCartCount();
+    document.getElementById("cartBtnCount").innerHTML = cartCountDisplay + "<i class='fa fa-shopping-cart' style=''> </i>";
 }

@@ -20,7 +20,7 @@
                 <li><a href="homePage.html">Main Page</a></li>
 				<li><a href="productPage.html">Books</a></li>
                 <li><a href="contactPage.html">Contact Us</a></li>
-				<li style="float: right"><a href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
+				<li style="float: right"><a id="cartBtnCount" href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
             </ul>
         </div>
 		
@@ -55,10 +55,13 @@
 		</div>
 		
 		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-		
+        
+		<!-- The actual snackbar -->
+        <div id="snackbar">Book added to cart</div>
     </body>
 	<script src="JavaScript/book.js"></script>
     <script src="JavaScript/reviewPage.js"></script>
+    <script src="JavaScript/cartPage.js"></script>
     <script>loadReviewPage();</script>
 </html>
 
