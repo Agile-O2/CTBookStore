@@ -1,6 +1,6 @@
 // Changes from String format to DOM Object format
     console.log(localStorage.getItem("currentBook"));
-let book = StringToBook(localStorage.getItem("currentBook"));
+let book = StringToBook(localStorage.getItem("currentBook")); 
 function ret()
 {
     sessionStorage.setItem("from","yes");
@@ -63,7 +63,18 @@ function addToCart()
     
         //log all of carts contents in console
         testCart();
-    }    
+    } 
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    var snackBarText = StringToBook(localStorage.getItem("currentBook")).title + " was added to your cart!";
+    x.innerHTML = snackBarText;
+    x.className = "show";
+    updateCartDisplay();
+    
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
         
 
