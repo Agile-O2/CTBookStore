@@ -142,6 +142,9 @@ img{
   font-size: 28px;
   font-weight: bold;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 .close:hover,
 .close:focus {
