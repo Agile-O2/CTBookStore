@@ -52,7 +52,7 @@ function printTable()
 	   }
         table += "<tr><td><button onclick='editCart(this,0)' id='clearBtn' >Clear Cart</button></td><td></td><td> Total Price: </td> <td> $"
         table += calcTotal();
-        table += "</td><td><button onclick='' id='checkoutBtn'>Check Out </button></td></tr>"
+        table += "</td><td><a href='checkOutPage.html' class='checkOutbtn'>Check Out </a></td></tr>"
     }
 	
 	// Display the table
