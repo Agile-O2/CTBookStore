@@ -12,7 +12,7 @@ function passInfo(clickedBook)
     // Save user's choices/input
     sessionStorage.setItem("saveSearch",saveSearch);
     sessionStorage.setItem("sortSearch",saveSort);
-    sessionStorage.setItem("search",document.getElementById("txt1").value);
+    sessionStorage.setItem("search",document.getElementById("searchTextbox").value);
 	// Changes from DOM object to string while conservating format
 	let book = BookToString(productPageList[clickedBook.rowIndex-1]);
 	// Stores the new string in localStorage
@@ -41,6 +41,7 @@ function printTable()
         table += "$";
 		table += productPageList[i].price;
 		table += "</td><td>";
+        // Show different if no rating yet
         if (productPageList[i].numOfReviews != 0)
             table += productPageList[i].averageRating+"/10";
         else
@@ -57,6 +58,7 @@ function printTable()
 // Takes the current productPageList and sorts it
 function Sort(toSort)
 {
+    // Save user's preference
     saveSort=toSort;
     // price low to high
     if (toSort == document.getElementById('lowToHigh').innerHTML)
@@ -117,16 +119,19 @@ function Sort(toSort)
             return 0;
             });
     }
+    // Resets Display
     printTable();
 }
 
 // Creates new productPageList based on user input | Book search
 function Search(str)
 {
+    // Saves user's preference
     saveSort="";
     saveSearch=str;
+    // Gets all the books from data
+    getAllBooks();
     let tempBooks = StringToBook(localStorage.getItem("allBooks")).book;
-    console.log(tempBooks);
 	// Resets productPageList
 	productPageList = [];
 	let i,j,tempBook;
@@ -173,12 +178,11 @@ function Search(str)
 			}
 		}
 	}
+    // Create Display
 	printTable();
 }
 
-var mybutton = document.getElementById("myBtn");
-window.onscroll = function() {scrollFunction()};
-
+// Shows button to go back top
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
@@ -187,17 +191,40 @@ function scrollFunction() {
 		mybutton.style.display = "none";
 	}
 }
-
+// Returns to top page
 function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 }
+
+function queryListenings()
+{
+    // Shows list for browsing
+    $(document).ready(function(){
+        $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });   
+    
+    // Search on enter
+    $("#searchTextbox").keyup(function(e) {
+        if (e.which == 13) {
+            $(".searchButton").click();
+        }
+    });
+    
+    // Button to go up
+    var mybutton = document.getElementById("myBtn");
+    window.onscroll = function() {scrollFunction()};
+}
+
 // Will load user's input/choices if he/she came back from reviewPage
 // Else it will create fresh page
 function loadProductPage()
 {
     console.log();
-    getAllBooks();
     if (sessionStorage.getItem("from")=="yes") 
     {
         // Goes back to previous state of page
@@ -213,17 +240,10 @@ function loadProductPage()
             find = sessionStorage.getItem("sortSearch");
         Sort(find);  
         sessionStorage.setItem("from","no")
-        document.getElementById("txt1").value=sessionStorage.getItem("search");
+        document.getElementById("searchTextbox").value=sessionStorage.getItem("search");
     }
     else
         Search("");  
-    
-    $(document).ready(function(){
-        $('.dropdown-submenu a.test').on("click", function(e){
-        $(this).next('ul').toggle();
-        e.stopPropagation();
-        e.preventDefault();
-      });
-    });
+    queryListenings();
 }
 
