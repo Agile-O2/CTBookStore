@@ -44,7 +44,7 @@
 								</div>
 								<div class="col-50">
 									<label for="zip">Zip</label>
-									<input type="text" id="zip" name="zip" placeholder="10001">
+									<input type="text" id="zip" name="zip" placeholder="10001" maxlength="5" onkeypress="return isNumber(event)">
 								</div>
 							</div>
 						</div>
@@ -63,7 +63,7 @@
 								<i style="font-size:24px; margin-left: 70px" class="fa">&#xf06b;</i>
 							</div>
 							<label for="cname">Name on Card</label>
-							<input type="text" id="cname" name="cardname" placeholder="John More Doe">
+							<input type="text" id="cname" name="cardname" placeholder="John More Doe" onkeypress="return lettersOnly()" >
 							<label for="ccnum">Credit card number</label>
 							<input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
 							<label for="expmonth">Exp Month</label>
@@ -101,7 +101,7 @@
 							</div>
 							<div class="col-50">
 								<label for="zip">Zip</label>
-								<input type="text" id="billingzip" name="zip" placeholder="10001">
+								<input type="text" id="billingzip" name="zip" placeholder="10001" maxlength="5" onkeypress="return isNumber(event)">
 							</div>
 						</div>
 					</div>
