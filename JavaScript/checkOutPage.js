@@ -32,8 +32,6 @@ function checkIfValidInputs()
     result += checkEmptyTextBoxes("zip");
     result += checkEmptyTextBoxes("cname");
     result += checkEmptyTextBoxes("ccnum");
-    result += checkEmptyTextBoxes("expmonth");
-    result += checkEmptyTextBoxes("expyear");
     result += checkEmptyTextBoxes("cvv");
     // If billing address is different
     if (document.getElementById("myCheck").checked != true)
@@ -139,3 +137,48 @@ function loadCheckOutPage()
 {
     console.log();
 }
+
+//Select the year and month for the credit card
+$(document).ready(function() {
+	const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var qntYears = 10;
+	var selectYear = $("#year");
+	var selectMonth = $("#month");
+	var currentYear = new Date().getFullYear();
+	
+	for (var y = 0; y < qntYears; y++){
+		let date = new Date(currentYear);
+		var yearElem = document.createElement("option");
+		yearElem.value = currentYear 
+		yearElem.textContent = currentYear;
+		selectYear.append(yearElem);
+		currentYear++;
+	} 
+	
+	for (var m = 0; m < 12; m++){
+		let monthNum = new Date(2018, m).getMonth()
+		let month = monthNames[monthNum];
+		var monthElem = document.createElement("option");
+		monthElem.value = monthNum; 
+		monthElem.textContent = month;
+		selectMonth.append(monthElem);
+	}
+
+	var d = new Date();
+	var month = d.getMonth();
+    var year = d.getFullYear();
+   
+    selectYear.val(year); 
+    selectYear.on("change", AdjustDays);  
+    selectMonth.val(month);    
+    selectMonth.on("change", AdjustDays);
+
+    AdjustDays();
+    selectDay.val(day)
+    
+	function AdjustDays(){
+		var year = selectYear.val();
+		var month = parseInt(selectMonth.val()) + 1;
+		selectDay.empty();
+	}    
+});
