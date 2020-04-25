@@ -22,6 +22,7 @@ function hideInfo() {
 // Checks if user enter the right info
 function checkIfValidInputs()
 {
+    // Check if textboxes are empty
     let result = 0;
     result += checkEmptyTextBoxes("fname");
     result += checkEmptyTextBoxes("email");
@@ -34,6 +35,7 @@ function checkIfValidInputs()
     result += checkEmptyTextBoxes("expmonth");
     result += checkEmptyTextBoxes("expyear");
     result += checkEmptyTextBoxes("cvv");
+    // If billing address is different
     if (document.getElementById("myCheck").checked != true)
     {
         result += checkEmptyTextBoxes("billingfname");
@@ -48,11 +50,19 @@ function checkIfValidInputs()
         alert("Please enter all necessary information");
         return false;
     }
-    
-    if(!validateEmail("email")) return false;
+    // Now Checks if inputs are correct
+    result += validateEmail("email");
+    result += checkNumbers("zip",5);
+    result += checkNumbers("cvv",3);
     if (document.getElementById("myCheck").checked != true)
     {
-        if(!validateEmail("billingemail")) return false;
+        result += validateEmail("billingemail");
+        result += checkNumbers("billingzip",5);
+    }
+    if (result > 0)
+    {
+        alert("Please fix your information");
+        return false;
     }
     return true;
 }
@@ -71,13 +81,6 @@ function checkEmptyTextBoxes(textbox)
         return 0;
     }
 }
-// ???
-// For cleaning textboxes in 
-function cleanBillingAddress(textbox)
-{
-    document.getElementById(textbox).style.borderColor  = "";
-    document.getElementById(textbox).value = "";
-}
 // Checks if email format is good
 function validateEmail(email)
 {
@@ -86,18 +89,33 @@ function validateEmail(email)
     if(emailDoc.value.match(mailformat))
     {
         emailDoc.style.borderColor  = "";
-        return true;
+        return 0;
     }
     else
     {
         emailDoc.focus();
         emailDoc.style.borderColor  = "red";
-        return false;
+        return 1;
     }
-    
 }
 
-// Checks if input is number
+// Checks if enough numbers are entered
+function checkNumbers(textbox,goalLength)
+{
+    if (document.getElementById(textbox).value.length == goalLength)
+    {
+        document.getElementById(textbox).style.borderColor  = "";
+        return 0;
+    }
+    else
+    {
+        document.getElementById(textbox).focus();
+        document.getElementById(textbox).style.borderColor  = "red";
+        return 1;
+    }
+}
+
+// Checks if typed character is number
 function isNumber(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -107,6 +125,15 @@ function isNumber(evt) {
     return true;
 }
 
+// Checks if typed character is letter
+function lettersOnly() 
+{
+    var charCode = event.keyCode;
+    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 8 || charCode == 32 || charCode == 39)
+        return true;
+    else
+        return false;
+}
 // Loads the page on start
 function loadCheckOutPage()
 {
