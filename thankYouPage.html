@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+    
+<head>
+    <title>Thank You!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="CSS/thankYouPage.css">
+</head>
+
+<body>
+    <!--Top Nav bar-->
+    <div id="div1">
+        <ul id="topBar">
+            <li class="topList"><a href="homePage.html">Main Page</a></li>
+            <li class="topList"><a href="productPage.html">Books</a></li>
+            <li class="topList"><a href="contactPage.html">Contact Us</a></li>
+            <li style="float: right"><a id="cartBtnCount" href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
+        </ul>
+    </div>
+    
+
+    <div class="jumbotron text-center">
+        <h1 id="custName" class="display-3">Thank You [customer]!</h1>
+        <h4>We are currently processing your order, it will be shipped out shortly.</h4>
+        <br>
+        <p class="lead">Confirmation will also be sent to your email, <em id="custEmail">[email]</em></p>
+        <p>Order #<em id="oNum">[order #]</em></p>
+        <p>Total price: $<em id="tPrice">[price]</em></p>
+        <hr>
+        <p>Any Questions? <a href="contactPage.html">Contact us</a></p>
+        <p class="lead">
+            <a class="btn btn-primary btn-sm" href="homePage.html" role="button">Continue to homepage</a>
+        </p>
+    </div>
+    <script src="JavaScript/thankYouPage.js"></script>
+</body>
+</html>
