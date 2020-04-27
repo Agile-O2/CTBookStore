@@ -186,12 +186,12 @@ function Search(str)
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
-		mybutton.style.display = "block";
+		document.getElementById("myBtn").style.display = "block";
 	} else {
-		mybutton.style.display = "none";
+		document.getElementById("myBtn").style.display = "none";
 	}
 }
-// Returns to top page
+
 function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;

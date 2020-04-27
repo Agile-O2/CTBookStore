@@ -22,6 +22,17 @@ function hideInfo() {
 		text.style.display = "block";
 	}
 }
+
+function hideGift() {
+	var checkBox = document.getElementById("giftCheck");
+	var text = document.getElementById("giftcardboxes");
+	if (checkBox.checked == true){
+		text.style.display = "block";
+	} else {
+		text.style.display = "none";
+	}
+}
+
 // Checks if user enter the right info
 function checkIfValidInputs()
 {
