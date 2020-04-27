@@ -5,10 +5,10 @@ function goBack() {
 
 // this window displays alert box after clicking on submit button
 function displaySuccess() {
-    if (checkIfValidInputs())
-    {
-        alert("Thank you for your purchases!");
-        createOrderJSON();
+    if (checkIfValidInputs()){
+        sessionStorage.setItem("confirmedOrder",getInputInfo()); 
+        window.location.href = "thankYouPage.html";
+        alert("Thank you for your purchase!");
     }
 }
 
@@ -65,6 +65,15 @@ function checkIfValidInputs()
 //        return false;
 //    }
     return true;
+}
+
+function getInputInfo(){
+    let orderInfo =[document.getElementById("fname").value,document.getElementById("email").value,"123456789",localStorage.getItem("totalPrice")];
+    
+    // Turn inner elements into strings separated by $$$
+    orderInfo = orderInfo.join('$$$');
+    return orderInfo;
+    
 }
 // Checks if user left an empty box
 function checkEmptyTextBoxes(textbox)
