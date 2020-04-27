@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Review Page
+		</title>
+		
+		<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" style="text/css" href="../CSS/reviewPage.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    
+    <body>
+        <div id="div1">
+            <ul>
+                <li><a href="homePage.html">Main Page</a></li>
+				<li><a href="productPage.html">Books</a></li>
+                <li><a href="contactPage.html">Contact Us</a></li>
+				<li style="float: right"><a id="cartBtnCount" href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
+            </ul>
+        </div>
+		
+        <div class="row" id="middlediv">
+            
+            <!-- left panel -->
+            <div class="col-5" > 
+                <p id="here"></p>
+                <div id="hereAgain"></div>
+            </div>
+            
+            <!-- right panel -->
+            <div class="col-7" style="margin: auto">
+				
+                <p id="hereAlso"></p>
+				
+				<div class="text-center">
+					<button type="button" id="returnButton" class="btn btn-outline-primary" onclick="ret()">Go Back</button>
+					<button type="button" class="btn btn-outline-primary" id="reviewButton">Reviews</button>					
+					<button type="button" id="addToCart" class="btn btn-outline-primary" onclick="addToCart()">Add To Cart</button>
+				</div>
+            </div>
+        </div>
+		
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p id="reviewsFromXML"></p>
+			</div>
+		</div>
+		
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        
+		<!-- The actual snackbar -->
+        <div id="snackbar">Book added to cart</div>
+    </body>
+	<script src="../JavaScript/jsonObjects.js"></script>
+    <script src="../JavaScript/reviewPage.js"></script>
+    <script src="../JavaScript/cartPage.js"></script>
+    <script>loadReviewPage();</script>
+</html>
+

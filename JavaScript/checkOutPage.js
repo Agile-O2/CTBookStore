@@ -12,6 +12,48 @@ function displaySuccess() {
     }
 }
 
+function displayCartItems(){
+
+    //get cart from local storage
+    let cart = localStorage.getItem("cart"); 
+    
+    // split contents of cart local storage into 1d array
+    let bookList=cart.split('@@@');
+    var quantity = [];
+    var cList = "";
+        
+    // Change the 1 outer array into 2 dim array
+    for (let z = 0; z<bookList.length;z++)
+    {
+        bookList[z] = bookList[z].split('$$$');
+        quantity[z] = bookList[z][1]; //count
+        let currentBook = StringToJSON(bookList[z][0]);
+        cList += "<p>";
+        cList += currentBook.title;
+        cList += "<span class = 'price'>"
+        cList += quantity[z];
+        cList += " x $"
+        cList += currentBook.price;
+        cList += "</span></p>";   
+    }
+    
+    var cartTotal = localStorage.getItem("cartTotal");
+    var subTotal = "$";
+    subTotal += cartTotal;
+    
+    var totalPrice = "<b>$";
+    totalPrice += (parseInt(cartTotal)* 1.0635).toFixed(2);
+    totalPrice += "</b>"
+    
+	// Display the table
+	document.getElementById("checkoutList").innerHTML = cList; 
+    document.getElementById("checkoutSubtotal").innerHTML = subTotal;
+    document.getElementById("taxes").innerHTML = "$" + (cartTotal* 0.0635).toFixed(2);
+    document.getElementById("checkoutTotalPrice").innerHTML = totalPrice;
+    localStorage.setItem("totalPrice",(parseInt(cartTotal)* 1.0635).toFixed(2));
+    
+}
+
 // this function will hide the text field on checked
 function hideInfo() {
 	var checkBox = document.getElementById("myCheck");
@@ -84,8 +126,8 @@ function getInputInfo(){
     // Turn inner elements into strings separated by $$$
     orderInfo = orderInfo.join('$$$');
     return orderInfo;
-    
 }
+
 // Checks if user left an empty box
 function checkEmptyTextBoxes(textbox)
 {
@@ -157,6 +199,7 @@ function lettersOnly()
 // Loads the page on start
 function loadCheckOutPage()
 {
+    displayCartItems();
     console.log();
 }
 
