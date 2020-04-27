@@ -8,7 +8,7 @@ updateCartDisplay();
 function cartPassInfo(clickedBook)
 {
 	// Changes from JSON/Book object to string while conservating format
-    var book = BookToString(cartList[clickedBook.closest("tr").rowIndex-1]);
+    var book = JSONToString(cartList[clickedBook.closest("tr").rowIndex-1]);
     console.log(book);
     
 	// Stores the new string in localStorage
@@ -87,7 +87,7 @@ function createTableList()
             count[z] = a[z][1]; //count
             
             //grab book from 2d array and push it to cartList
-            let book1 = StringToBook(a[z][0]);
+            let book1 = StringToJSON(a[z][0]);
             cartList.push(book1);
         }
         
@@ -146,7 +146,7 @@ function saveCart(){
     {
         a[z] = a[z].split('$$$');
         a[z][1] = count[z]; //count
-        a[z][0] = BookToString(cartList[z]);
+        a[z][0] = JSONToString(cartList[z]);
         a[z] = a[z].join('$$$');
     }
     if(cartList.length != a.length){ //if an item was removed, cartList will be 1 item shorter than cart 
