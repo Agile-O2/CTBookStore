@@ -103,7 +103,7 @@ function calcTotal()
     }
     totalprice = totalprice.toFixed(2);
     console.log(totalprice);
-    localStorage.setItem("totalPrice",totalprice);
+    localStorage.setItem("cartTotal",totalprice);
     return totalprice;
 }
 

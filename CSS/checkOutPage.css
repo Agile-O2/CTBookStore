@@ -13,6 +13,7 @@ body{
 	padding: 15px;
 	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
     background-size: cover;
+    margin-bottom: 30px;
 }
 #topBar{
 	list-style-type: none;
@@ -70,6 +71,8 @@ li{
 .col-25 {
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
+  margin-left: -20px;
+  margin-top: -30px;
 }
 
 .col-50 {
@@ -80,6 +83,10 @@ li{
 .col-75 {
   -ms-flex: 75%; /* IE10 */
   flex: 75%;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-top: -30px;
+  text-align: center;
 }
 
 .col-25,
@@ -89,15 +96,18 @@ li{
 }
 
 .container {
-  background-color: #f2f2f2;
+    background-color: #f2f2f2;
+    width: 80%;
 	padding: 5px 30px 15px 30px;
 	border: 1px solid lightgrey;
 	border-radius: 30px;
-	margin-top: 80px;
+	margin-top: 40px;
+    display: inline-block;
+    text-align: left;
 }
 
 input[type=text] {
-  width: 100%;
+  width: 75%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
@@ -105,6 +115,7 @@ input[type=text] {
 }
 
 label {
+    width: 75%;
   margin-bottom: 10px;
   display: block;
 }
@@ -144,7 +155,7 @@ span.price {
   color: grey;
 }
 select{
-	width: 100%;
+	width: 75%;
 	margin-bottom: 20px;
 	padding: 12px;
 	border: 1px solid #ccc;
@@ -173,6 +184,11 @@ select{
 	border-radius: 3px;
 	cursor: pointer;
 	font-size: 17px;
+}
+
+#cartDisplay{
+    width: 100%;
+    margin-left: -60px;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */

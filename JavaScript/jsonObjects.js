@@ -4,7 +4,7 @@
 function openFile(file)
 {
     var xobj = new XMLHttpRequest();
-    var where = "JSON/" + file + ".json";
+    var where = "../JSON/" + file + ".json";
     xobj.open('GET', where, false);
     xobj.send(null);  
     return xobj.responseText;

@@ -7,7 +7,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="CSS/checkOutPage.css">
+		<link rel="stylesheet" href="../CSS/checkOutPage.css">
 	</head>
 	
 	<body>
@@ -122,22 +122,23 @@
 			</div>
 			
 			<div class="col-25">
-				<div class="container">
-					<h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-					<p><a href="#">Product 1</a> <span class="price">$15</span></p>
-					<p><a href="#">Product 2</a> <span class="price">$5</span></p>
-					<p><a href="#">Product 3</a> <span class="price">$8</span></p>
-					<p><a href="#">Product 4</a> <span class="price">$2</span></p>
+				<div class="container" id="cartDisplay">
+					<h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4>
+                    <div id="checkoutList">
+                    </div>
+					
 					<hr>
-					<p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                    <p>Subtotal <span id=checkoutSubtotal class="price" style="color:black"></span></p>
+                    <p>Shipping <span id="shipping" class="price" style="color:black">$0</span></p>
+                    <p>Taxes <span id="taxes" class="price" style="color:black">$0</span></p>
+					<p>Total <span id=checkoutTotalPrice class="price" style="color:black"></span></p>
 				</div>
 			</div>
 		</div>
 
 		<!--JavaScript Linkage-->
-        <script src="JSON/orders.js"></script>
-		<script src="JavaScript/checkOutPage.js"></script>
-        <script src="JavaScript/jsonObjects.js"></script>
+		<script src="../JavaScript/checkOutPage.js"></script>
+        <script src="../JavaScript/jsonObjects.js"></script>
 		<script>loadCheckOutPage();</script>
 	</body>
 </html>
