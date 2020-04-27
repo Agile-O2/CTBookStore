@@ -14,7 +14,7 @@ function passInfo(clickedBook)
     sessionStorage.setItem("sortSearch",saveSort);
     sessionStorage.setItem("search",document.getElementById("searchTextbox").value);
 	// Changes from DOM object to string while conservating format
-	let book = BookToString(productPageList[clickedBook.rowIndex-1]);
+	let book = JSONToString(productPageList[clickedBook.rowIndex-1]);
 	// Stores the new string in localStorage
 	localStorage.setItem("currentBook",book); 
 	// Go to new book
@@ -130,8 +130,8 @@ function Search(str)
     saveSort="";
     saveSearch=str;
     // Gets all the books from data
-    getAllBooks();
-    let tempBooks = StringToBook(localStorage.getItem("allBooks")).book;
+    let tempBooks = getAllItems("books");
+    console.log(tempBooks);
 	// Resets productPageList
 	productPageList = [];
 	let i,j,tempBook;
@@ -186,9 +186,9 @@ function Search(str)
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
-		mybutton.style.display = "block";
+		document.getElementById("myBtn").style.display = "block";
 	} else {
-		mybutton.style.display = "none";
+		document.getElementById("myBtn").style.display = "none";
 	}
 }
 // Returns to top page
@@ -216,7 +216,6 @@ function queryListenings()
     });
     
     // Button to go up
-    var mybutton = document.getElementById("myBtn");
     window.onscroll = function() {scrollFunction()};
 }
 
@@ -224,7 +223,6 @@ function queryListenings()
 // Else it will create fresh page
 function loadProductPage()
 {
-    console.log();
     if (sessionStorage.getItem("from")=="yes") 
     {
         // Goes back to previous state of page

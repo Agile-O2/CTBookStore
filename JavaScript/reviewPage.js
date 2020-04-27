@@ -1,6 +1,6 @@
 // Changes from String format to DOM Object format
     console.log(localStorage.getItem("currentBook"));
-let book = StringToBook(localStorage.getItem("currentBook")); 
+let book = StringToJSON(localStorage.getItem("currentBook")); 
 function ret()
 {
     sessionStorage.setItem("from","yes");
@@ -36,7 +36,7 @@ function addToCart()
         for (let z = 0; z<a.length;z++)
         {
             a[z] = a[z].split('$$$');
-            let book1 = StringToBook((a[z][0]));
+            let book1 = StringToJSON((a[z][0]));
             
             if (book1.isbn == book.isbn)//check if book is already in cart
             {
@@ -68,7 +68,7 @@ function addToCart()
     var x = document.getElementById("snackbar");
 
     // Add the "show" class to DIV
-    var snackBarText = StringToBook(localStorage.getItem("currentBook")).title + " was added to your cart!";
+    var snackBarText = StringToJSON(localStorage.getItem("currentBook")).title + " was added to your cart!";
     x.innerHTML = snackBarText;
     x.className = "show";
     updateCartDisplay();
@@ -166,7 +166,7 @@ function testCart(){
         console.log("books in cart:");
         for (let z = 0; z<b.length;z++)
         {
-            let book1 = StringToBook((b[z][0]));
+            let book1 = StringToJSON((b[z][0]));
             let count1 = b[z][1];
             console.log(count1, "x ", book1.title );
         }
