@@ -6,7 +6,6 @@ body{
 	background-size: cover;
 	margin: 0;
 }
-
 #div1{
 	background-color: transparent;
 	font-family: cursive;
@@ -56,60 +55,94 @@ li{
 #div1 a:hover{
 	background-color:lightgreen;
 }
-
-
-
 * {
-	box-sizing: border-box;	
+  box-sizing: border-box;
 }
 
 .row {
-	display: -ms-flexbox; /* IE10 */
-	display: flex;
-	-ms-flex-wrap: wrap; /* IE10 */
-	flex-wrap: wrap;
-	margin: 0 -16px;
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
 }
 
 .col-25 {
-	-ms-flex: 25%; /* IE10 */
-	flex: 25%;
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
 }
 
 .col-50 {
-	-ms-flex: 50%; /* IE10 */
-	flex: 50%;
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
 }
 
 .col-75 {
-	-ms-flex: 75%; /* IE10 */
-	flex: 75%;
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
 }
 
 .col-25,
 .col-50,
 .col-75 {
-	padding: 16px;
+  padding: 0 16px;
 }
 
 .container {
-	background-color: #f2f2f2;
+  background-color: #f2f2f2;
 	padding: 5px 30px 15px 30px;
 	border: 1px solid lightgrey;
 	border-radius: 30px;
 	margin-top: 80px;
-	margin-left: 350px;
-	margin-right: 350px;
 }
 
 input[type=text] {
-	width: 100%;
-	margin-bottom: 20px;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
 select{
 	width: 100%;
 	margin-bottom: 20px;
@@ -117,18 +150,6 @@ select{
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
-
-label {
-	margin-bottom: 10px;
-	display: block;
-}
-
-.icon-container {
-	margin-bottom: 20px;
-	padding: 7px 0;
-	font-size: 24px;
-}
-
 .btn1 {
 	background-color: #4CAF50;
 	color: white;
@@ -154,38 +175,12 @@ label {
 	font-size: 17px;
 }
 
-.btn:hover {
-  	background-color: #45a049;
-}
-
-a {
-	color: #2196F3;
-}
-
-hr {
-	border: 1px solid lightgrey;
-}
-
-span.price {
-  	float: right;
-	color: grey;
-}
-.firstLabel {
-    margin-right: 100px;
-}
-.cardtype{
-	margin-top: 18px;
-	font-weight: bold;
-}
-.buttonClass input{
-	float: left;
-}
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {
-	.row {
-		flex-direction: column-reverse;
+  .row {
+    flex-direction: column-reverse;
   }
-	.col-25 {
-		margin-bottom: 20px;
+  .col-25 {
+    margin-bottom: 20px;
   }
 }

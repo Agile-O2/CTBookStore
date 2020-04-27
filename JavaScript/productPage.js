@@ -191,7 +191,7 @@ function scrollFunction() {
 		document.getElementById("myBtn").style.display = "none";
 	}
 }
-// Returns to top page
+
 function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
