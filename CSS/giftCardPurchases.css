@@ -1,0 +1,214 @@
+body{
+	background-color: darkgrey;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	margin: 0;
+}
+
+#div1{
+	background-color: transparent;
+	font-family: cursive;
+	margin: 0;
+	padding: 15px;
+	background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-size: cover;
+}
+#topBar{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.topList{
+	display: inline;
+	margin-right: 15px;
+	font-size: 20px;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+li{
+	display: inline;
+	margin-right: 15px;
+	font-size: 20px;
+}
+#div1 a{
+	color: white;
+	text-decoration: none;
+	padding: 20px;
+	font-weight:bold;
+}
+#div1 a:hover{
+	background-color:lightgreen;
+}
+
+
+#div1 a{
+	color: white;
+	text-decoration: none;
+	padding: 20px;
+	font-weight:bold;
+}
+#div1 a:hover{
+	background-color:lightgreen;
+}
+
+
+
+* {
+	box-sizing: border-box;	
+}
+
+.row {
+	display: -ms-flexbox; /* IE10 */
+	display: flex;
+	-ms-flex-wrap: wrap; /* IE10 */
+	flex-wrap: wrap;
+	margin: 0 -16px;
+}
+
+.col-25 {
+	-ms-flex: 25%; /* IE10 */
+	flex: 25%;
+}
+
+.col-50 {
+	-ms-flex: 50%; /* IE10 */
+	flex: 50%;
+}
+
+.col-75 {
+	-ms-flex: 75%; /* IE10 */
+	flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+	padding: 0 16px;
+}
+
+.container {
+	background-color: #f2f2f2;
+	padding: 5px 30px 15px 30px;
+	border: 1px solid lightgrey;
+	border-radius: 30px;
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input[type=text] {
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+select{
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+label {
+	margin-bottom: 10px;
+	display: block;
+}
+
+.icon-container {
+	margin-bottom: 20px;
+	padding: 7px 0;
+	font-size: 24px;
+}
+
+.btn1 {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px;
+	margin: 10px 0;
+	margin-left: 190px;
+	border: none;
+  	width: 25%;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 17px;
+}
+.btn2{
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px;
+	margin: 10px 0;
+	margin-left: 50px;
+	border: none;
+  	width: 25%;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 17px;
+}
+
+.btn:hover {
+  	background-color: #45a049;
+}
+
+a {
+	color: #2196F3;
+}
+
+hr {
+	border: 1px solid lightgrey;
+}
+
+.firstLabel {
+    margin-right: 100px;
+}
+.cardtype{
+	margin-top: 18px;
+	font-weight: bold;
+}
+.buttonClass input{
+	float: left;
+}
+
+fieldset {
+      overflow: hidden
+}
+
+legend {
+	font-weight: bold;
+}
+.some-class {
+      float: left;
+      clear: none;
+    }
+
+#priceLabel {
+	float: left;
+	clear: none;
+	display: block;
+	padding: 0px 1em 0px 8px;
+}
+
+input[type=radio],
+input.radio {
+      float: left;
+      clear: none;
+      margin: 2px 0 0 2px;
+    }
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+	.row {
+		flex-direction: column-reverse;
+  }
+	.col-25 {
+		margin-bottom: 20px;
+  }
+}

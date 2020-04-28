@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gift Card</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../CSS/giftCardPurchases.css">
+	</head>
+
+	<body>
+		<!--Top navbar-->
+		<div id="div1">
+            <ul id="topBar">
+                <li class="topList"><a href="homePage.html">Main Page</a></li>
+				<li class="topList"><a href="productPage.html">Books</a></li>
+                <li class="topList"><a href="contactPage.html">Contact Us</a></li>
+				<li style="float: right"><a id="cartBtnCount" href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
+            </ul>
+        </div>
+
+		<!--Input boxes-->
+		<div class="row">
+			<div class="container">
+				<h1 style="text-align: center">Gift Card Purchases</h1>
+				<form id="f1" action="">
+					<p style="font-size: 20px;"><strong><i style="font-size:24px;" class="fa" >&#xf06b;</i> Select a gift card amount:</strong></p>
+
+					<fieldset>
+						<input id="r1" type="radio" name="Set1" value="5" />
+						<label for="r1">$5.00</label>
+						<input id="r2" type="radio" name="Set1" value="10" />
+						<label for="r2">$10.00</label>
+						<input id="r3" type="radio" name="Set1" value="15" />
+						<label for="r3">$15.00</label>
+						<input id="r4" type="radio" name="Set1" value="20" />
+						<label for="r4">$20.00</label>
+						<input id="r5" type="radio" name="Set1" value="25" />
+						<label for="r5">$25.00</label>
+						<input id="r6" type="radio" name="Set1" value="50" />
+						<label for="r6">$50.00</label>
+						<input id="r7" type="radio" name="Set1" value="100" />
+						<label for="r7">$100.00</label>
+					</fieldset>
+
+					<fieldset style="float: right;width:150px;">
+						<input id="total" type="text" name="total" value="" /><strong> Total</strong>&nbsp;&nbsp;
+						<input type="reset" style="font-size:11px;" />
+					</fieldset><br><br><br><br><br><br>
+
+					<div class="row">
+						<div class="col-50">
+							<h3>Shipping Address</h3>
+							<label for="fname"><i class="fa fa-user"></i> Full Name</label>
+							<input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+							<label for="email"><i class="fa fa-envelope"></i> Email</label>
+							<input type="text" id="email" name="email" placeholder="john@example.com">
+							<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+							<input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+							<label for="city"><i class="fa fa-institution"></i> City</label>
+							<input type="text" id="city" name="city" placeholder="New York">
+							<div class="row">
+								<div class="col-50">
+									<label for="state">State</label>
+									<input type="text" id="state" name="state" placeholder="NY">
+								</div>
+								<div class="col-50">
+									<label for="zip">Zip</label>
+									<input type="text" id="zip" name="zip" placeholder="10001">
+								</div>
+							</div>
+						</div>
+						<div class="col-50">
+							<h3>Payment(Credit Card)</h3>
+							<div class="cardtype">
+								<!--&nbsp = empty space-->
+								<span class="firstLabel">Accepted Cards</span>
+							</div>
+							<div class="icon-container">
+								<i class="fa fa-cc-visa" style="color:navy;"></i>
+								<i class="fa fa-cc-amex" style="color:blue;"></i>
+								<i class="fa fa-cc-mastercard" style="color:red;"></i>
+								<i class="fa fa-cc-discover" style="color:orange;"></i>
+							</div>
+							<label for="cname">Name on Card</label>
+							<input type="text" id="cname" name="cardname" placeholder="John More Doe" onkeypress="return lettersOnly()" >
+							<label for="ccnum">Credit card number</label>
+							<input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+							<label for="expmonth">Exp Month</label>
+							<select id="month"></select>
+							<div class="row">
+								<div class="col-50">
+									<label for="expyear">Exp Year</label>
+									<select id="year"></select>
+								</div>
+								<div class="col-50">
+									<label for="cvv">CVV</label>
+									<input type="text" id="cvv" name="cvv" placeholder="352" maxlength="3" onkeypress="return isNumber(event)">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<br>
+					<label>
+						<input type="checkbox" id="myCheck" name="sameadr" onclick="hideInfo()"> Billing address same as shipping
+					</label>
+					<div class="row">
+						<div class="col-50" id="text">
+							<h3>Billing Address</h3>
+							<label for="fname"><i class="fa fa-user"></i> Full Name</label>
+							<input type="text" id="billingfname" name="firstname" placeholder="John M. Doe">
+							<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+							<input type="text" id="billingadr" name="address" placeholder="542 W. 15th Street">
+							<label for="city"><i class="fa fa-institution"></i> City</label>
+							<input type="text" id="billingcity" name="city" placeholder="New York">
+							<div class="row">
+								<div class="col-50">
+									<label for="state">State</label>
+									<input type="text" id="billingstate" name="state" placeholder="NY">
+								</div>
+								<div class="col-50">
+									<label for="zip">Zip</label>
+									<input type="text" id="billingzip" name="zip" placeholder="10001" maxlength="5" onkeypress="return isNumber(event)">
+								</div>
+							</div>
+						</div>
+						<div class="col-50" style="display: none" id="giftcardboxes">
+							<h3>Gift Card</h3>
+							<label for="fname"><i style="font-size:24px;" class="fa" >&#xf06b;</i>  Gift Card Number</label>
+							<input type="text" id="giftcardnum" name="GiftcardNum" placeholder="Enter your gift card number">
+						</div>
+					</div>
+					<div class="buttonClass">
+						<input type="button" onclick="goBack()" value="Previous" class="btn1">
+						<input type="button" value="Submit Payment" onclick="displaySuccess()" class="btn2">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!--JavaScript Linkage-->
+        <script src="../JSON/orders.js"></script>
+		<script src="../JavaScript/giftCardPurchases.js"></script>
+        <script src="../JavaScript/jsonObjects.js"></script>
+		<script>loadCheckOutPage();</script>
+	</body>
+</html>
