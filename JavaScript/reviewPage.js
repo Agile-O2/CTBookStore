@@ -81,9 +81,9 @@ function addToCart()
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
-		document.getElementById("myBtn").style.display = "block";
+		document.getElementById("topBtn").style.display = "block";
 	} else {
-		document.getElementById("myBtn").style.display = "none";
+		document.getElementById("topBtn").style.display = "none";
 	}
 }
 
@@ -95,17 +95,17 @@ function topFunction() {
 
 function loadReviewPage()
 {
-     document.getElementById("here").innerHTML=
+     document.getElementById("titleAuthor").innerHTML=
         book.title+"<br>By: &nbsp;" + book.author; 
 
-    document.getElementById("hereAgain").innerHTML = 
+    document.getElementById("bookDetails").innerHTML = 
         "<img src='/" + book.image+"'/>" + 
         "<br>Price: " + "$"+book.price + 
         "<br>Year: &nbsp;" + book.year + 
         "<br>Topic: &nbsp;" + book.topic + 
         "<br>Pages: &nbsp;"+ book.pages+"<br>";
 
-    document.getElementById("hereAlso").innerHTML = 
+    document.getElementById("bookDescription").innerHTML = 
         "<br>Description:&nbsp; " + book.description + 
         "<br><br>ISBN: &nbsp;" + book.isbn;
 

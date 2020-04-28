@@ -48,12 +48,12 @@ li{
 }
 
 
-#here{
+#titleAuthor{
 	text-align: center;
 	font-size: 200%;
 	color: white;
 }
-#hereAgain{
+#bookDetails{
 	text-align: center;
 	color: white;
 	font-size: 20px;
@@ -62,14 +62,14 @@ img{
 	width: 70%;
 	height: 70%;
 }
-#hereAlso{
+#bookDescription{
 	font-size: 16px;
 	color: white;
 	text-align: center;
 	margin-left: 5%;
 	margin-right: 5%;
 }
-#myBtn {
+#topBtn {
 	display: none;
 	position:fixed;
 	bottom: 20px;
@@ -84,7 +84,7 @@ img{
 	padding: 15px;
 	border-radius: 4px;
 }
-#myBtn:hover {
+#topBtn:hover {
 	background-color: #555;
 }
 #returnButton{
