@@ -69,7 +69,16 @@ function checkIfValidInputs()
 }
 
 function getInputInfo(){
-    let orderInfo =[document.getElementById("fname").value,document.getElementById("email").value,"123456789",localStorage.getItem("totalPrice")];
+	var radioButton = document.getElementsByName('Set1');
+	var radioValue;
+	
+	for(var i = 0; i < radioButton.length; i++){
+		if(radioButton[i].checked){
+			radioValue = radioButton[i].value;
+		}
+	}
+	
+    let orderInfo =[document.getElementById("fname").value,document.getElementById("email").value,"123456789",radioValue];
 
     // Turn inner elements into strings separated by $$$
     orderInfo = orderInfo.join('$$$');
@@ -215,7 +224,7 @@ function setRadios()
 		oForm.elements.total.value = total.toFixed(2);
 	}
 
-var i = 0, input, inputs = document.getElementById('f1').getElementsByTagName('input');
+var i = 0, input, inputs = document.getElementById('gitField').getElementsByTagName('input');
 while (input = inputs.item(i++))
 	if (input.name.match(/^Set\d+$/))
 		input.onclick = sumRadios;

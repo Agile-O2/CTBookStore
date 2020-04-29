@@ -237,13 +237,5 @@ $(document).ready(function() {
     selectYear.on("change", AdjustDays);  
     selectMonth.val(month);    
     selectMonth.on("change", AdjustDays);
-
-    AdjustDays();
-    selectDay.val(day)
-    
-	function AdjustDays(){
-		var year = selectYear.val();
-		var month = parseInt(selectMonth.val()) + 1;
-		selectDay.empty();
-	}    
+	
 });
