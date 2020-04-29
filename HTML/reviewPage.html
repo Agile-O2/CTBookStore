@@ -19,8 +19,8 @@
             <ul>
                 <li><a href="homePage.html">Main Page</a></li>
 				<li><a href="productPage.html">Books</a></li>
-                <li><a href="contactPage.html">Contact Us</a></li>
                 <li><a href="giftCardPurchases.html">Purchase a Gift Card</a></li>
+                <li><a href="contactPage.html">Contact Us</a></li>
 				<li style="float: right"><a id="cartBtnCount" href="cartPage.html"><i class="fa fa-shopping-cart" style=""></i></a></li>
             </ul>
         </div>
@@ -29,14 +29,14 @@
             
             <!-- left panel -->
             <div class="col-5" > 
-                <p id="here"></p>
-                <div id="hereAgain"></div>
+                <p id="titleAuthor"></p>
+                <div id="bookDetails"></div>
             </div>
             
             <!-- right panel -->
             <div class="col-7" style="margin: auto">
 				
-                <p id="hereAlso"></p>
+                <p id="bookDescription"></p>
 				
 				<div class="text-center">
 					<button type="button" id="returnButton" class="btn btn-outline-primary" onclick="ret()">Go Back</button>
@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		
-		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+		<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
         
 		<!-- The actual snackbar -->
         <div id="snackbar">Book added to cart</div>

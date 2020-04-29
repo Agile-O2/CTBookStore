@@ -70,8 +70,18 @@ function checkIfValidInputs()
 
 // Prepares info to be stored on localstorage
 function getInputInfo(){
-    let orderInfo =[getDocVal("fname"),getDocVal("email"),localStorage.getItem("totalPrice")];
-    
+  
+	var radioButton = document.getElementsByName('Set1');
+	var radioValue;
+	
+	for(var i = 0; i < radioButton.length; i++){
+		if(radioButton[i].checked){
+			radioValue = radioButton[i].value;
+		}
+	}
+	
+  let orderInfo =[getDocVal("fname"),getDocVal("email"),radioValue];
+  
     // Turn inner elements into strings separated by $$$
     orderInfo = orderInfo.join('$$$');
     return orderInfo;
@@ -221,7 +231,7 @@ function setRadios()
 		oForm.elements.total.value = total.toFixed(2);
 	}
 
-var i = 0, input, inputs = document.getElementById('f1').getElementsByTagName('input');
+var i = 0, input, inputs = document.getElementById('gitField').getElementsByTagName('input');
 while (input = inputs.item(i++))
 	if (input.name.match(/^Set\d+$/))
 		input.onclick = sumRadios;

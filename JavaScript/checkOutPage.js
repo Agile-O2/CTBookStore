@@ -45,7 +45,7 @@ function displayCartItems(){
     subTotal += cartTotal;
     
     var totalPrice = "<b>$";
-    totalPrice += (parseInt(cartTotal)* 1.0635).toFixed(2);
+    totalPrice += ((parseInt(cartTotal)* 1.0635)+4.99).toFixed(2);
     totalPrice += "</b>"
     
 	// Display the table
@@ -53,7 +53,7 @@ function displayCartItems(){
     document.getElementById("checkoutSubtotal").innerHTML = subTotal;
     document.getElementById("taxes").innerHTML = "$" + (cartTotal* 0.0635).toFixed(2);
     document.getElementById("checkoutTotalPrice").innerHTML = totalPrice;
-    localStorage.setItem("totalPrice",(parseInt(cartTotal)* 1.0635).toFixed(2));
+    localStorage.setItem("totalPrice",((parseInt(cartTotal)* 1.0635)+4.99).toFixed(2));
     
 }
 
