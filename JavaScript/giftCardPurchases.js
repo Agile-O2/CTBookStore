@@ -26,56 +26,62 @@ function hideInfo() {
 // Checks if user enter the right info
 function checkIfValidInputs()
 {
-//    // Check if textboxes are empty
-//    let result = 0;
-//    result += checkEmptyTextBoxes("fname");
-//    result += checkEmptyTextBoxes("email");
-//    result += checkEmptyTextBoxes("adr");
-//    result += checkEmptyTextBoxes("city");
-//    result += checkEmptyTextBoxes("state");
-//    result += checkEmptyTextBoxes("zip");
-//    result += checkEmptyTextBoxes("cname");
-//    result += checkEmptyTextBoxes("ccnum");
-//    result += checkEmptyTextBoxes("cvv");
-//    // If billing address is different
-//    if (document.getElementById("myCheck").checked != true)
-//    {
-//        result += checkEmptyTextBoxes("billingfname");
-//        result += checkEmptyTextBoxes("billingadr");
-//        result += checkEmptyTextBoxes("billingcity");
-//        result += checkEmptyTextBoxes("billingstate");
-//        result += checkEmptyTextBoxes("billingzip");
-//    }
-//    if (result > 0)
-//    {
-//        alert("Please enter all necessary information");
-//        return false;
-//    }
-//    // Now Checks if inputs are correct
-//    result += validateEmail("email");
-//    result += checkNumbers("zip",5);
-//    result += checkNumbers("cvv",3);
-//    if (document.getElementById("myCheck").checked != true)
-//    {
-//        result += validateEmail("billingemail");
-//        result += checkNumbers("billingzip",5);
-//    }
-//    if (result > 0)
-//    {
-//        alert("Please fix your information");
-//        return false;
-//    }
+    // Check if textboxes are empty
+    let result = 0;
+    result += checkEmptyTextBoxes("fname");
+    result += checkEmptyTextBoxes("email");
+    result += checkEmptyTextBoxes("adr");
+    result += checkEmptyTextBoxes("city");
+    result += checkEmptyTextBoxes("state");
+    result += checkEmptyTextBoxes("zip");
+    result += checkEmptyTextBoxes("cname");
+    result += checkEmptyTextBoxes("ccnum");
+    result += checkEmptyTextBoxes("cvv");
+    // If billing address is different
+    if (document.getElementById("myCheck").checked != true)
+    {
+        result += checkEmptyTextBoxes("billingfname");
+        result += checkEmptyTextBoxes("billingadr");
+        result += checkEmptyTextBoxes("billingcity");
+        result += checkEmptyTextBoxes("billingstate");
+        result += checkEmptyTextBoxes("billingzip");
+    }
+    if (result > 0)
+    {
+        alert("Please enter all necessary information");
+        return false;
+    }
+    // Now Checks if inputs are correct
+    result += validateEmail("email");
+    result += checkNumbers("zip",5);
+    result += checkNumbers("cvv",3);
+    if (document.getElementById("myCheck").checked != true)
+    {
+        result += validateEmail("billingemail");
+        result += checkNumbers("billingzip",5);
+    }
+    if (result > 0)
+    {
+        alert("Please fix your information");
+        return false;
+    }
     return true;
 }
 
+// Prepares info to be stored on localstorage
 function getInputInfo(){
-    let orderInfo =[document.getElementById("fname").value,document.getElementById("email").value,"123456789",localStorage.getItem("totalPrice")];
-
+    let orderInfo =[getDocVal("fname"),getDocVal("email"),localStorage.getItem("totalPrice")];
+    
     // Turn inner elements into strings separated by $$$
     orderInfo = orderInfo.join('$$$');
     return orderInfo;
-
 }
+// To get document values shorter
+function getDocVal(doc)
+{
+    return document.getElementById(doc).value;
+}
+
 // Checks if user left an empty box
 function checkEmptyTextBoxes(textbox)
 {
