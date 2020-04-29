@@ -30,6 +30,9 @@ h1{
 	font-size: 75px;
 	color: darkblue
 }
+#title{
+    margin-top: 50px;
+}
 button{
 	animation-name: bounce;
 	animation-duration: 3s;

@@ -186,9 +186,9 @@ function Search(str)
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
-		document.getElementById("myBtn").style.display = "block";
+		document.getElementById("topBtn").style.display = "block";
 	} else {
-		document.getElementById("myBtn").style.display = "none";
+		document.getElementById("topBtn").style.display = "none";
 	}
 }
 
