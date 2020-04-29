@@ -12,17 +12,19 @@ function displaySuccess() {
     }
 }
 
+// Shows cart items on page
 function displayCartItems(){
 
     //get cart from local storage
     let cart = localStorage.getItem("cart"); 
     
     // split contents of cart local storage into 1d array
-    let bookList=cart.split('@@@');
+    let bookList = cart.split('@@@');
     var quantity = [];
     var cList = "";
         
     // Change the 1 outer array into 2 dim array
+    // and create a HTML list
     for (let z = 0; z<bookList.length;z++)
     {
         bookList[z] = bookList[z].split('$$$');
@@ -37,6 +39,7 @@ function displayCartItems(){
         cList += "</span></p>";   
     }
     
+    // Get total price
     var cartTotal = localStorage.getItem("cartTotal");
     var subTotal = "$";
     subTotal += cartTotal;
@@ -54,7 +57,7 @@ function displayCartItems(){
     
 }
 
-// this function will hide the text field on checked
+// This function will hide the text field on checked
 function hideInfo() {
 	var checkBox = document.getElementById("myCheck");
 	var text = document.getElementById("text");
@@ -65,6 +68,7 @@ function hideInfo() {
 	}
 }
 
+// Hides gift card textbox on checkmark
 function hideGift() {
 	var checkBox = document.getElementById("giftCheck");
 	var text = document.getElementById("giftcardboxes");
@@ -78,54 +82,151 @@ function hideGift() {
 // Checks if user enter the right info
 function checkIfValidInputs()
 {
-//    // Check if textboxes are empty
-//    let result = 0;
-//    result += checkEmptyTextBoxes("fname");
-//    result += checkEmptyTextBoxes("email");
-//    result += checkEmptyTextBoxes("adr");
-//    result += checkEmptyTextBoxes("city");
-//    result += checkEmptyTextBoxes("state");
-//    result += checkEmptyTextBoxes("zip");
-//    result += checkEmptyTextBoxes("cname");
-//    result += checkEmptyTextBoxes("ccnum");
-//    result += checkEmptyTextBoxes("cvv");
-//    // If billing address is different
-//    if (document.getElementById("myCheck").checked != true)
-//    {
-//        result += checkEmptyTextBoxes("billingfname");
-//        result += checkEmptyTextBoxes("billingadr");
-//        result += checkEmptyTextBoxes("billingcity");
-//        result += checkEmptyTextBoxes("billingstate");
-//        result += checkEmptyTextBoxes("billingzip");
-//    }
-//    if (result > 0)
-//    {
-//        alert("Please enter all necessary information");
-//        return false;
-//    }
-//    // Now Checks if inputs are correct
-//    result += validateEmail("email");
-//    result += checkNumbers("zip",5);
-//    result += checkNumbers("cvv",3);
-//    if (document.getElementById("myCheck").checked != true)
-//    {
-//        result += validateEmail("billingemail");
-//        result += checkNumbers("billingzip",5);
-//    }
-//    if (result > 0)
-//    {
-//        alert("Please fix your information");
-//        return false;
-//    }
+    // Resets all red boxes
+    unRedAll();
+    // Checks gift card requirements
+    if (!checkGiftCard()) return false;
+    // Check if textboxes are empty
+    let result = 0;
+    result += checkEmptyTextBoxes("fname");
+    result += checkEmptyTextBoxes("email");
+    result += checkEmptyTextBoxes("adr");
+    result += checkEmptyTextBoxes("city");
+    result += checkEmptyTextBoxes("state");
+    result += checkEmptyTextBoxes("zip");
+    let totalLeft = getNonDollar("checkoutTotalPrice");
+    console.log(totalLeft);
+    // total 0 means that gift card covers entire cost, so
+    // no need to enter billing and cc info
+    if (totalLeft != 0)
+    {
+        result += checkEmptyTextBoxes("cname");
+        result += checkEmptyTextBoxes("ccnum");
+        result += checkEmptyTextBoxes("cvv");
+        // If billing address is different
+        if (document.getElementById("myCheck").checked != true)
+        {
+            result += checkEmptyTextBoxes("billingfname");
+            result += checkEmptyTextBoxes("billingadr");
+            result += checkEmptyTextBoxes("billingcity");
+            result += checkEmptyTextBoxes("billingstate");
+            result += checkEmptyTextBoxes("billingzip");
+        }
+    }
+    if (result > 0)
+    {
+        alert("Please enter all necessary information");
+        return false;
+    }
+    // Now Checks if inputs are correct
+    result += validateEmail("email");
+    result += checkNumbers("zip",5);
+    // Same idea as above with the if then loops
+    if (document.getElementById("checkoutTotalPrice").value != 0)
+    {
+        result += checkNumbers("cvv",3);
+        if (document.getElementById("myCheck").checked != true)
+        {
+            result += validateEmail("billingemail");
+            result += checkNumbers("billingzip",5);
+        }
+    }
+    if (result > 0)
+    {
+        alert("Please fix your information");
+        return false;
+    }
     return true;
 }
 
+// Gets text price as float number without "$"
+function getNonDollar(doc)
+{
+    return parseFloat(document.getElementById(doc).textContent.substr(1));
+}
+
+// Checks if gift card option was selected, textbox is filled properly, and/or gift card exists
+// Performs necessary changes as well like red textboxes or change of total price calculation
+function checkGiftCard()
+{
+    // Check if giftcard selected and then check if the giftcard input is valid
+    let giftCheckDoc = document.getElementById("giftCheck");
+    let giftNumDoc = document.getElementById("giftcardnum");
+    // Giftcard option selected?
+    if (giftCheckDoc.checked == true)
+    {
+        // Gift card format correct?
+        if (giftNumDoc.value.length < 16)
+        {
+            giftNumDoc.focus();
+            giftNumDoc.style.borderColor  = "red";
+            alert("Please enter correct card number");
+            return false;
+        }
+        else
+        {
+            // Looks for specifc giftcard
+            let allGiftCards = getAllItems("giftcards");
+            let i = 0;
+            for (i = 0; i < allGiftCards.length; i++)
+            {
+                console.log(allGiftCards[i].code);
+                console.log(giftNumDoc.value);
+                if(allGiftCards[i].code == giftNumDoc.value)
+                {
+                    giftNumDoc.style.borderColor  = "";
+                    let giftValue = allGiftCards[i].value;
+                    let totalValue = getNonDollar("checkoutSubtotal") + getNonDollar("shipping") + getNonDollar("taxes");
+                    console.log(totalValue);
+                    
+                    let newTotal = totalValue - giftValue
+                    if (newTotal < 0)
+                    {
+                        document.getElementById("checkoutTotalPrice").innerHTML = "$0.00";
+                    }
+                    else
+                    {
+                        document.getElementById("checkoutTotalPrice").innerHTML = "$" + newTotal;
+                    }
+                    document.getElementById("giftcard").innerHTML = "$" + giftValue.toFixed(2);
+                    return true;
+                }
+            }
+            giftNumDoc.focus();
+            giftNumDoc.style.borderColor  = "red";
+            alert("Card not found");
+            return false;
+        }
+    }
+    else
+    {return true;}
+}
+
+// Makes all textbox clear before checking them
+function unRedAll()
+{
+    var textboxes = document.getElementsByTagName('input');
+    for(var i in textboxes)
+    {
+        if(textboxes[i].type == "text")
+        {
+            textboxes[i].style.borderColor="";
+        }
+    }
+}
+
+// Prepares info to be stored on localstorage
 function getInputInfo(){
-    let orderInfo =[document.getElementById("fname").value,document.getElementById("email").value,"123456789",localStorage.getItem("totalPrice")];
+    let orderInfo =[getDocVal("fname"),getDocVal("email"),localStorage.getItem("totalPrice")];
     
     // Turn inner elements into strings separated by $$$
     orderInfo = orderInfo.join('$$$');
     return orderInfo;
+}
+
+function getDocVal(doc)
+{
+    return document.getElementById(doc).value;
 }
 
 // Checks if user left an empty box
@@ -205,37 +306,39 @@ function loadCheckOutPage()
 
 //Select the year and month for the credit card
 $(document).ready(function() {
-	const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	var qntYears = 10;
-	var selectYear = $("#year");
-	var selectMonth = $("#month");
-	var currentYear = new Date().getFullYear();
-	
-	for (var y = 0; y < qntYears; y++){
-		let date = new Date(currentYear);
-		var yearElem = document.createElement("option");
-		yearElem.value = currentYear 
-		yearElem.textContent = currentYear;
-		selectYear.append(yearElem);
-		currentYear++;
-	} 
-	
-	for (var m = 0; m < 12; m++){
-		let monthNum = new Date(2018, m).getMonth()
-		let month = monthNames[monthNum];
-		var monthElem = document.createElement("option");
-		monthElem.value = monthNum; 
-		monthElem.textContent = month;
-		selectMonth.append(monthElem);
-	}
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var qntYears = 10;
+var selectYear = $("#year");
+var selectMonth = $("#month");
+var currentYear = new Date().getFullYear();
 
-	var d = new Date();
-	var month = d.getMonth();
-    var year = d.getFullYear();
-   
-    selectYear.val(year); 
-    selectYear.on("change", AdjustDays);  
-    selectMonth.val(month);    
-    selectMonth.on("change", AdjustDays);
-	
+for (var y = 0; y < qntYears; y++){
+    let date = new Date(currentYear);
+    var yearElem = document.createElement("option");
+    yearElem.value = currentYear 
+    yearElem.textContent = currentYear;
+    selectYear.append(yearElem);
+    currentYear++;
+} 
+
+for (var m = 0; m < 12; m++){
+    let monthNum = new Date(2018, m).getMonth()
+    let month = monthNames[monthNum];
+    var monthElem = document.createElement("option");
+    monthElem.value = monthNum; 
+    monthElem.textContent = month;
+    selectMonth.append(monthElem);
+}
 });
+
+
+// this function will hide the text field on checked
+function hideInfo() {
+	var checkBox = document.getElementById("myCheck");
+	var text = document.getElementById("text");
+	if (checkBox.checked == true){
+		text.style.display = "none";
+	} else {
+		text.style.display = "block";
+	}
+}

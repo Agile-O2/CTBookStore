@@ -45,7 +45,7 @@
 									</div>
 									<div class="col-50">
 										<label for="zip">Zip</label>
-										<input type="text" id="zip" name="zip" placeholder="10001">
+										<input type="text" id="zip" name="zip" maxlength="5" placeholder="10001" onkeypress="return isNumber(event)">
 									</div>
 								</div>
 							</div>
@@ -111,7 +111,7 @@
 							<div class="col-50" style="display: none" id="giftcardboxes">
 								<h3>Gift Card</h3>
 								<label for="fname"><i style="font-size:24px;" class="fa" >&#xf06b;</i>  Gift Card Number</label>
-								<input type="text" id="giftcardnum" name="GiftcardNum" placeholder="Enter your gift card number">
+								<input type="text" id="giftcardnum" name="GiftcardNum" maxlength="16" placeholder="Enter your gift card number">
 							</div>
 						</div>
 						<div class="buttonClass">
@@ -129,10 +129,11 @@
                     </div>
 					
 					<hr>
-                    <p>Subtotal <span id=checkoutSubtotal class="price" style="color:black"></span></p>
-                    <p>Shipping <span id="shipping" class="price" style="color:black">$4.99</span></p>
-                    <p>Taxes <span id="taxes" class="price" style="color:black">$0</span></p>
-					<p>Total <span id=checkoutTotalPrice class="price" style="color:black"></span></p>
+                    <p>Subtotal <span id=checkoutSubtotal class="price" style="color:black">$0.00</span></p>
+                    <p>Shipping <span id="shipping" class="price" style="color:black">$0.00</span></p>
+                    <p>Taxes <span id="taxes" class="price" style="color:black">$0.00</span></p>
+                    <p>Gift Card <span id="giftcard" class="price" style="color:black">$0.00</span></p>
+					<p>Total <span id=checkoutTotalPrice class="price" style="color:black">$0.00</span></p>
 				</div>
 			</div>
 		</div>

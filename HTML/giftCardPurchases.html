@@ -66,7 +66,7 @@
 								</div>
 								<div class="col-50">
 									<label for="zip">Zip</label>
-									<input type="text" id="zip" name="zip" placeholder="10001">
+									<input type="text" id="zip" name="zip" placeholder="10001" maxlength="5" onkeypress="return isNumber(event)">
 								</div>
 							</div>
 						</div>
@@ -140,7 +140,6 @@
 		</div>
 
 		<!--JavaScript Linkage-->
-        <script src="../JSON/orders.js"></script>
 		<script src="../JavaScript/giftCardPurchases.js"></script>
         <script src="../JavaScript/jsonObjects.js"></script>
 		<script>loadCheckOutPage();</script>
