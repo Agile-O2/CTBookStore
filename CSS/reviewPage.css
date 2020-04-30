@@ -69,6 +69,33 @@ img{
 	margin-left: 5%;
 	margin-right: 5%;
 }
+
+#simBookContainer{
+    color: white;
+    font-size: 20px;
+    background-color: lightgray;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    border-radius: 25px;
+    padding: 20px;
+    background-image: url("https://www.albanyhillsdental.com/x/cdn/?https://storage.googleapis.com/wzukusers/user-23775701/images/1f7fee01b42c4142b264e0857082cafd/blue.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#simImg{
+    margin: 10px;
+    width: 70%;
+}
+
+#simBook{
+ height: 300px;
+ margin-bottom: 10px;
+ padding-bottom: 10px;
+ font-size: 15px;
+ text-align: center;
+}
+
 #topBtn {
 	display: none;
 	position:fixed;
