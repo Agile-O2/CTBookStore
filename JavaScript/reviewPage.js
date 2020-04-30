@@ -171,3 +171,23 @@ function testCart(){
             console.log(count1, "x ", book1.title );
         }
 }
+
+
+// Gets similar books based on category
+function getSimilarBooks()
+{
+    var bks = getAllItems("books");
+    var curList = [];
+    var count = 0;
+    var curbook = StringToJSON(localStorage.getItem("currentBook"));
+    while (count < bks.length && curList.length < 4)
+    {
+        console.log(curList.length);
+        if (curbook.topic == bks[count].topic)
+        {
+            curList.push(bks[count]);
+        }
+        count++;
+    }
+    console.log(curList);
+}

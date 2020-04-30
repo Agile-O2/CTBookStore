@@ -83,10 +83,19 @@
 								</div>
 							</div>
 						</div>
+                        
 						
 						<label>
 							<input type="checkbox" id="myCheck" name="sameadr" onclick="hideInfo()"> Billing address same as shipping
 						</label>
+<!--                        -->
+                        <div style="display: none" id="giftcardboxes">
+								<h3>Gift Card</h3>
+								<label for="fname"><i style="font-size:24px;" class="fa" >&#xf06b;</i>  Gift Card Number</label>
+								<input type="text" id="giftcardnum" name="GiftcardNum" maxlength="16" placeholder="Enter your gift card number">
+                                <input type="button" id="applyButton" value="Apply" onclick="checkGiftCard()">
+                                <label for="fname"><i style="font-size:24px;" class="fa"></i>Note: If total is $0.00, then there is no need to enter credit card and billing information.</label>
+                        </div>
 						<div class="row">
 							<div class="col-50" id="text">
 								<h3>Billing Address</h3>
@@ -108,11 +117,7 @@
 								</div>
 							</div>
 							
-							<div class="col-50" style="display: none" id="giftcardboxes">
-								<h3>Gift Card</h3>
-								<label for="fname"><i style="font-size:24px;" class="fa" >&#xf06b;</i>  Gift Card Number</label>
-								<input type="text" id="giftcardnum" name="GiftcardNum" maxlength="16" placeholder="Enter your gift card number">
-							</div>
+							
 						</div>
 						<div class="buttonClass">
 							<input type="button" onclick="goBack()" value="Return to Cart" class="btn1">
@@ -132,15 +137,16 @@
                     <p>Subtotal <span id=checkoutSubtotal class="price" style="color:black">$0.00</span></p>
                     <p>Shipping <span id="shipping" class="price" style="color:black">$0.00</span></p>
                     <p>Taxes <span id="taxes" class="price" style="color:black">$0.00</span></p>
-                    <p>Gift Card <span id="giftcard" class="price" style="color:black">$0.00</span></p>
+                    <p>Gift Card <span id="giftcard" class="price" style="color:black">-$0.00</span></p>
 					<p>Total <span id=checkoutTotalPrice class="price" style="color:black">$0.00</span></p>
 				</div>
 			</div>
 		</div>
-
-		<!--JavaScript Linkage-->
-		<script src="../JavaScript/checkOutPage.js"></script>
-        <script src="../JavaScript/jsonObjects.js"></script>
-		<script>loadCheckOutPage();</script>
+        <!-- Pop up for Gift Card -->
+        <div id="snackbar">Gift Card Applied</div>
 	</body>
+        <!--JavaScript Linkage-->
+    <script src="../JavaScript/checkOutPage.js"></script>
+    <script src="../JavaScript/jsonObjects.js"></script>
+    <script>loadCheckOutPage();</script>
 </html>
