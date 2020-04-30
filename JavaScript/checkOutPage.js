@@ -40,19 +40,16 @@ function displayCartItems(){
     }
     
     // Get total price
-    var cartTotal = localStorage.getItem("cartTotal");
-    var subTotal = "$";
-    subTotal += cartTotal;
-    
-    var totalPrice = "<b>$";
-    totalPrice += ((parseInt(cartTotal)* 1.0635)+4.99).toFixed(2);
-    totalPrice += "</b>"
+    var cartTotal = parseInt(localStorage.getItem("cartTotal"));
+    var tax = 0.0635;
+    var shipping = 4.99
     
 	// Display the table
 	document.getElementById("checkoutList").innerHTML = cList; 
-    document.getElementById("checkoutSubtotal").innerHTML = subTotal;
-    document.getElementById("taxes").innerHTML = "$" + (cartTotal* 0.0635).toFixed(2);
-    document.getElementById("checkoutTotalPrice").innerHTML = totalPrice;
+    document.getElementById("checkoutSubtotal").innerHTML = "$" + cartTotal.toFixed(2);
+    document.getElementById("taxes").innerHTML = "$" + (cartTotal * tax).toFixed(2);
+    document.getElementById("shipping").innerHTML = "$" + 4.99;
+    document.getElementById("checkoutTotalPrice").innerHTML = "$" + totalCost();
     localStorage.setItem("totalPrice",((parseInt(cartTotal)* 1.0635)+4.99).toFixed(2));
     
 }
@@ -76,6 +73,8 @@ function hideGift() {
 		text.style.display = "block";
 	} else {
 		text.style.display = "none";
+        document.getElementById("giftcard").innerHTML = "-$0.00";
+        document.getElementById("checkoutTotalPrice").innerHTML = "$" + totalCost();
 	}
 }
 
@@ -84,8 +83,6 @@ function checkIfValidInputs()
 {
     // Resets all red boxes
     unRedAll();
-    // Checks gift card requirements
-    if (!checkGiftCard()) return false;
     // Check if textboxes are empty
     let result = 0;
     result += checkEmptyTextBoxes("fname");
@@ -95,7 +92,6 @@ function checkIfValidInputs()
     result += checkEmptyTextBoxes("state");
     result += checkEmptyTextBoxes("zip");
     let totalLeft = getNonDollar("checkoutTotalPrice");
-    console.log(totalLeft);
     // total 0 means that gift card covers entire cost, so
     // no need to enter billing and cc info
     if (totalLeft != 0)
@@ -122,12 +118,11 @@ function checkIfValidInputs()
     result += validateEmail("email");
     result += checkNumbers("zip",5);
     // Same idea as above with the if then loops
-    if (document.getElementById("checkoutTotalPrice").value != 0)
+    if (totalLeft != 0)
     {
         result += checkNumbers("cvv",3);
         if (document.getElementById("myCheck").checked != true)
         {
-            result += validateEmail("billingemail");
             result += checkNumbers("billingzip",5);
         }
     }
@@ -142,13 +137,16 @@ function checkIfValidInputs()
 // Gets text price as float number without "$"
 function getNonDollar(doc)
 {
-    return parseFloat(document.getElementById(doc).textContent.substr(1));
+    let item = document.getElementById(doc).textContent;
+    let index = item.indexOf("$");
+    return parseFloat(item.substr(index+1));
 }
 
 // Checks if gift card option was selected, textbox is filled properly, and/or gift card exists
 // Performs necessary changes as well like red textboxes or change of total price calculation
 function checkGiftCard()
 {
+    unRedAll();
     // Check if giftcard selected and then check if the giftcard input is valid
     let giftCheckDoc = document.getElementById("giftCheck");
     let giftNumDoc = document.getElementById("giftcardnum");
@@ -161,7 +159,7 @@ function checkGiftCard()
             giftNumDoc.focus();
             giftNumDoc.style.borderColor  = "red";
             alert("Please enter correct card number");
-            return false;
+            //return false;
         }
         else
         {
@@ -170,15 +168,11 @@ function checkGiftCard()
             let i = 0;
             for (i = 0; i < allGiftCards.length; i++)
             {
-                console.log(allGiftCards[i].code);
-                console.log(giftNumDoc.value);
                 if(allGiftCards[i].code == giftNumDoc.value)
                 {
                     giftNumDoc.style.borderColor  = "";
                     let giftValue = allGiftCards[i].value;
-                    let totalValue = getNonDollar("checkoutSubtotal") + getNonDollar("shipping") + getNonDollar("taxes");
-                    console.log(totalValue);
-                    
+                    let totalValue = getNonDollar("checkoutSubtotal") + getNonDollar("shipping") + getNonDollar("taxes");            
                     let newTotal = totalValue - giftValue
                     if (newTotal < 0)
                     {
@@ -186,20 +180,26 @@ function checkGiftCard()
                     }
                     else
                     {
-                        document.getElementById("checkoutTotalPrice").innerHTML = "$" + newTotal;
+                        document.getElementById("checkoutTotalPrice").innerHTML = "$" + newTotal.toFixed(2);
                     }
-                    document.getElementById("giftcard").innerHTML = "$" + giftValue.toFixed(2);
-                    return true;
+                    document.getElementById("giftcard").innerHTML = "-$" + giftValue.toFixed(2);
+                    // Get the snackbar DIV
+                    var x = document.getElementById("snackbar");
+
+                    // Add the "show" class to DIV
+                    var snackBarText = "$" + giftValue.toFixed(2) + " Gift Card Applied";
+                    x.innerHTML = snackBarText;
+                    x.className = "show";
+                    // After 3 seconds, remove the show class from DIV
+                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                    return;
                 }
             }
             giftNumDoc.focus();
             giftNumDoc.style.borderColor  = "red";
             alert("Card not found");
-            return false;
         }
     }
-    else
-    {return true;}
 }
 
 // Makes all textbox clear before checking them
@@ -301,34 +301,36 @@ function lettersOnly()
 function loadCheckOutPage()
 {
     displayCartItems();
-    console.log();
 }
 
 //Select the year and month for the credit card
-$(document).ready(function() {
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var qntYears = 10;
-var selectYear = $("#year");
-var selectMonth = $("#month");
-var currentYear = new Date().getFullYear();
+$(document).ready(function() 
+{
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var qntYears = 10;
+    var selectYear = $("#year");
+    var selectMonth = $("#month");
+    var currentYear = new Date().getFullYear();
 
-for (var y = 0; y < qntYears; y++){
-    let date = new Date(currentYear);
-    var yearElem = document.createElement("option");
-    yearElem.value = currentYear 
-    yearElem.textContent = currentYear;
-    selectYear.append(yearElem);
-    currentYear++;
-} 
+    for (var y = 0; y < qntYears; y++)
+    {
+        let date = new Date(currentYear);
+        var yearElem = document.createElement("option");
+        yearElem.value = currentYear 
+        yearElem.textContent = currentYear;
+        selectYear.append(yearElem);
+        currentYear++;
+    } 
 
-for (var m = 0; m < 12; m++){
-    let monthNum = new Date(2018, m).getMonth()
-    let month = monthNames[monthNum];
-    var monthElem = document.createElement("option");
-    monthElem.value = monthNum; 
-    monthElem.textContent = month;
-    selectMonth.append(monthElem);
-}
+    for (var m = 0; m < 12; m++)
+    {
+        let monthNum = new Date(2018, m).getMonth()
+        let month = monthNames[monthNum];
+        var monthElem = document.createElement("option");
+        monthElem.value = monthNum; 
+        monthElem.textContent = month;
+        selectMonth.append(monthElem);
+    }
 });
 
 
@@ -341,4 +343,15 @@ function hideInfo() {
 	} else {
 		text.style.display = "block";
 	}
+}
+
+// Calculates Total
+function totalCost()
+{
+    let tax = getNonDollar("taxes");
+    let cartValue = getNonDollar("checkoutSubtotal");
+    let shipping = getNonDollar("shipping");
+    let giftcard = getNonDollar("giftcard");
+    let total = cartValue + shipping + tax - giftcard;
+    return total.toFixed(2);
 }
