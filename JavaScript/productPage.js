@@ -52,7 +52,7 @@ function printTable()
 	}
 	
 	// Display the table
-	document.getElementById("demo").innerHTML = table;  
+	document.getElementById("productsTable").innerHTML = table;  
 }
 
 // Takes the current productPageList and sorts it

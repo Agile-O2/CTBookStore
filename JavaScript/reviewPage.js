@@ -1,11 +1,22 @@
 // Changes from String format to DOM Object format
-    console.log(localStorage.getItem("currentBook"));
+ console.log(localStorage.getItem("currentBook"));
 let book = StringToJSON(localStorage.getItem("currentBook")); 
 function ret()
 {
     sessionStorage.setItem("from","yes");
     window.location.href = "productPage.html";
 	window.history.back();
+}
+
+function passInfo(clickedBookPosition)
+{
+    let simBookList = getSimilarBooks();
+    index = parseInt(clickedBookPosition);
+    let book = JSONToString(simBookList[index]);
+	// Stores the new string in localStorage
+    localStorage.setItem("currentBook",book);
+	// Go to new book
+	window.location.href = "reviewPage.html";
 }
 
 //Daniel Pobidel
@@ -95,6 +106,7 @@ function topFunction() {
 
 function loadReviewPage()
 {
+    loadSimilarBooks();
      document.getElementById("titleAuthor").innerHTML=
         book.title+"<br>By: &nbsp;" + book.author; 
 
@@ -183,11 +195,62 @@ function getSimilarBooks()
     while (count < bks.length && curList.length < 4)
     {
         console.log(curList.length);
-        if (curbook.topic == bks[count].topic)
+        if (curbook.topic == bks[count].topic && curbook.isbn != bks[count].isbn)
         {
             curList.push(bks[count]);
         }
         count++;
     }
     console.log(curList);
+    return curList;
 }
+
+function loadSimilarBooks(){
+    similarBookList = getSimilarBooks();
+    
+    let simBookDisplay = "";
+    for(let i =0; i<similarBookList.length; i++){
+        simBookDisplay += "<div id='simBook' class='col'>";
+        simBookDisplay +=  "<img id='simImg' onclick='passInfo(" + i + ")' src='/" + similarBookList[i].image+"'/>";
+        simBookDisplay += "<br>"
+        simBookDisplay +=  similarBookList[i].title;
+        simBookDisplay += "<br>";
+        simBookDisplay += "By: " + similarBookList[i].author;
+        simBookDisplay += "<br>";
+        simBookDisplay += "$" + similarBookList[i].price;
+        simBookDisplay += "</div>";
+    }
+    for(let i=0; i<(4-similarBookList.length); i++){
+        simBookDisplay += "<div id='simBook' class='col'>";
+        simBookDisplay += "</div>";
+    }
+    document.getElementById("simBooksRow").innerHTML=simBookDisplay;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
