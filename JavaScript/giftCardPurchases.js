@@ -1,9 +1,4 @@
-function checkIfDone()
-{
-    if (checkIfAmountSelected() == false)
-        return false;
-    checkIfValidInputs();
-}
+// ######################## Validation methods ##############################
 
 // Checks if user enter the right info
 function checkIfValidInputs()
@@ -52,6 +47,8 @@ function checkIfAmountSelected()
         
 }
 
+// ######################## Getters + Calculators methods ##############################
+
 // Returns the amount paid
 function getAmount()
 {
@@ -63,6 +60,13 @@ function getAmount()
 			return radioButton[i].value;
     return 0;
 }
+
+function getFromPage()
+{
+    return "giftCard";
+}
+
+// ######################## Load Page  ##############################
 
 // Loads the page on start
 function loadGiftCardPurchases()

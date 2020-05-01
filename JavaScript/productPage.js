@@ -1,4 +1,3 @@
-// Radoslaw Konopka
 // Global productPageList
 // Contains current list of books on the page
 var productPageList;
@@ -192,11 +191,13 @@ function scrollFunction() {
 	}
 }
 
+// Goes to the top of the page when button pressed
 function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 }
 
+// Contains functions for any specific changes in the page
 function queryListenings()
 {
     // Shows list for browsing

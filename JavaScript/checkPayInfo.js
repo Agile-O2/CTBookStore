@@ -17,7 +17,8 @@ function displaySuccess() {
 // Prepares info to be stored on localstorage
 function getInputInfo(){
     let amount = getAmount();
-    let orderInfo =[getDocVal("fname"),getDocVal("email"), amount];
+    let fromPage = getFromPage();
+    let orderInfo =[getDocVal("fname"),getDocVal("email"), amount, fromPage];
     
     // Turn inner elements into strings separated by $$$
     orderInfo = orderInfo.join('$$$');
@@ -36,9 +37,6 @@ function emptyShippingBoxes()
     result += checkEmptyTextBoxes("city");
     result += checkEmptyTextBoxes("state");
     result += checkEmptyTextBoxes("zip");
-    result += checkEmptyTextBoxes("cname");
-    result += checkEmptyTextBoxes("ccnum");
-    result += checkEmptyTextBoxes("cvv");
     return result;
 }
 

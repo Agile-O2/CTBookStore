@@ -54,7 +54,7 @@ button{
 	transform: translate(-50%, -50%);
 	animation-name: bounce;
 	animation-duration: 3s;
-	animation-delay: 2s;
+	animation-delay: 0s;
 	animation-iteration-count: infinite;
 }
 .btn:hover #slide {
