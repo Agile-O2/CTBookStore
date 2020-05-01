@@ -1,3 +1,5 @@
+// ######################## Visual methods ##############################
+
 // Shows cart items on page
 function displayCartItems(){
 
@@ -53,6 +55,19 @@ function hideGift() {
 	}
 }
 
+// this function will hide the text field on checked
+function hideInfo() {
+	var checkBox = document.getElementById("myCheck");
+	var text = document.getElementById("text");
+	if (checkBox.checked == true){
+		text.style.display = "none";
+	} else {
+		text.style.display = "block";
+	}
+}
+
+// ######################## Validation methods ##############################
+
 // Checks if user enter the right info
 function checkIfValidInputs()
 {
@@ -90,18 +105,11 @@ function checkIfValidInputs()
     return true;
 }
 
-// Gets text price as float number without "$"
-function getNonDollar(doc)
-{
-    let item = document.getElementById(doc).textContent;
-    let index = item.indexOf("$");
-    return parseFloat(item.substr(index+1));
-}
-
 // Checks if gift card option was selected, textbox is filled properly, and/or gift card exists
 // Performs necessary changes as well like red textboxes or change of total price calculation
 function checkGiftCard()
 {
+    // Resets all red boxes
     unRedAll();
     // Check if giftcard selected and then check if the giftcard input is valid
     let giftCheckDoc = document.getElementById("giftCheck");
@@ -133,12 +141,13 @@ function checkGiftCard()
                     if (newTotal < 0)
                     {
                         document.getElementById("checkoutTotalPrice").innerHTML = "$0.00";
+                        document.getElementById("giftcard").innerHTML = "-$" + totalValue.toFixed(2);
                     }
                     else
                     {
                         document.getElementById("checkoutTotalPrice").innerHTML = "$" + newTotal.toFixed(2);
+                        document.getElementById("giftcard").innerHTML = "-$" + giftValue.toFixed(2);
                     }
-                    document.getElementById("giftcard").innerHTML = "-$" + giftValue.toFixed(2);
                     // Get the snackbar DIV
                     var x = document.getElementById("snackbar");
 
@@ -158,21 +167,25 @@ function checkGiftCard()
     }
 }
 
+// ######################## Getters + Calculators methods ##############################
+
+// Gets text price as float number without "$"
+function getNonDollar(doc)
+{
+    let item = document.getElementById(doc).textContent;
+    let index = item.indexOf("$");
+    return parseFloat(item.substr(index+1));
+}
+
+function getFromPage()
+{
+    return "checkOut";
+}
+
 // Returns the amount paid
 function getAmount()
 {
     return localStorage.getItem("totalPrice");
-}
-
-// this function will hide the text field on checked
-function hideInfo() {
-	var checkBox = document.getElementById("myCheck");
-	var text = document.getElementById("text");
-	if (checkBox.checked == true){
-		text.style.display = "none";
-	} else {
-		text.style.display = "block";
-	}
 }
 
 // Calculates Total
@@ -185,6 +198,8 @@ function totalCost()
     let total = cartValue + shipping + tax - giftcard;
     return total.toFixed(2);
 }
+
+// ######################## Load Page  ##############################
 
 // Loads the page on start
 function loadCheckOutPage()

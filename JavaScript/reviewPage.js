@@ -1,6 +1,6 @@
-// Changes from String format to DOM Object format
- console.log(localStorage.getItem("currentBook"));
+// Changes from String format to JSON format
 let book = StringToJSON(localStorage.getItem("currentBook")); 
+// Lets browser know that we came from review page
 function ret()
 {
     sessionStorage.setItem("from","yes");
@@ -8,10 +8,11 @@ function ret()
 	window.history.back();
 }
 
+// Open a page with a selected similar book
 function passInfo(clickedBookPosition)
 {
     let simBookList = getSimilarBooks();
-    index = parseInt(clickedBookPosition);
+    let index = parseInt(clickedBookPosition);
     let book = JSONToString(simBookList[index]);
 	// Stores the new string in localStorage
     localStorage.setItem("currentBook",book);
@@ -47,9 +48,9 @@ function addToCart()
         for (let z = 0; z<a.length;z++)
         {
             a[z] = a[z].split('$$$');
-            let book1 = StringToJSON((a[z][0]));
+            let bookTemp = StringToJSON((a[z][0]));
             
-            if (book1.isbn == book.isbn)//check if book is already in cart
+            if (bookTemp.isbn == book.isbn)//check if book is already in cart
             {
                 if(a[z][1] < parseInt(book.stock))//check stock
                 {
@@ -75,7 +76,7 @@ function addToCart()
         //log all of carts contents in console
         testCart();
     } 
-    // Get the snackbar DIV
+    // Get the snackbar DIV || showss a pop up box whenever user adds book to the page
     var x = document.getElementById("snackbar");
 
     // Add the "show" class to DIV
@@ -87,8 +88,8 @@ function addToCart()
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
-        
 
+// Shows button to go up
 function scrollFunction() {
 	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 	{
@@ -98,12 +99,13 @@ function scrollFunction() {
 	}
 }
 
+// Goes to the top of the page when button pressed
 function topFunction() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 }
 
-
+// Display the page on load
 function loadReviewPage()
 {
     loadSimilarBooks();
@@ -184,7 +186,6 @@ function testCart(){
         }
 }
 
-
 // Gets similar books based on category
 function getSimilarBooks()
 {
@@ -205,6 +206,7 @@ function getSimilarBooks()
     return curList;
 }
 
+// Display similar books
 function loadSimilarBooks(){
     similarBookList = getSimilarBooks();
     
@@ -226,31 +228,3 @@ function loadSimilarBooks(){
     }
     document.getElementById("simBooksRow").innerHTML=simBookDisplay;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
